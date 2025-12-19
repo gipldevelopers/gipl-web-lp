@@ -60,7 +60,7 @@ export default function StatsSection() {
       value: 250,
       suffix: "+",
       title: "Happy Clients",
-      desc: "Long-term partnerships with businesses that trust our web development services",
+      desc: "Long term partnerships with businesses that trust our web development services",
       color: "from-purple-500 to-pink-500",
       duration: 2.5,
       bgColor: "bg-purple-50"
@@ -79,8 +79,8 @@ export default function StatsSection() {
       icon: FaTrophy,
       value: 100,
       suffix: "%",
-      title: "On-Time Delivery",
-      desc: "Never missed a deadline—your website launches exactly when promised",
+      title: "On Time Delivery",
+      desc: "Never missed a deadline your website launches exactly when promised",
       color: "from-orange-500 to-yellow-500",
       duration: 2,
       bgColor: "bg-orange-50"

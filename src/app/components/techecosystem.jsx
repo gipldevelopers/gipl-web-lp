@@ -41,7 +41,7 @@ export default function TechEcosystem() {
       emoji: "🚀",
       name: "Next.js",
       category: "Frontend",
-      description: "Create SEO-friendly websites that rank higher on Google with fast page loads.",
+      description: "Create SEO friendly websites that rank higher on Google with fast page loads.",
       color: "from-gray-900 to-black",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-gray-900 to-black",
@@ -77,7 +77,7 @@ export default function TechEcosystem() {
       emoji: "🔥",
       name: "Firebase/Supabase",
       category: "Database/Auth",
-      description: "Store data securely with real-time updates and user authentication features.",
+      description: "Store data securely with real time updates and user authentication features.",
       color: "from-orange-500 to-yellow-500",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-orange-500 to-yellow-500",
@@ -89,7 +89,7 @@ export default function TechEcosystem() {
       emoji: "✅",
       name: "TypeScript",
       category: "Language",
-      description: "Write cleaner, error-free code that's easier to maintain and scale over time.",
+      description: "Write cleaner, error free code that's easier to maintain and scale over time.",
       color: "from-blue-600 to-indigo-600",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-blue-600 to-indigo-600",
@@ -113,7 +113,7 @@ export default function TechEcosystem() {
       emoji: "🅰️",
       name: "Angular",
       category: "Frontend",
-      description: "Develop large-scale business applications with Google's trusted framework.",
+      description: "Develop large scale business applications with Google's trusted framework.",
       color: "from-red-500 to-pink-500",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-red-500 to-pink-500",
@@ -125,7 +125,7 @@ export default function TechEcosystem() {
       emoji: "🐘",
       name: "PHP/Laravel",
       category: "Backend",
-      description: "Build secure, database-driven websites with popular PHP framework.",
+      description: "Build secure, database driven websites with popular PHP framework.",
       color: "from-red-400 to-orange-500",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-red-400 to-orange-500",
@@ -149,7 +149,7 @@ export default function TechEcosystem() {
       emoji: "🪟",
       name: ".NET",
       category: "Backend",
-      description: "Build enterprise-level applications with Microsoft's reliable framework.",
+      description: "Build enterprise level applications with Microsoft's reliable framework.",
       color: "from-purple-600 to-pink-600",
       iconColor: "text-white",
       bgColor: "bg-gradient-to-br from-purple-600 to-pink-600",
@@ -477,16 +477,26 @@ export default function TechEcosystem() {
 
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-8 text-center"
-        >
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105">
-            View Case Studies
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </motion.div>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  className="mt-8 text-center"
+>
+  <motion.a
+    href="http://localhost:3000/#case"
+    className="group inline-flex items-center gap-2 
+               bg-gradient-to-r from-blue-600 to-purple-600 
+               text-white px-6 py-3 rounded-lg font-semibold 
+               hover:shadow-lg transition-all hover:scale-105"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
+    aria-label="View Case Studies"
+  >
+    View Case Studies
+    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+  </motion.a>
+</motion.div>
+
       </div>
 
       <style jsx>{`

@@ -25,24 +25,25 @@ export default function CaseStudiesSlider() {
 
   const caseStudies = [
   {
-    quarter: "Case Study 1",
-    title: "Housepire - Real Estate Platform",
-    client: "Housepire",
-    challenge:
-      "Needed modern website development for luxury property listings with virtual tours and advanced search.",
-    solution:
-      "Built custom platform with property filters, 360° tours, lead capture, and mobile-responsive design.",
-    icon: Target,
-    color: "from-blue-500 to-purple-500",
-    bgColor: "bg-gradient-to-br from-blue-50 to-purple-50",
-    metrics: ["75%", "Increase in Inquiries", "45%", "More Lead Conversions"],
-    tech: ["React.js", "Node.js", "MongoDB", "AWS"],
-  },
+  quarter: "Case Study 1",
+  title: "Housepire",
+  url: "https://houspire.ai",
+  challenge:
+    "Needed modern website development for luxury property listings with virtual tours and advanced search.",
+  solution:
+    "Built custom platform with property filters, 360° tours, lead capture, and mobile-responsive design.",
+  icon: Target,
+  color: "from-blue-500 to-purple-500",
+  bgColor: "bg-gradient-to-br from-blue-50 to-purple-50",
+  metrics: ["75%", "Increase in Inquiries", "45%", "More Lead Conversions"],
+  tech: ["React.js", "Node.js", "MongoDB", "AWS"],
+},
+
 
   {
     quarter: "Case Study 2",
-    title: "Novotion - Digital Agency Portfolio",
-    client: "Novotion",
+    title: "Novotion",
+    url: "https://share.google/0BT6R4lglIjF2at9D",
     challenge:
       "Creative agency needed website development showcasing their work with fast performance.",
     solution:
@@ -56,8 +57,8 @@ export default function CaseStudiesSlider() {
 
   {
     quarter: "Case Study 3",
-    title: "Ask Nani - Recipe Community",
-    client: "Ask Nani",
+    title: "Ask Nani",
+    url : "https://asknani-frontend-omega.vercel.app/",
     challenge:
       "Platform for sharing traditional recipes with modern UI and search functionality.",
     solution:
@@ -71,8 +72,8 @@ export default function CaseStudiesSlider() {
 
   {
     quarter: "Case Study 4",
-    title: "Divine Spirituals - E-commerce + Booking",
-    client: "Divine Spirituals",
+    title: "Divine Spiritual",
+    url : "https://www.divinspiritualhealing.com/",
     challenge:
       "Dual-purpose platform needed: online store + event booking for meditation sessions.",
     solution:
@@ -293,24 +294,41 @@ export default function CaseStudiesSlider() {
                   <div className={`${study.bgColor} rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-200 h-full`}>
                     
                     {/* Header */}
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md`}>
-                            <study.icon className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="text-sm font-bold text-gray-900">{study.title}</div>
-                          </div>
-                        </div>
-                        <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
-                      </div>
-                      
-                      <div className="inline-flex items-center gap-1 bg-white/80 px-3 py-1.5 rounded-full">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-xs font-medium text-gray-700">Client: {study.client}</span>
-                      </div>
-                    </div>
+                  <div className="mb-4">
+  <div className="flex items-center justify-between mb-3">
+    <div className="flex items-center gap-2">
+      <div
+        className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md`}
+      >
+        <study.icon className="w-5 h-5 text-white" />
+      </div>
+      <div>
+        {/* ✅ Make title clickable */}
+        {study.url ? (
+          <a
+            href={study.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-gray-900 hover:text-blue-600 flex items-center gap-1"
+          >
+            {study.title}
+            {/* <ArrowUpRight className="w-3 h-3 opacity-60" /> */}
+          </a>
+        ) : (
+          <div className="text-sm font-bold text-gray-900">{study.title}</div>
+        )}
+      </div>
+    </div>
+    {/* Optional Arrow on right */}
+    <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+  </div>
+
+  <div className="inline-flex items-center gap-1 bg-white/80 px-3 py-1.5 rounded-full">
+    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+    <span className="text-xs font-medium text-gray-700">Client: {study.client}</span>
+  </div>
+</div>
+
 
                     {/* Metrics */}
                     <div className="grid grid-cols-2 gap-2 mb-4">
@@ -366,22 +384,38 @@ export default function CaseStudiesSlider() {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-8 text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold text-white mb-2">Ready to See These Results?</h3>
-            <p className="text-blue-100 mb-4">
-              Let's discuss how we can transform your digital presence.
-            </p>
-            <button className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105">
-              <CheckCircle className="w-4 h-4" />
-              Schedule Free Consultation
-            </button>
-          </div>
-        </motion.div>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  className="mt-8 text-center"
+>
+  <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-bold text-white mb-2">
+      Ready to See These Results?
+    </h3>
+
+    <p className="text-blue-100 mb-4">
+      Let's discuss how we can transform your digital presence.
+    </p>
+
+    <motion.a
+      href="https://gohilinfotech.com/contact"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 
+                 bg-white text-blue-600 
+                 px-6 py-2.5 rounded-lg font-semibold 
+                 hover:shadow-lg transition-all"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      aria-label="Schedule Free Consultation"
+    >
+      <CheckCircle className="w-4 h-4" />
+      Schedule Free Consultation
+    </motion.a>
+  </div>
+</motion.div>
+
       </div>
 
       <style jsx>{`

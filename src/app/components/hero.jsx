@@ -111,13 +111,13 @@ export default function HeroSection() {
   // --- Content to add into hero (user provided) ---
   const HEADLINE = "Build A Website That Works Harder Than Your Competitors";
   const SUBHEAD =
-    "Fast, Modern, High-Converting Website Development That Brings Real Customers—Not Just Visitors";
+    "Fast, Modern, High Converting Website Development That Brings Real Customers Not Just Visitors";
   const FEATURES = [
-    "Lightning-fast performance (under 3 seconds)",
-    "Mobile-first responsive design",
-    "SEO-ready structure from day one",
-    "Bank-level security & SSL included",
-    "Conversion-focused layouts",
+    "Performance Optimization",
+    "Mobile first responsive design",
+    "SEO ready structure from day one",
+    "Bank level security & SSL included",
+    "Conversion focused layouts",
     "Lifetime support & maintenance",
   ];
 
@@ -214,24 +214,31 @@ export default function HeroSection() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-8 justify-center lg:justify-start"
             >
-              <motion.button
-                variants={pulseAnimation}
-                animate="animate"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => smoothScrollTo("contact")}
-                className="group relative px-5 sm:px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all overflow-hidden"
-                aria-label="Start Your Project Today - contact form"
-                title="Start Your Project Today"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative flex items-center justify-center gap-2">
-                  <span className="text-sm sm:text-base">
-                    Start Your Project Today
-                  </span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </motion.button>
+              <motion.a
+  href="https://gohilinfotech.com/contact"
+  target="_blank"
+  rel="noopener noreferrer"
+  variants={pulseAnimation}
+  animate="animate"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="group relative inline-block px-5 sm:px-6 py-3 
+             bg-gradient-to-r from-blue-600 to-purple-600 
+             text-white rounded-lg font-semibold shadow-md 
+             hover:shadow-lg transition-all overflow-hidden"
+  aria-label="Start Your Project Today - contact page"
+  title="Start Your Project Today"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+  
+  <div className="relative flex items-center justify-center gap-2">
+    <span className="text-sm sm:text-base">
+      Start Your Project Today
+    </span>
+    <ArrowRight className="w-4 h-4" />
+  </div>
+</motion.a>
+
 
              
             </motion.div>
@@ -242,7 +249,7 @@ export default function HeroSection() {
               className="text-xs text-gray-500 max-w-2xl mx-auto lg:mx-0"
             >
               <span className="mr-2">🔒</span>
-              Bank-level security, SSL, and lifetime support available.
+              Bank level security, SSL, and lifetime support available.
             </motion.div>
           </motion.div>
 

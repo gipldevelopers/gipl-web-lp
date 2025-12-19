@@ -26,39 +26,7 @@ export default function WhyChooseUs() {
 
   // BENEFITS DATA
   const benefits = [
-    {
-      icon: Zap,
-      title: "Lightning-Fast Speed",
-      description:
-        "Your website loads in under 3 seconds. Fast websites rank better and convert higher. We optimize every line of code for peak performance.",
-      color: "from-blue-500 to-purple-500",
-      stats: "Under 3 sec load",
-    },
-    {
-      icon: Palette,
-      title: "Pixel-Perfect Design",
-      description:
-        "Clean, modern, conversion-first UI. We ensure your website impresses instantly and turns visitors into real customers.",
-      color: "from-purple-500 to-pink-500",
-      stats: "100% modern design",
-    },
-    {
-      icon: TrendingUp,
-      title: "Conversion-Focused Architecture",
-      description:
-        "Every layout, color, and button placement is strategically crafted to increase leads and sales — not just look pretty.",
-      color: "from-green-500 to-cyan-500",
-      stats: "↑ Higher conversions",
-    },
-    {
-      icon: Cpu,
-      title: "Latest Technology Stack",
-      description:
-        "Speed, security, SEO — everything optimized from day one. React, Next.js, Node.js keep your site ahead of competitors.",
-      color: "from-blue-500 to-indigo-500",
-      stats: "Next.js + React",
-    },
-    {
+     {
       icon: Settings,
       title: "Customized for Your Goals",
       description:
@@ -70,9 +38,42 @@ export default function WhyChooseUs() {
       icon: ListChecks,
       title: "Smooth, Transparent Process",
       description:
-        "From planning to launch — clear timelines, updates, and zero confusion at any step of your development journey.",
+        "From planning to launch clear timelines, updates, and zero confusion at any step of your development journey.",
       color: "from-pink-500 to-red-500",
       stats: "100% clarity",
+    },
+    {
+      icon: Palette,
+      title: "Pixel-Perfect Design",
+      description:
+        "Clean, modern, conversion first UI. We ensure your website impresses instantly and turns visitors into real customers.",
+      color: "from-purple-500 to-pink-500",
+      stats: "100% modern design",
+    },
+    {
+      icon: TrendingUp,
+      title: "Conversion-Focused Architecture",
+      description:
+        "Every layout, color, and button placement is strategically crafted to increase leads and sales  not just look pretty.",
+      color: "from-green-500 to-cyan-500",
+      stats: "↑ Higher conversions",
+    },
+    {
+      icon: Cpu,
+      title: "Latest Technology Stack",
+      description:
+        "Speed, security, SEO  everything optimized from day one. React, Next.js, Node.js keep your site ahead of competitors.",
+      color: "from-blue-500 to-indigo-500",
+      stats: "Next.js + React",
+    },
+    
+    {
+      icon: Zap,
+      title: "Performance Optimization",
+      description:
+        "Your website loads in under 3 seconds. Fast websites rank better and convert higher. We optimize every line of code for peak performance.",
+      color: "from-blue-500 to-purple-500",
+      stats: "Under 3 sec load",
     },
   ];
 
@@ -203,12 +204,7 @@ export default function WhyChooseUs() {
 
         {/* Controls */}
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-gray-700">
-              Key Benefits
-            </span>
-          </div>
+       
 
           <div className="flex gap-2">
             <button

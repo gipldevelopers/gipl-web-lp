@@ -25,14 +25,16 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
   const websiteTypes = [
     { title: "Business Website", subtitle: "Professional online presence", icon: Briefcase, color: "from-blue-400 to-indigo-500" },
     { title: "E-Commerce Website", subtitle: "Online stores with secure payments", icon: ShoppingCart, color: "from-emerald-400 to-teal-500" },
-    { title: "Portfolio Website", subtitle: "Showcase creative work", icon: ImageIcon, color: "from-pink-400 to-rose-500" },
-    { title: "Landing Page", subtitle: "High-converting sales funnels", icon: Target, color: "from-orange-400 to-amber-500" },
-    { title: "Corporate Website", subtitle: "Enterprise digital presence", icon: Building, color: "from-slate-600 to-gray-700" },
-    { title: "Blog / News", subtitle: "Content publishing platforms", icon: BookOpen, color: "from-cyan-400 to-blue-500" },
+    { title: "Real Estate Website", subtitle: "Property listings & lead gen", icon: Home, color: "from-rose-400 to-pink-500" },
     { title: "Custom Web Apps", subtitle: "CRMs, dashboards & booking systems", icon: Layout, color: "from-violet-400 to-fuchsia-500" },
+    { title: "Corporate Website", subtitle: "Enterprise digital presence", icon: Building, color: "from-slate-600 to-gray-700" },
     { title: "Personal Branding", subtitle: "Individual professional sites", icon: User, color: "from-yellow-400 to-amber-500" },
     { title: "Educational / LMS", subtitle: "Online learning platforms", icon: GraduationCap, color: "from-green-400 to-lime-500" },
-    { title: "Real Estate Website", subtitle: "Property listings & lead gen", icon: Home, color: "from-rose-400 to-pink-500" }
+    { title: "Landing Page", subtitle: "High converting sales funnels", icon: Target, color: "from-orange-400 to-amber-500" },
+    { title: "Portfolio Website", subtitle: "Showcase creative work", icon: ImageIcon, color: "from-pink-400 to-rose-500" },
+    { title: "Blog / News", subtitle: "Content publishing platforms", icon: BookOpen, color: "from-cyan-400 to-blue-500" },
+
+
   ];
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
         {/* Header - styled to match TechEcosystem exactly */}
         <motion.div initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-gray-900">Types of Websites We Build</h2>
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">Many businesses don't know which website they need — pick a type below and we'll match the perfect solution.</p>
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">Many businesses don't know which website they need  pick a type below and we'll match the perfect solution.</p>
         </motion.div>
 
         {/* Top bar: Technology Stack label + swiper buttons (moved to top) */}
@@ -133,7 +135,7 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
                         </div>
                       </div>
 
-                      <p className="text-sm text-gray-700 mb-4">We design and build {t.title.toLowerCase()} with attention to conversions, performance and brand alignment — optimized for the goals you care about.</p>
+                      <p className="text-sm text-gray-700 mb-4">We design and build {t.title.toLowerCase()} with attention to conversions, performance and brand alignment  optimized for the goals you care about.</p>
 
                       
 
@@ -151,10 +153,22 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
         {/* CTA block - matches TechEcosystem button style */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-2 text-center">
           <div className="inline-flex gap-3">
-            <button onClick={handleCTA} className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105">
-              Schedule a Free Consultation
-              <ChevronRight className="w-4 h-4" />
-            </button>
+           <motion.a
+  href="https://gohilinfotech.com/contact"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3 
+             bg-gradient-to-r from-blue-600 to-purple-600 
+             text-white px-6 py-3 rounded-lg font-semibold 
+             hover:shadow-lg transition-all"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.98 }}
+  aria-label="Schedule a Free Consultation"
+>
+  Schedule a Free Consultation
+  <ChevronRight className="w-4 h-4" />
+</motion.a>
+
 
           </div>
         </motion.div>

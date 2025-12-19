@@ -155,7 +155,7 @@ export default function IndustriesSlider() {
           </h2>
           
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-            Our versatile team has delivered high-impact solutions across diverse sectors.
+            Our versatile team has delivered high impact solutions across diverse sectors.
           </p>
         </motion.div>
 

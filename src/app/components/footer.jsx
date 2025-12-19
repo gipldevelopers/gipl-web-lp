@@ -43,7 +43,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-gray-300 text-lg max-w-xl mx-auto leading-relaxed mb-8"
         >
-          Leading website development company in India — building fast, modern,
+          Leading website development company in India  building fast, modern,
           high-converting websites that help businesses grow.
         </motion.p>
 
@@ -53,7 +53,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          href="#contact"
+          href="https://gohilinfotech.com/contact"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-white/20 transition"
         >
           <Mail className="w-4 h-4" />

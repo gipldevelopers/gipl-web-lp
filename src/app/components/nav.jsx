@@ -137,30 +137,28 @@ export default function Navbar() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
-            <motion.button
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="
-                px-6 py-2.5
-                bg-linear-to-r from-blue-600 to-purple-600
-                text-white font-medium text-sm
-                rounded-xl
-                shadow-lg shadow-blue-500/25
-                hover:shadow-xl hover:shadow-blue-500/30
-                transition-all duration-300
-                relative overflow-hidden
-                group
-              "
-            >
-              <span className="relative z-10">Contact Us</span>
-              <div className="
-                absolute inset-0
-                bg-linear-to-r from-purple-600 to-blue-600
-                opacity-0 group-hover:opacity-100
-                transition-opacity duration-300
-              " />
-            </motion.button>
+            <motion.a
+  href="https://gohilinfotech.com/contact"
+  target="_blank"
+  rel="noopener noreferrer"
+  variants={linkVariants}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="
+    mt-4 mx-2
+    px-4 py-3.5
+    bg-linear-to-r from-blue-600 to-purple-600
+    text-white font-medium
+    rounded-xl
+    shadow-lg
+    hover:shadow-xl
+    transition-all duration-300
+    inline-flex justify-center
+  "
+>
+  Contact Us
+</motion.a>
+
           </div>
 
           {/* Mobile Menu Button */}

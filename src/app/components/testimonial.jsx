@@ -89,7 +89,7 @@ export default function TestimonialsSlider() {
   const stats = [
     { value: "4.9/5", label: "Client Rating", icon: Star },
     { value: "98%", label: "Satisfaction", icon: Star },
-    { value: "50+", label: "Projects", icon: Star },
+    { value: "25+", label: "Projects", icon: Star },
     { value: "24/7", label: "Support", icon: Star }
   ];
 
