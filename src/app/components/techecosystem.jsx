@@ -336,10 +336,7 @@ export default function TechEcosystem() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4">
-            <Cpu className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-blue-700">Modern Tech Stack</span>
-          </div>
+          
           
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-gray-900">
             Our Tech Ecosystem
@@ -460,19 +457,7 @@ export default function TechEcosystem() {
             ))}
           </div>
 
-          {/* Progress Dots */}
-          <div className="flex justify-center gap-2 mt-4">
-            {Array.from({ length: Math.max(1, techStack.length - getVisibleCards() + 1) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-blue-500 w-6' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          
         </div>
 
         {/* Call to Action */}
@@ -480,7 +465,7 @@ export default function TechEcosystem() {
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   viewport={{ once: true }}
-  className="mt-8 text-center"
+  className="mt-2 text-center"
 >
   <motion.a
     href="http://localhost:3000/#case"

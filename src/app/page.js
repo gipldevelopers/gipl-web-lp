@@ -5,6 +5,7 @@ import Footer from './components/footer'
 import HeroSection from './components/hero'
 import IndustriesSlider from './components/indusryslider'
 import Nav from './components/nav'
+import ScrollStorySection from './components/ScrollStorySection'
 import WebsiteTypesGrid from './components/service_grid'
 import StatsSection from './components/statesec'
 import TechEcosystem from './components/techecosystem'
@@ -16,6 +17,7 @@ export default function Home() {
     <>
       <Nav />
       <HeroSection/>
+      <ScrollStorySection/>
       <AnimatedCTASection/>
       <WhyChooseUsSection/>
       <StatsSection/>

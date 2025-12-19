@@ -83,7 +83,7 @@ export default function Navbar() {
               : "mt-6 backdrop-blur-lg bg-white/90 shadow-lg border border-white/20"
             }
             rounded-2xl lg:rounded-3xl
-            py-2 px-2 md:py-2 md:px-3
+            py-1 px-1 md:py-1 md:px-1
             flex items-center justify-between
             before:absolute before:inset-x-0 before:top-0 before:h-px 
             before:bg-linear-to-r before:from-transparent before:via-blue-500/20 before:to-transparent
@@ -98,7 +98,7 @@ export default function Navbar() {
             <img
               src="/GIPL_Short-Logo-e1750248392231.png"
               alt="Gohil Infotech"
-              className="h-8 md:h-10 w-auto"
+              className="h-12 md:h-12 w-auto"
             />
            
           </motion.div>
@@ -145,7 +145,6 @@ export default function Navbar() {
   whileTap={{ scale: 0.95 }}
   onClick={() => setIsMobileMenuOpen(false)}
   className="
-    mt-4 mx-2
     px-4 py-3.5
     bg-linear-to-r from-blue-600 to-purple-600
     text-white font-medium
@@ -266,7 +265,6 @@ export default function Navbar() {
                       variants={linkVariants}
                       whileTap={{ scale: 0.95 }}
                       className="
-                        mt-4 mx-2
                         px-4 py-3.5
                         bg-linear-to-r from-blue-600 to-purple-600
                         text-white font-medium
