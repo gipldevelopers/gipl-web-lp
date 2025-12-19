@@ -26,14 +26,21 @@ export default function Footer() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
         {/* Logo */}
-        <motion.img
+        <motion.a
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          src="/GIPL_Short-Logo-e1750248392231.png"
-          alt="Gohil Infotech"
-          className="h-14 mx-auto mb-6"
-        />
+          href="https://gohilinfotech.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block mx-auto mb-6 flex justify-center"
+        >
+          <img
+            src="/GIPL_Short-Logo-e1750248392231.png"
+            alt="Gohil Infotech"
+            className="h-14"
+          />
+        </motion.a>
 
         {/* Tagline */}
         <motion.p
@@ -102,15 +109,18 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom copyright */}
-        <motion.p
+        <motion.a
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-sm text-gray-500 mt-10"
+          href="https://gohilinfotech.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-500 mt-10 hover:text-gray-300 transition-colors"
         >
           © {new Date().getFullYear()} Gohil Infotech. All rights reserved.
-        </motion.p>
+        </motion.a>
       </div>
 
       {/* Back to Top */}

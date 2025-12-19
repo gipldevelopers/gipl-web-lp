@@ -51,7 +51,7 @@ export default function CaseStudiesSlider() {
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
       metrics: ["90%", "Increase in Inquiries", "120%", "Traffic Growth"],
-      tech: ["Next.js", "Tailwind CSS", "WordPress"],
+      tech: ["Next.js", "Tailwind CSS", "node.js", "AWS"],
     },
 
     {
@@ -66,7 +66,7 @@ export default function CaseStudiesSlider() {
       color: "from-orange-500 to-yellow-500",
       bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50",
       metrics: ["15,000+", "Registered Users", "2,500+", "Recipes Uploaded"],
-      tech: ["WordPress", "Custom PHP", "MySQL"],
+      tech: ["Laravel", "Razorpay", "MySQL","AWS"],
     },
 
     {
@@ -81,7 +81,7 @@ export default function CaseStudiesSlider() {
       color: "from-red-500 to-pink-500",
       bgColor: "bg-gradient-to-br from-red-50 to-pink-50",
       metrics: ["₹25L+", "Revenue in Year One", "500+", "Event Bookings"],
-      tech: ["WooCommerce", "Laravel", "Razorpay"],
+      tech: ["HTML","CSS","JS","PHP" ],
     },
   ];
 

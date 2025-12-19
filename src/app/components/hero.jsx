@@ -215,32 +215,29 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-8 justify-center lg:justify-start"
             >
               <motion.a
-  href="https://gohilinfotech.com/contact"
-  target="_blank"
-  rel="noopener noreferrer"
-  variants={pulseAnimation}
-  animate="animate"
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  className="group relative inline-block px-5 sm:px-6 py-3 
+                href="https://gohilinfotech.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={pulseAnimation}
+                animate="animate"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative inline-block px-5 sm:px-6 py-3 
              bg-gradient-to-r from-blue-600 to-purple-600 
              text-white rounded-lg font-semibold shadow-md 
              hover:shadow-lg transition-all overflow-hidden"
-  aria-label="Start Your Project Today - contact page"
-  title="Start Your Project Today"
->
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-  
-  <div className="relative flex items-center justify-center gap-2">
-    <span className="text-sm sm:text-base">
-      Start Your Project Today
-    </span>
-    <ArrowRight className="w-4 h-4" />
-  </div>
-</motion.a>
+                aria-label="Start Your Project Today - contact page"
+                title="Start Your Project Today"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-
-             
+                <div className="relative flex items-center justify-center gap-2">
+                  <span className="text-sm sm:text-base">
+                    Start Your Project Today
+                  </span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </motion.a>
             </motion.div>
 
             {/* Small trust/assurance line */}
@@ -269,7 +266,7 @@ export default function HeroSection() {
               className="relative bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 border border-gray-100"
             >
               {/* Diagram header */}
-              <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <div className="flex items-center justify-between mb-1 sm:mb-6">
                 <h3 className="text-sm sm:text-base font-semibold text-gray-800">
                   TrustLine Workflow
                 </h3>
@@ -284,7 +281,7 @@ export default function HeroSection() {
               </div>
 
               {/* Diagram content - Responsive height */}
-              <div className="relative h-38 sm:h-56 md:h-64">
+              <div className="relative h-54 sm:h-56 md:h-64">
                 {/* Left side - Customers */}
                 <motion.div
                   variants={floatAnimation}
@@ -396,7 +393,7 @@ export default function HeroSection() {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1.2 }}
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-xs"
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-xs mt-6 md:mt-0"
                 >
                   <div className="flex justify-around">
                     {[
@@ -440,14 +437,14 @@ export default function HeroSection() {
               className="grid grid-cols-3 gap-2 sm:gap-3 sm:flex sm:flex-wrap sm:justify-center mt-4 sm:mt-6"
             >
               {[
-                { bg: "bg-gray-900", text: "API", label: "API" },
-                { bg: "bg-blue-500", text: "Web", label: "Web" },
-                { bg: "bg-green-500", text: "AI", label: "AI" },
+                { bg: "bg-gray-900", text: "API" },
+                { bg: "bg-blue-500", text: "Web" },
+                { bg: "bg-green-500", text: "AI" },
               ].map((badge, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="bg-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center gap-1 sm:gap-2"
+                  className=" px-2 sm:px-3 py-1.5 sm:py-2  flex items-center justify-center gap-1 sm:gap-2"
                 >
                   <div
                     className={`w-4 h-4 sm:w-5 sm:h-5 ${badge.bg} rounded flex items-center justify-center`}
@@ -481,7 +478,10 @@ export default function HeroSection() {
           {/* Logo list (replace company names with logos + placeholder fallback) */}
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
             {[
-              { name: "Google Partner ", src: "/g-paerner-removebg-preview.png" },
+              {
+                name: "Google Partner ",
+                src: "/g-paerner-removebg-preview.png",
+              },
               { name: "AWS", src: "/download__1_-removebg-preview.png" },
               { name: "Razorpay", src: "/download__2_-removebg-preview.png" },
               { name: "Meta", src: "/download-removebg-preview.png" },
