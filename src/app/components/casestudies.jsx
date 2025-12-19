@@ -323,10 +323,7 @@ export default function CaseStudiesSlider() {
     <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
   </div>
 
-  <div className="inline-flex items-center gap-1 bg-white/80 px-3 py-1.5 rounded-full">
-    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-    <span className="text-xs font-medium text-gray-700">Client: {study.client}</span>
-  </div>
+  
 </div>
 
 

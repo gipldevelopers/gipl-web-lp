@@ -284,12 +284,12 @@ export default function HeroSection() {
               </div>
 
               {/* Diagram content - Responsive height */}
-              <div className="relative h-48 sm:h-56 md:h-64">
+              <div className="relative h-38 sm:h-56 md:h-64">
                 {/* Left side - Customers */}
                 <motion.div
                   variants={floatAnimation}
                   animate="animate"
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 sm:w-28 md:w-32"
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 w-20 sm:w-28 md:w-32"
                 >
                   <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-purple-100">
                     <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
@@ -323,7 +323,7 @@ export default function HeroSection() {
                   animate="animate"
                   className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 >
-                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full shadow-lg flex items-center gap-2 sm:gap-3">
+                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white px-1 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full shadow-lg flex items-center gap-2 sm:gap-3">
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{
@@ -368,7 +368,7 @@ export default function HeroSection() {
                   variants={floatAnimation}
                   animate="animate"
                   transition={{ delay: 0.2 }}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 sm:w-28 md:w-32"
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 w-18 sm:w-28 md:w-32"
                 >
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-blue-100">
                     <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">

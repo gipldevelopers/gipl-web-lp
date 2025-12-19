@@ -341,9 +341,7 @@ export default function TestimonialsSlider() {
                           <p className="text-xs text-gray-600 truncate">{t.role}</p>
                         </div>
 
-                        <span className="text-[10px] px-2 py-1 bg-white/80 rounded-full text-gray-700 whitespace-nowrap ml-2">
-                          📍 {t.location} | {t.project}
-                        </span>
+                        
                       </div>
                     </div>
                   </div>

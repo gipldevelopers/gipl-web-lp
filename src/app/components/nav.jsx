@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -28,7 +28,7 @@ export default function Navbar() {
     closed: {
       opacity: 0,
       y: -20,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     open: {
       opacity: 1,
@@ -36,14 +36,14 @@ export default function Navbar() {
       transition: {
         duration: 0.3,
         staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const linkVariants = {
     closed: { opacity: 0, y: -10 },
-    open: { opacity: 1, y: 0 }
+    open: { opacity: 1, y: 0 },
   };
 
   const containerVariants = {
@@ -52,17 +52,17 @@ export default function Navbar() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { y: -20, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1
-    }
+      opacity: 1,
+    },
   };
 
   return (
@@ -78,9 +78,10 @@ export default function Navbar() {
           className={`
             relative
             transition-all duration-300 ease-out
-            ${scrolled
-              ? "mt-3 backdrop-blur-xl bg-white/95 shadow-xl border border-gray-100"
-              : "mt-6 backdrop-blur-lg bg-white/90 shadow-lg border border-white/20"
+            ${
+              scrolled
+                ? "mt-3 backdrop-blur-xl bg-white/95 shadow-xl border border-gray-100"
+                : "mt-6 backdrop-blur-lg bg-white/90 shadow-lg border border-white/20"
             }
             rounded-2xl lg:rounded-3xl
             py-1 px-1 md:py-1 md:px-1
@@ -100,7 +101,6 @@ export default function Navbar() {
               alt="Gohil Infotech"
               className="h-12 md:h-12 w-auto"
             />
-           
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -124,13 +124,15 @@ export default function Navbar() {
                 "
               >
                 {link.label}
-                <span className="
+                <span
+                  className="
                   absolute left-4 right-4 -bottom-1
                   h-0.5 bg-linear-to-r from-blue-500 to-purple-500
                   transform scale-x-0 group-hover:scale-x-100
                   transition-transform duration-300 ease-out
                   origin-left
-                " />
+                "
+                />
               </motion.a>
             ))}
           </div>
@@ -138,13 +140,13 @@ export default function Navbar() {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <motion.a
-  href="https://gohilinfotech.com/contact"
-  target="_blank"
-  rel="noopener noreferrer"
-  variants={linkVariants}
-  whileTap={{ scale: 0.95 }}
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="
+              href="https://gohilinfotech.com/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={linkVariants}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="
     px-4 py-3.5
     bg-linear-to-r from-blue-600 to-purple-600
     text-white font-medium
@@ -154,10 +156,9 @@ export default function Navbar() {
     transition-all duration-300
     inline-flex justify-center
   "
->
-  Contact Us
-</motion.a>
-
+            >
+              Contact Us
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -177,24 +178,30 @@ export default function Navbar() {
             "
           >
             <div className="w-6 h-6 relative">
-              <span className={`
+              <span
+                className={`
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 h-0.5 w-4 bg-gray-700 rounded-full
                 transition-all duration-300
                 ${isMobileMenuOpen ? "rotate-45 top-1/2" : "top-1/4"}
-              `} />
-              <span className={`
+              `}
+              />
+              <span
+                className={`
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 h-0.5 w-4 bg-gray-700 rounded-full
                 transition-all duration-300
                 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}
-              `} />
-              <span className={`
+              `}
+              />
+              <span
+                className={`
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 h-0.5 w-4 bg-gray-700 rounded-full
                 transition-all duration-300
                 ${isMobileMenuOpen ? "-rotate-45 top-1/2" : "top-3/4"}
-              `} />
+              `}
+              />
             </div>
           </motion.button>
         </motion.div>
@@ -228,13 +235,15 @@ export default function Navbar() {
                   lg:hidden z-50
                 "
               >
-                <div className="
+                <div
+                  className="
                   backdrop-blur-xl bg-white/95
                   border border-gray-200
                   rounded-2xl
                   shadow-2xl
                   overflow-hidden
-                ">
+                "
+                >
                   <div className="flex flex-col p-2">
                     {navLinks.map((link) => (
                       <motion.a
@@ -259,23 +268,24 @@ export default function Navbar() {
                         {link.label}
                       </motion.a>
                     ))}
-                    
+
                     {/* Mobile CTA */}
-                    <motion.button
-                      variants={linkVariants}
-                      whileTap={{ scale: 0.95 }}
-                      className="
-                        px-4 py-3.5
-                        bg-linear-to-r from-blue-600 to-purple-600
-                        text-white font-medium
-                        rounded-xl
-                        shadow-lg
-                        hover:shadow-xl
-                        transition-all duration-300
-                      "
-                    >
-                      Contact Us
-                    </motion.button>
+                    <Link href="https://gohilinfotech.com/contact">
+                      <motion.button
+                        whileTap={{ scale: 0.95 }}
+                        className="
+      px-4 py-3.5
+      bg-linear-to-r from-blue-600 to-purple-600
+      text-white font-medium
+      rounded-xl
+      shadow-lg
+      hover:shadow-xl
+      transition-all duration-300
+    "
+                      >
+                        Contact Us
+                      </motion.button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

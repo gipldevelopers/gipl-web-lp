@@ -98,15 +98,6 @@ export default function IndustriesSlider() {
       features: ["Hotels", "Booking", "Tours"],
       iconColor: "text-indigo-600",
       bgColor: "bg-indigo-50"
-    },
-    {
-      icon: Palette,
-      title: "Creative Agencies",
-      description: "Portfolio sites, showcase pages, and premium brand experience websites.",
-      color: "from-purple-500 to-pink-500",
-      features: ["Portfolio", "Branding", "Showcase"],
-      iconColor: "text-purple-600",
-      bgColor: "bg-purple-50"
     }
   ];
 
@@ -162,7 +153,7 @@ export default function IndustriesSlider() {
         <div className="relative">
 
           {/* Slider */}
-          <div className="relative h-[320px] md:h-[280px] mb-6 overflow-hidden rounded-xl">
+          <div className="relative h-[200px] md:h-[280px] mb-6 overflow-hidden rounded-xl">
             <AnimatePresence mode="wait">
               {industries.map((industry, index) => 
                 index === activeIndex && (
@@ -314,7 +305,7 @@ export default function IndustriesSlider() {
           </div>
 
           {/* Badges */}
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
             {industries.map((industry, index) => (
               <motion.button
                 key={index}

@@ -81,7 +81,6 @@ export default function ScrollStorySection() {
       bg-gradient-to-b from-white via-blue-50 to-purple-50"
     >
       <div className="h-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center px-10 gap-20">
-
         {/* ================= GRAPHICS ================= */}
         <div className="relative flex justify-center items-center mt-[140px]">
           {/* Soft Glow */}
@@ -131,30 +130,28 @@ export default function ScrollStorySection() {
           {/* TITLE */}
           <div className="mb-10">
             <p className="tracking-widest text-blue-600 text-sm mb-2">
-              OUR SERVICES
+              OUR EXPERTIESE
             </p>
-            <h2 className="text-5xl font-bold">
-              Full-Stack Development
-            </h2>
+            <h2 className="text-5xl font-bold">Full-Stack Development</h2>
           </div>
 
           {/* FRONTEND */}
           <div ref={t1} className="absolute inset-0 top-[120px]">
-            <p className="tracking-widest text-cyan-600 text-sm mb-3">
+            <p className="tracking-widest text-cyan-600 text-sm mt-4">
               FRONTEND
             </p>
             <h3 className="text-4xl font-semibold mb-4">
               UI & User Experience
             </h3>
             <p className="text-gray-600 max-w-md leading-relaxed">
-              Modern, responsive, and conversion-focused interfaces that
-              deliver smooth user journeys and strong brand impact.
+              Modern, responsive, and conversion-focused interfaces that deliver
+              smooth user journeys and strong brand impact.
             </p>
           </div>
 
           {/* BACKEND */}
           <div ref={t2} className="absolute inset-0 top-[120px] opacity-0">
-            <p className="tracking-widest text-emerald-600 text-sm mb-3">
+            <p className="tracking-widest text-emerald-600 text-sm mt-4">
               BACKEND
             </p>
             <h3 className="text-4xl font-semibold mb-4">
@@ -168,15 +165,13 @@ export default function ScrollStorySection() {
 
           {/* DATABASE */}
           <div ref={t3} className="absolute inset-0 top-[120px] opacity-0">
-            <p className="tracking-widest text-purple-600 text-sm mb-3">
+            <p className="tracking-widest text-purple-600 text-sm mt-4">
               DATABASE
             </p>
-            <h3 className="text-4xl font-semibold mb-4">
-              Data & Performance
-            </h3>
+            <h3 className="text-4xl font-semibold mb-4">Data & Performance</h3>
             <p className="text-gray-600 max-w-md leading-relaxed">
-              High-performance databases designed for speed, security,
-              backups, and long-term scalability.
+              High-performance databases designed for speed, security, backups,
+              and long-term scalability.
             </p>
           </div>
         </div>

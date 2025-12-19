@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ArrowRight, Sparkles, Rocket, Zap, TrendingUp, Target } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Rocket,
+  Zap,
+  TrendingUp,
+  Target,
+} from "lucide-react";
 
 export default function AnimatedCTASection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +24,9 @@ export default function AnimatedCTASection() {
     const styles = [...Array(20)].map(() => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`,
+      animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${
+        Math.random() * 2
+      }s`,
     }));
     setParticleStyles(styles);
 
@@ -74,7 +83,10 @@ export default function AnimatedCTASection() {
             {/* Loading placeholder for stats bar */}
             <div className="flex flex-wrap justify-center gap-6 mt-8">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="bg-gray-100 animate-pulse px-6 py-3 rounded-lg w-32 sm:w-40 h-12"></div>
+                <div
+                  key={i}
+                  className="bg-gray-100 animate-pulse px-6 py-3 rounded-lg w-32 sm:w-40 h-12"
+                ></div>
               ))}
             </div>
 
@@ -120,8 +132,6 @@ export default function AnimatedCTASection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          
-
           {/* Main heading with animated gradient */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="relative inline-block">
@@ -155,7 +165,7 @@ export default function AnimatedCTASection() {
             {/* Animated stats bar */}
             <div className="flex flex-wrap justify-center gap-6 mt-8">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
-                <TrendingUp className="w-5 h-5 text-green-500 animate-bounce" />
+                <TrendingUp className="w-5 h-5 text-green-500 animate-pulse" />
                 <span className="font-semibold text-gray-700">65%</span>
                 <span className="text-sm text-gray-500">
                   Visitors leave due to slow loading
@@ -171,7 +181,7 @@ export default function AnimatedCTASection() {
               </div>
 
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
-                <Zap className="w-5 h-5 text-purple-500 animate-ping" />
+                <Zap className="w-5 h-5 text-purple-500 animate-pulse" />
                 <span className="font-semibold text-gray-700">0%</span>
                 <span className="text-sm text-gray-500">
                   Organic traffic if not ranking
@@ -197,24 +207,25 @@ export default function AnimatedCTASection() {
             }`}
           >
             {/* Primary CTA */}
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform overflow-hidden">
-              {/* Animated background effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <a href="https://gohilinfotech.com/contact" className="inline-block">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform overflow-hidden">
+                {/* Animated background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              {/* Shine effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                {/* Shine effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-              {/* Button content */}
-              <div className="relative flex items-center justify-center gap-3">
-                <span className="text-lg">Start Your Project Today</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-              </div>
+                {/* Button content */}
+                <div className="relative flex items-center justify-center gap-3">
+                  <span className="text-lg">Start Your Project Today</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
 
-              {/* Floating elements */}
-              <div className="absolute -top-2 -left-2 w-4 h-4 bg-white rounded-full animate-ping opacity-30"></div>
-              <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-white rounded-full animate-ping opacity-30 delay-500"></div>
-            </button>
-
+                {/* Floating elements */}
+                <div className="absolute -top-2 -left-2 w-4 h-4 bg-white rounded-full animate-ping opacity-30"></div>
+                <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-white rounded-full animate-ping opacity-30 delay-500"></div>
+              </button>
+            </a>
             {/* Secondary CTA */}
           </div>
 
