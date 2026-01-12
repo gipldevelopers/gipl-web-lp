@@ -33,8 +33,7 @@ export default function CaseStudiesSlider() {
       solution:
         "Built custom platform with property filters, 360° tours, lead capture, and mobile-responsive design.",
       icon: Target,
-      color: "from-blue-500 to-purple-500",
-      bgColor: "bg-gradient-to-br from-blue-50 to-purple-50",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       metrics: ["75%", "Increase in Inquiries", "45%", "More Lead Conversions"],
       tech: ["React.js", "Node.js", "MongoDB", "AWS"],
     },
@@ -48,8 +47,7 @@ export default function CaseStudiesSlider() {
       solution:
         "Interactive portfolio with smooth animations, blog integration, and SEO optimization.",
       icon: Zap,
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
+      color: "from-[#E67E22] to-[#D46A1A]",
       metrics: ["90%", "Increase in Inquiries", "120%", "Traffic Growth"],
       tech: ["Next.js", "Tailwind CSS", "node.js", "AWS"],
     },
@@ -63,8 +61,7 @@ export default function CaseStudiesSlider() {
       solution:
         "User accounts, recipe search with filters, step-by-step instructions, and regional categories.",
       icon: Users,
-      color: "from-orange-500 to-yellow-500",
-      bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       metrics: ["15,000+", "Registered Users", "2,500+", "Recipes Uploaded"],
       tech: ["Laravel", "Razorpay", "MySQL","AWS"],
     },
@@ -78,8 +75,7 @@ export default function CaseStudiesSlider() {
       solution:
         "WooCommerce store, booking calendar, multi-payment gateways, blog, and multi-language support.",
       icon: Rocket,
-      color: "from-red-500 to-pink-500",
-      bgColor: "bg-gradient-to-br from-red-50 to-pink-50",
+      color: "from-[#E67E22] to-[#D46A1A]",
       metrics: ["₹25L+", "Revenue in Year One", "500+", "Event Bookings"],
       tech: ["HTML","CSS","JS","PHP" ],
     },
@@ -225,7 +221,7 @@ export default function CaseStudiesSlider() {
   return (
     <div
       id="case"
-      className="min-h-[50vh] bg-gradient-to-b from-white to-blue-50 py-8 md:py-10 px-4 sm:px-6 lg:px-8"
+      className="min-h-[50vh] bg-[#E67E22]/10 py-8 md:py-10 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -235,11 +231,17 @@ export default function CaseStudiesSlider() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+          <h2 
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
             Real Results: Our Mini Case Studies
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto mb-6">
+          <p 
+            className="text-sm sm:text-base text-[#7A7A7A] max-w-3xl mx-auto mb-6"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             See how our technology-first approach turned business challenges
             into measurable success stories.
           </p>
@@ -250,25 +252,28 @@ export default function CaseStudiesSlider() {
         {/* Scroll Controls */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-gray-700">
+            <Target className="w-4 h-4 text-[#27B0C4]" />
+            <span 
+              className="text-sm font-medium text-[#2C3E50]"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
               Recent Case Studies
             </span>
           </div>
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
+              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
             </button>
             <button
               onClick={scrollRight}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
+              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
             </button>
           </div>
         </div>
@@ -290,22 +295,25 @@ export default function CaseStudiesSlider() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-10.666px)] snap-center"
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] lg:w-[380px] snap-center"
               >
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className="relative rounded-xl overflow-hidden group cursor-pointer h-full"
+                  className="relative rounded-xl overflow-hidden group cursor-pointer h-full flex"
                 >
+                  {/* Gradient Border on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#27B0C4] via-[#73CCD7] to-[#E67E22] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                   {/* Main Card */}
                   <div
-                    className={`${study.bgColor} rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-200 h-full`}
+                    className="relative bg-white rounded-xl p-5 border border-[#F4F4F4] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col min-h-[500px]"
                   >
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <div
-                            className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md`}
+                            className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md flex-shrink-0`}
                           >
                             <study.icon className="w-5 h-5 text-white" />
                           </div>
@@ -316,13 +324,17 @@ export default function CaseStudiesSlider() {
                                 href={study.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm font-bold text-gray-900 hover:text-blue-600 flex items-center gap-1"
+                                className="text-sm font-bold text-[#2C3E50] hover:text-[#27B0C4] flex items-center gap-1"
+                                style={{ fontFamily: 'var(--font-poppins)' }}
                               >
                                 {study.title}
                                 {/* <ArrowUpRight className="w-3 h-3 opacity-60" /> */}
                               </a>
                             ) : (
-                              <div className="text-sm font-bold text-gray-900">
+                              <div 
+                                className="text-sm font-bold text-[#2C3E50]"
+                                style={{ fontFamily: 'var(--font-poppins)' }}
+                              >
                                 {study.title}
                               </div>
                             )}
@@ -332,10 +344,10 @@ export default function CaseStudiesSlider() {
                           href={study.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-bold text-gray-900 hover:text-blue-600 flex items-center gap-1"
+                          className="text-sm font-bold text-[#2C3E50] hover:text-[#27B0C4] flex items-center gap-1"
                         >
                           {/* Optional Arrow on right */}
-                          <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                          <ArrowUpRight className="w-4 h-4 text-[#7A7A7A] group-hover:text-[#27B0C4] transition-colors" />
                         </a>
                       </div>
                     </div>
@@ -345,12 +357,18 @@ export default function CaseStudiesSlider() {
                       {[0, 2].map((startIdx) => (
                         <div
                           key={startIdx}
-                          className="bg-white/80 rounded-lg p-2 text-center"
+                          className="bg-[#F4F4F4] rounded-lg p-2 text-center border border-[#F4F4F4]"
                         >
-                          <div className="text-lg font-bold text-gray-900">
+                          <div 
+                            className="text-lg font-bold text-[#2C3E50]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
                             {study.metrics[startIdx]}
                           </div>
-                          <div className="text-xs text-gray-600">
+                          <div 
+                            className="text-xs text-[#7A7A7A]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
                             {study.metrics[startIdx + 1]}
                           </div>
                         </div>
@@ -358,39 +376,52 @@ export default function CaseStudiesSlider() {
                     </div>
 
                     {/* Challenge & Solution */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 flex-grow">
                       <div>
                         <div className="flex items-center gap-1 mb-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                          <span className="text-sm font-medium text-gray-800">
+                          <div className="w-2 h-2 bg-[#E67E22] rounded-full"></div>
+                          <span 
+                            className="text-sm font-medium text-[#2C3E50]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
                             Challenge
                           </span>
                         </div>
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <p 
+                          className="text-sm text-[#7A7A7A] leading-relaxed"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           {study.challenge}
                         </p>
                       </div>
 
                       <div>
                         <div className="flex items-center gap-1 mb-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm font-medium text-gray-800">
+                          <div className="w-2 h-2 bg-[#27B0C4] rounded-full"></div>
+                          <span 
+                            className="text-sm font-medium text-[#2C3E50]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
                             Solution
                           </span>
                         </div>
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <p 
+                          className="text-sm text-[#7A7A7A] leading-relaxed"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           {study.solution}
                         </p>
                       </div>
                     </div>
 
                     {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-1 mt-4 pt-4 border-t border-white/50">
-                      {["Next.js", "Tailwind CSS", "TypeScript", "Vercel"].map(
+                    <div className="flex flex-wrap gap-1 mt-4 pt-4 border-t border-[#F4F4F4]">
+                      {study.tech.map(
                         (tech, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-white/70 rounded-md text-xs text-gray-700"
+                            className="px-2 py-1 bg-[#F4F4F4] rounded-md text-xs text-[#2C3E50] border border-[#F4F4F4]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {tech}
                           </span>
@@ -411,12 +442,18 @@ export default function CaseStudiesSlider() {
           viewport={{ once: true }}
           className="mt-8 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="bg-[#27B0C4] rounded-xl p-6 max-w-3xl mx-auto border border-[#27B0C4]">
+            <h3 
+              className="text-xl font-bold text-white mb-2"
+              style={{ fontFamily: 'var(--font-rubik)' }}
+            >
               Ready to See These Results?
             </h3>
 
-            <p className="text-blue-100 mb-4">
+            <p 
+              className="text-white/90 mb-4"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
               Let's discuss how we can transform your digital presence.
             </p>
 
@@ -425,15 +462,16 @@ export default function CaseStudiesSlider() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 
-                 bg-white text-blue-600 
+                 bg-white text-[#2C3E50] 
                  px-6 py-2.5 rounded-lg font-semibold 
-                 hover:shadow-lg transition-all"
+                 hover:shadow-lg hover:bg-white/90 transition-all border border-white/20"
+              style={{ fontFamily: 'var(--font-poppins)' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               aria-label="Schedule Free Consultation"
             >
-              <CheckCircle className="w-4 h-4" />
-              Schedule Free Consultation
+              <CheckCircle className="w-4 h-4 text-[#2C3E50]" />
+              <span className="text-[#2C3E50]">Schedule Free Consultation</span>
             </motion.a>
           </div>
         </motion.div>

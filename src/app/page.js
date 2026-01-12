@@ -11,12 +11,16 @@ import StatsSection from './components/statesec'
 import TechEcosystem from './components/techecosystem'
 import TestimonialsSection from './components/testimonial'
 import WhyChooseUsSection from './components/whychoooseus'
+import TrustLineWorkflow from './components/TrustLineWorkflow'
+import TrustedBrands from './components/TrustedBrands'
 
 export default function Home() {
   return (
     <>
       <Nav />
       <HeroSection/>
+      <TrustLineWorkflow/>
+      <TrustedBrands/>
       <ScrollStorySection/>
       <AnimatedCTASection/>
       <WhyChooseUsSection/>

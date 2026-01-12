@@ -26,8 +26,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Mumbai",
       project: "E-Commerce Website Development",
-      bgColor: "bg-gradient-to-br from-blue-50 to-purple-50",
-      accentColor: "from-blue-500 to-purple-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#27B0C4] to-[#73CCD7]"
     },
     {
       quote:
@@ -37,8 +37,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Bangalore",
       project: "Corporate Website Development",
-      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
-      accentColor: "from-green-500 to-emerald-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#E67E22] to-[#D46A1A]"
     },
     {
       quote:
@@ -48,8 +48,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Pune",
       project: "Web Application Development",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      accentColor: "from-purple-500 to-pink-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#27B0C4] to-[#73CCD7]"
     },
     {
       quote:
@@ -59,8 +59,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Ahmedabad",
       project: "Real Estate Platform",
-      bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50",
-      accentColor: "from-orange-500 to-yellow-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#E67E22] to-[#D46A1A]"
     },
     {
       quote:
@@ -70,8 +70,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Hyderabad",
       project: "LMS Development",
-      bgColor: "bg-gradient-to-br from-cyan-50 to-blue-50",
-      accentColor: "from-cyan-500 to-blue-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#27B0C4] to-[#73CCD7]"
     },
     {
       quote:
@@ -81,8 +81,8 @@ export default function TestimonialsSlider() {
       rating: 5,
       location: "Delhi",
       project: "Business Website Development",
-      bgColor: "bg-gradient-to-br from-pink-50 to-rose-50",
-      accentColor: "from-pink-500 to-rose-500"
+      bgColor: "bg-[#F4F4F4]",
+      accentColor: "from-[#E67E22] to-[#D46A1A]"
     }
   ];
 
@@ -226,7 +226,7 @@ export default function TestimonialsSlider() {
   };
 
   return (
-    <div id="testimonials" className="min-h-[40vh] bg-gradient-to-b from-white to-blue-50 py-6 md:py-8 px-4 sm:px-6 lg:px-8">
+    <div id="testimonials" className="min-h-[40vh] bg-[#FFFFFF] py-6 md:py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -235,54 +235,73 @@ export default function TestimonialsSlider() {
           viewport={{ once: true }}
           className="text-center mb-4"
         >
-          
-
-          <h2 className="text-xl sm:text-2xl font-bold mb-1 text-gray-900">
-            Don't Just Take Our Word For It
+          <h2 
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
+            What Our Clients Say
           </h2>
 
-          <p className="text-xs sm:text-sm text-gray-600 mb-4 max-w-xl mx-auto">
-            Real clients. Real results.
+          <p 
+            className="text-sm sm:text-base text-[#7A7A7A] mb-4 max-w-2xl mx-auto"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
+            Hear directly from businesses that have experienced our impact.
           </p>
         </motion.div>
 
         {/* Stats */}
         <div className="grid grid-cols-4 gap-2 mb-4">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-lg p-2 shadow-xs border border-gray-100">
+            <div key={index} className="bg-[#F4F4F4] rounded-lg p-2 shadow-sm border border-[#F4F4F4]">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-1 mb-1">
-                  <stat.icon className="w-3 h-3 text-yellow-400" />
-                  <span className="text-sm font-bold text-gray-900">{stat.value}</span>
+                  <stat.icon className="w-3 h-3 text-[#E67E22]" />
+                  <span 
+                    className="text-sm font-bold text-[#2C3E50]"
+                    style={{ fontFamily: 'var(--font-poppins)' }}
+                  >
+                    {stat.value}
+                  </span>
                 </div>
-                <div className="text-[10px] text-gray-600">{stat.label}</div>
+                <div 
+                  className="text-[10px] text-[#7A7A7A]"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  {stat.label}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Controls */}
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-gray-700">Client Feedback</span>
+            <Target className="w-4 h-4 text-[#27B0C4]" />
+            <span 
+              className="text-sm font-medium text-[#2C3E50]"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              Client Testimonials
+            </span>
           </div>
 
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-transform hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
+              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
             </button>
 
             <button
               onClick={scrollRight}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-transform hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
+              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
             </button>
           </div>
         </div>
@@ -304,44 +323,66 @@ export default function TestimonialsSlider() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-13.333px)] lg:w-[calc(25%-15px)] snap-center"
+                className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-10.666px)] snap-center"
               >
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className={`relative rounded-xl overflow-hidden group cursor-pointer h-full ${t.bgColor}`}
+                  className="relative rounded-xl overflow-hidden group cursor-pointer h-full flex"
                 >
-                  <div className="rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-200 h-full">
+                  <div className={`${t.bgColor} rounded-xl p-5 border border-[#F4F4F4] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col`}>
                     {/* accent icon */}
-                    <div className="mb-3">
+                    <div className="mb-4 flex-shrink-0">
                       <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${t.accentColor} flex items-center justify-center shadow-md mb-2`}>
                         <Quote className="w-5 h-5 text-white" />
                       </div>
                     </div>
 
                     {/* quote */}
-                    <div className="mb-3">
-                      <p className="text-sm text-gray-700 leading-relaxed">
+                    <div className="mb-4 flex-grow">
+                      <p 
+                        className="text-sm text-[#7A7A7A] leading-relaxed italic"
+                        style={{ fontFamily: 'var(--font-poppins)' }}
+                      >
                         "{t.quote}"
                       </p>
                     </div>
 
                     {/* rating */}
-                    <div className="flex items-center gap-1 mb-3">
+                    <div className="flex items-center gap-1 mb-4 flex-shrink-0">
                       {Array.from({ length: t.rating }).map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400" />
+                        <Star key={i} className="w-4 h-4 text-[#E67E22] fill-[#E67E22]" />
                       ))}
-                      <span className="text-xs text-gray-600 ml-2">{t.rating}.0</span>
+                      <span 
+                        className="text-xs text-[#7A7A7A] ml-2"
+                        style={{ fontFamily: 'var(--font-poppins)' }}
+                      >
+                        {t.rating}.0
+                      </span>
                     </div>
 
                     {/* client info */}
-                    <div className="pt-3 border-t border-white/50">
+                    <div className="pt-4 border-t border-[#F4F4F4] flex-shrink-0">
                       <div className="flex justify-between items-start">
                         <div className="min-w-0">
-                          <h4 className="font-semibold text-gray-900 text-sm truncate">{t.name}</h4>
-                          <p className="text-xs text-gray-600 truncate">{t.role}</p>
+                          <h4 
+                            className="font-semibold text-[#2C3E50] text-sm truncate mb-1"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
+                            {t.name}
+                          </h4>
+                          <p 
+                            className="text-xs text-[#7A7A7A] truncate"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
+                            {t.role}
+                          </p>
+                          <p 
+                            className="text-xs text-[#7A7A7A] mt-1"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
+                            {t.project}
+                          </p>
                         </div>
-
-                        
                       </div>
                     </div>
                   </div>

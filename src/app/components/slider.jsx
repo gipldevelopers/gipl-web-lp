@@ -153,12 +153,22 @@ const Carousel = ({ children, title, subtitle, id }) => {
   }, [isDragging, startX, scrollLeft, children.length]);
 
   return (
-    <section id={id} className="py-16 md:py-24 bg-gray-50">
+    <section id={id} className="py-16 md:py-24 bg-[#F4F4F4]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Responsive Heading */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 text-center mb-3">{title}</h2>
+        <h2 
+          className="text-3xl sm:text-4xl font-extrabold text-[#2C3E50] text-center mb-3"
+          style={{ fontFamily: 'var(--font-rubik)' }}
+        >
+          {title}
+        </h2>
         {/* Responsive Subtitle */}
-        <p className="text-lg sm:text-xl text-purple-600 text-center mb-10 max-w-3xl mx-auto">{subtitle}</p>
+        <p 
+          className="text-lg sm:text-xl text-[#27B0C4] text-center mb-10 max-w-3xl mx-auto"
+          style={{ fontFamily: 'var(--font-poppins)' }}
+        >
+          {subtitle}
+        </p>
         
         {/* The Carousel Container */}
         <div 
@@ -180,10 +190,10 @@ const Carousel = ({ children, title, subtitle, id }) => {
 // --- Data Structures ---
 
 const STATS = [
-  { value: '65+', label: 'Websites Successfully Launched', icon: Briefcase, color: 'text-green-500' },
-  { value: '100+', label: 'Happy & Satisfied Clients', icon: Star, color: 'text-fuchsia-500' },
-  { value: '180%', label: 'Average Conversion Increase', icon: TrendingUp, color: 'text-red-500' },
-  { value: '100%', label: 'Project Success Rate', icon: CheckCircle, color: 'text-purple-500' },
+  { value: '65+', label: 'Websites Successfully Launched', icon: Briefcase, color: 'text-[#27B0C4]' },
+  { value: '100+', label: 'Happy & Satisfied Clients', icon: Star, color: 'text-[#E67E22]' },
+  { value: '180%', label: 'Average Conversion Increase', icon: TrendingUp, color: 'text-[#27B0C4]' },
+  { value: '100%', label: 'Project Success Rate', icon: CheckCircle, color: 'text-[#E67E22]' },
 ];
 
 const INDUSTRIES = [
@@ -224,17 +234,27 @@ const TESTIMONIALS = [
 const CarouselCard = ({ children, className = '' }) => (
   // Responsive sizing: w-full (1 card), sm:w-1/2 (2 cards), md:w-1/3 (3 cards), lg:w-1/4 (4 cards)
   <div className={`snap-start flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ${className}`}>
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 h-full border border-gray-100">
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 h-full border border-[#F4F4F4]">
       {children}
     </div>
   </div>
 );
 
 const StatCard = ({ value, label, Icon, color }) => (
-  <div className="p-6 bg-white rounded-xl shadow-md text-center">
+  <div className="p-6 bg-white rounded-xl shadow-md text-center border border-[#F4F4F4]">
     <Icon className={`w-7 h-7 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 ${color}`} />
-    <p className="text-4xl sm:text-5xl font-extrabold text-gray-900">{value}</p>
-    <p className="mt-1 text-base sm:text-lg font-medium text-gray-500">{label}</p>
+    <p 
+      className="text-4xl sm:text-5xl font-extrabold text-[#2C3E50]"
+      style={{ fontFamily: 'var(--font-rubik)' }}
+    >
+      {value}
+    </p>
+    <p 
+      className="mt-1 text-base sm:text-lg font-medium text-[#7A7A7A]"
+      style={{ fontFamily: 'var(--font-poppins)' }}
+    >
+      {label}
+    </p>
   </div>
 );
 
@@ -245,55 +265,101 @@ const GohilInfotechLandingPage = () => {
     <div className="min-h-screen font-sans antialiased bg-white">
       
       {/* 1. Hero Section: Are You Stuck in the Digital Past? */}
-      <section className="relative overflow-hidden pt-20 pb-12 md:pt-32 md:pb-24 bg-purple-900 text-white">
+      <section className="relative overflow-hidden pt-20 pb-12 md:pt-32 md:pb-24 bg-[#2C3E50] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+            <h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight"
+              style={{ fontFamily: 'var(--font-rubik)' }}
+            >
               Are You Stuck in the Digital Past?
             </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-purple-200 font-light">
-              It’s time to move beyond outdated websites. Gohil Infotech crafts future-proof, high-performance web experiences that drive real revenue.
+            <p 
+              className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-white/80 font-light"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              It's time to move beyond outdated websites. Gohil Infotech crafts future-proof, high-performance web experiences that drive real revenue.
             </p>
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <a href="#contact" className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold rounded-full shadow-lg bg-fuchsia-400 text-purple-900 hover:bg-fuchsia-500 transition duration-300 transform hover:scale-105">
+              <a 
+                href="#contact" 
+                className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold rounded-full shadow-lg bg-[#E67E22] text-white hover:bg-[#D46A1A] transition duration-300 transform hover:scale-105"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
                 Start Your Project Today
               </a>
-              <a href="#track-record" className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold rounded-full border-2 border-purple-300 text-white hover:bg-purple-800 transition duration-300">
+              <a 
+                href="#track-record" 
+                className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold rounded-full border-2 border-white/30 text-white hover:bg-white/10 transition duration-300"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
                 See Our Work
               </a>
             </div>
           </div>
         </div>
         {/* Background Gradient Effect */}
-        <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-purple-950 to-purple-800"></div>
+        <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]"></div>
       </section>
 
       {/* 2. Why Choose Gohil Infotech? */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 text-center mb-4">Why Choose Gohil Infotech?</h2>
-          <p className="text-lg sm:text-xl text-purple-600 text-center mb-10 max-w-3xl mx-auto">
+          <h2 
+            className="text-3xl sm:text-4xl font-extrabold text-[#2C3E50] text-center mb-4"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
+            Why Choose Gohil Infotech?
+          </h2>
+          <p 
+            className="text-lg sm:text-xl text-[#27B0C4] text-center mb-10 max-w-3xl mx-auto"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             We don't just build websites; we engineer growth platforms powered by the Next.js and Tailwind CSS ecosystem.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-purple-600">
-              <RefreshCcw className="w-8 h-8 sm:w-10 sm:h-10 text-purple-600 mb-3 sm:mb-4" />
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">Unbeatable Speed</h3>
-              <p className="text-sm sm:text-base text-gray-600">
+            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-[#27B0C4] border border-[#F4F4F4]">
+              <RefreshCcw className="w-8 h-8 sm:w-10 sm:h-10 text-[#27B0C4] mb-3 sm:mb-4" />
+              <h3 
+                className="text-xl sm:text-2xl font-semibold text-[#2C3E50] mb-2 sm:mb-3"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
+                Unbeatable Speed
+              </h3>
+              <p 
+                className="text-sm sm:text-base text-[#7A7A7A]"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
                 Leverage server-side rendering (SSR) and static site generation (SSG) with Next.js for sub-second load times that Google loves.
               </p>
             </div>
-            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-fuchsia-500">
-              <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-fuchsia-500 mb-3 sm:mb-4" />
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">Pixel-Perfect Design</h3>
-              <p className="text-sm sm:text-base text-gray-600">
+            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-[#E67E22] border border-[#F4F4F4]">
+              <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-[#E67E22] mb-3 sm:mb-4" />
+              <h3 
+                className="text-xl sm:text-2xl font-semibold text-[#2C3E50] mb-2 sm:mb-3"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
+                Pixel-Perfect Design
+              </h3>
+              <p 
+                className="text-sm sm:text-base text-[#7A7A7A]"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
                 Tailwind CSS ensures every site is instantly responsive, looks flawless on every device, and is highly maintainable.
               </p>
             </div>
-            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-green-500">
-              <BarChart2 className="w-8 h-8 sm:w-10 sm:h-10 text-green-500 mb-3 sm:mb-4" />
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">Conversion Focused</h3>
-              <p className="text-sm sm:text-base text-gray-600">
+            <div className="p-6 sm:p-8 rounded-xl shadow-lg bg-white border-t-4 border-[#27B0C4] border border-[#F4F4F4]">
+              <BarChart2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#27B0C4] mb-3 sm:mb-4" />
+              <h3 
+                className="text-xl sm:text-2xl font-semibold text-[#2C3E50] mb-2 sm:mb-3"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
+                Conversion Focused
+              </h3>
+              <p 
+                className="text-sm sm:text-base text-[#7A7A7A]"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
                 Our approach integrates UX best practices to maximize lead capture, sales, and overall business outcomes.
               </p>
             </div>
@@ -302,9 +368,14 @@ const GohilInfotechLandingPage = () => {
       </section>
 
       {/* 3. Our Proven Track Record: Numbers That Speak Volumes */}
-      <section id="track-record" className="py-16 md:py-24 bg-purple-800 text-white">
+      <section id="track-record" className="py-16 md:py-24 bg-[#2C3E50] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white text-center mb-10">Our Proven Track Record</h2>
+          <h2 
+            className="text-3xl sm:text-4xl font-extrabold text-white text-center mb-10"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
+            Our Proven Track Record
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {STATS.map((stat) => (
               <StatCard key={stat.label} value={stat.value} label={stat.label} Icon={stat.icon} color={stat.color} />
@@ -322,8 +393,18 @@ const GohilInfotechLandingPage = () => {
         {INDUSTRIES.map((industry, index) => (
           <CarouselCard key={index} className="px-3">
             <p className="text-4xl sm:text-5xl mb-3 sm:mb-4">{industry.icon}</p>
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">{industry.name}</h3>
-            <p className="text-xs sm:text-sm text-gray-600">{industry.description}</p>
+            <h3 
+              className="text-lg sm:text-xl font-semibold text-[#2C3E50] mb-1 sm:mb-2"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {industry.name}
+            </h3>
+            <p 
+              className="text-xs sm:text-sm text-[#7A7A7A]"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {industry.description}
+            </p>
           </CarouselCard>
         ))}
       </Carousel>
@@ -336,14 +417,49 @@ const GohilInfotechLandingPage = () => {
       >
         {CASE_STUDIES.map((study, index) => (
           <CarouselCard key={index} className="px-3">
-            <span className="inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-purple-100 text-purple-700 mb-2 sm:mb-3">{study.time}</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-purple-600 mb-2 sm:mb-3">{study.result}</h3>
-            <p className="text-xs sm:text-sm font-medium text-gray-500 mb-1 sm:mb-2">Client: {study.client}</p>
-            <div className="mt-3 pt-3 border-t border-gray-100">
-                <p className="text-sm sm:text-base font-semibold text-gray-900">Challenge:</p>
-                <p className="text-xs sm:text-sm text-gray-600">{study.challenge}</p>
-                <p className="text-sm sm:text-base font-semibold text-gray-900 mt-2 sm:mt-3">Solution:</p>
-                <p className="text-xs sm:text-sm text-gray-600">{study.solution}</p>
+            <span 
+              className="inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-[#F4F4F4] text-[#27B0C4] mb-2 sm:mb-3"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {study.time}
+            </span>
+            <h3 
+              className="text-xl sm:text-2xl font-bold text-[#27B0C4] mb-2 sm:mb-3"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {study.result}
+            </h3>
+            <p 
+              className="text-xs sm:text-sm font-medium text-[#7A7A7A] mb-1 sm:mb-2"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              Client: {study.client}
+            </p>
+            <div className="mt-3 pt-3 border-t border-[#F4F4F4]">
+                <p 
+                  className="text-sm sm:text-base font-semibold text-[#2C3E50]"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  Challenge:
+                </p>
+                <p 
+                  className="text-xs sm:text-sm text-[#7A7A7A]"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  {study.challenge}
+                </p>
+                <p 
+                  className="text-sm sm:text-base font-semibold text-[#2C3E50] mt-2 sm:mt-3"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  Solution:
+                </p>
+                <p 
+                  className="text-xs sm:text-sm text-[#7A7A7A]"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  {study.solution}
+                </p>
             </div>
           </CarouselCard>
         ))}
@@ -359,24 +475,49 @@ const GohilInfotechLandingPage = () => {
           <CarouselCard key={index} className="px-3">
             <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
                 <p className="text-2xl sm:text-3xl">{tech.icon}</p>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900">{tech.name}</h3>
+                <h3 
+                  className="text-lg sm:text-xl font-bold text-[#2C3E50]"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
+                  {tech.name}
+                </h3>
             </div>
-            <p className="text-xs sm:text-sm font-medium text-purple-600 mb-1 sm:mb-2">{tech.category}</p>
-            <p className="text-xs sm:text-sm text-gray-600">{tech.description}</p>
+            <p 
+              className="text-xs sm:text-sm font-medium text-[#27B0C4] mb-1 sm:mb-2"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {tech.category}
+            </p>
+            <p 
+              className="text-xs sm:text-sm text-[#7A7A7A]"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {tech.description}
+            </p>
           </CarouselCard>
         ))}
       </Carousel>
 
       {/* 7. Your Solution: CTA */}
-      <section className="py-16 md:py-24 bg-purple-600">
+      <section className="py-16 md:py-24 bg-[#27B0C4]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-3 sm:mb-4">
+          <h2 
+            className="text-3xl md:text-5xl font-extrabold text-white mb-3 sm:mb-4"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
             Your Solution: A Future-Proof Website
           </h2>
-          <p className="text-lg sm:text-xl text-purple-100 max-w-3xl mx-auto mb-8 sm:mb-10">
+          <p 
+            className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-10"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             Stop losing customers to slow, clunky websites. Partner with Gohil Infotech and invest in a digital asset built for tomorrow's internet.
           </p>
-          <a href="#contact" className="inline-block px-8 py-3 text-lg sm:text-xl font-bold rounded-full shadow-2xl bg-fuchsia-400 text-purple-900 hover:bg-fuchsia-500 transition duration-300 transform hover:scale-105">
+          <a 
+            href="#contact" 
+            className="inline-block px-8 py-3 text-lg sm:text-xl font-bold rounded-full shadow-2xl bg-[#E67E22] text-white hover:bg-[#D46A1A] transition duration-300 transform hover:scale-105"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             Book a Free Strategy Call
           </a>
         </div>
@@ -391,14 +532,29 @@ const GohilInfotechLandingPage = () => {
         {TESTIMONIALS.map((testimonial, index) => (
           // Testimonials use a slightly different, wider card size: 1 on mobile, 2 on tablet, 3 on desktop
           <div key={index} className="snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 h-full flex flex-col justify-between border-t-4 border-purple-500">
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 h-full flex flex-col justify-between border-t-4 border-[#27B0C4] border border-[#F4F4F4]">
                 <div>
-                    <MessageSquare className="w-7 h-7 sm:w-8 sm:h-8 text-purple-500 mb-3 sm:mb-4" />
-                    <p className="text-base sm:text-lg italic text-gray-700 mb-4 sm:mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                    <MessageSquare className="w-7 h-7 sm:w-8 sm:h-8 text-[#27B0C4] mb-3 sm:mb-4" />
+                    <p 
+                      className="text-base sm:text-lg italic text-[#7A7A7A] mb-4 sm:mb-6 leading-relaxed"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
+                      "{testimonial.quote}"
+                    </p>
                 </div>
-                <div className="font-semibold pt-3 border-t border-gray-100">
-                    <p className="text-sm sm:text-base text-gray-900">{testimonial.name}</p>
-                    <p className="text-xs sm:text-sm text-purple-600">{testimonial.title}</p>
+                <div className="font-semibold pt-3 border-t border-[#F4F4F4]">
+                    <p 
+                      className="text-sm sm:text-base text-[#2C3E50]"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
+                      {testimonial.name}
+                    </p>
+                    <p 
+                      className="text-xs sm:text-sm text-[#27B0C4]"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
+                      {testimonial.title}
+                    </p>
                 </div>
             </div>
           </div>
@@ -406,11 +562,26 @@ const GohilInfotechLandingPage = () => {
       </Carousel>
       
       {/* 9. Contact/Footer Section */}
-      <footer id="contact" className="py-8 sm:py-12 bg-gray-900 text-white">
+      <footer id="contact" className="py-8 sm:py-12 bg-[#2C3E50] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h3 className="text-xl sm:text-2xl font-semibold mb-2">Gohil Infotech</h3>
-          <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">Crafting the digital future, one Next.js application at a time.</p>
-          <p className="text-xs sm:text-sm text-gray-500">&copy; {new Date().getFullYear()} Gohil Infotech. All rights reserved.</p>
+          <h3 
+            className="text-xl sm:text-2xl font-semibold mb-2"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
+            Gohil Infotech
+          </h3>
+          <p 
+            className="text-sm sm:text-base text-white/70 mb-3 sm:mb-4"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
+            Crafting the digital future, one Next.js application at a time.
+          </p>
+          <p 
+            className="text-xs sm:text-sm text-white/50"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
+            &copy; {new Date().getFullYear()} Gohil Infotech. All rights reserved.
+          </p>
         </div>
       </footer>
 
