@@ -106,7 +106,7 @@ export default function HeroSection() {
 
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] relative pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8 md:pb-10">
+    <div className="min-h-[100dvh] sm:min-h-screen bg-[#FFFFFF] relative flex items-start overflow-hidden">
       {/* Subtle background pattern - Mobile optimized */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -132,9 +132,9 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 relative z-10 w-full pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-6 sm:pb-8 md:pb-10">
         {/* Main content - Centered */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-start">
           {/* Text content - Centered */}
           <motion.div
             variants={containerVariants}
@@ -145,7 +145,7 @@ export default function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#2C3E50] mb-2 sm:mb-3 md:mb-4 leading-tight px-2"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#2C3E50] mb-2 sm:mb-2.5 md:mb-3 leading-tight px-2"
               style={{ fontFamily: 'var(--font-rubik)' }}
             >
               {HEADLINE}
@@ -154,13 +154,13 @@ export default function HeroSection() {
             {/* Sub-headline */}
             <motion.p
               variants={itemVariants}
-              className="text-xs sm:text-sm md:text-base lg:text-lg text-[#7A7A7A] mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto leading-relaxed px-2"
+              className="text-sm sm:text-base md:text-lg text-[#7A7A7A] mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto leading-relaxed px-2"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               {SUBHEAD}
             </motion.p>
 
-            {/* Key features */}
+            {/* Key features - Single column on mobile, 2 columns on larger screens */}
             <motion.div
               variants={itemVariants}
               className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 md:gap-3 mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto px-2"
@@ -168,12 +168,12 @@ export default function HeroSection() {
               {FEATURES.map((f, i) => (
                 <div
                   key={i}
-                  className="flex items-start sm:items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 md:p-3 rounded-lg bg-[#F4F4F4] border border-[#F4F4F4]"
+                  className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 md:p-3.5 rounded-lg bg-[#F4F4F4] border border-[#F4F4F4]"
                 >
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center bg-[#27B0C4] text-white flex-shrink-0 mt-0.5 sm:mt-0">
-                    <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center bg-[#27B0C4] text-white flex-shrink-0">
+                    <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5" />
                   </div>
-                  <div className="text-xs sm:text-sm text-[#2C3E50] font-medium leading-snug" style={{ fontFamily: 'var(--font-poppins)' }}>{f}</div>
+                  <div className="text-sm sm:text-base text-[#2C3E50] font-medium leading-snug" style={{ fontFamily: 'var(--font-poppins)' }}>{f}</div>
                 </div>
               ))}
             </motion.div>
@@ -181,7 +181,7 @@ export default function HeroSection() {
             {/* CTA Buttons - Centered */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-3 sm:mb-4 justify-center px-2"
+              className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-2 sm:mb-2.5 md:mb-3 justify-center px-2"
             >
               <motion.a
                 href="https://gohilinfotech.com/contact"
@@ -191,19 +191,19 @@ export default function HeroSection() {
                 animate="animate"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative inline-block px-4 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 
+                className="group relative inline-block px-5 sm:px-6 md:px-7 py-3 sm:py-3.5 md:py-4 
              bg-[#E67E22] 
-             text-white rounded-lg font-semibold text-xs sm:text-sm md:text-base shadow-md 
+             text-white rounded-lg font-semibold text-sm sm:text-base md:text-lg shadow-md 
              hover:shadow-lg hover:bg-[#D46A1A] transition-all overflow-hidden active:scale-95 touch-manipulation w-full sm:w-auto"
                 aria-label="Start Your Project Today - contact page"
                 title="Start Your Project Today"
                 style={{ fontFamily: 'var(--font-poppins)' }}
               >
-                <div className="relative flex items-center justify-center gap-1.5 sm:gap-2">
+                <div className="relative flex items-center justify-center gap-2">
                   <span>
                     Start Your Project Today
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
               </motion.a>
             </motion.div>
@@ -211,7 +211,7 @@ export default function HeroSection() {
             {/* Small trust/assurance line */}
             <motion.div
               variants={itemVariants}
-              className="text-xs sm:text-sm text-[#7A7A7A] max-w-2xl mx-auto text-center px-2"
+              className="text-xs sm:text-sm text-[#7A7A7A] max-w-2xl mx-auto text-center px-2 mb-0"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               <span className="mr-1.5 sm:mr-2">🔒</span>
