@@ -31,9 +31,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Build fast, interactive websites with reusable components and smooth user experience.",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-blue-500 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Fast Loading",
         "Interactive UI",
@@ -49,9 +49,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Create SEO friendly websites that rank higher on Google with fast page loads.",
-      color: "from-gray-900 to-black",
+      color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-gray-900 to-black",
+      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
       features: [
         "SEO Optimized",
         "Fast Performance",
@@ -67,9 +67,9 @@ export default function TechEcosystem() {
       category: "Backend",
       description:
         "Power your website with reliable backend technology for APIs and server functions.",
-      color: "from-green-500 to-emerald-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-green-500 to-emerald-500",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Scalable",
         "Fast Processing",
@@ -85,9 +85,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Design beautiful, responsive websites faster with modern CSS framework.",
-      color: "from-teal-500 to-cyan-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-teal-500 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
       features: [
         "Mobile Friendly",
         "Quick Design",
@@ -103,9 +103,9 @@ export default function TechEcosystem() {
       category: "Database/Auth",
       description:
         "Store data securely with real time updates and user authentication features.",
-      color: "from-orange-500 to-yellow-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-orange-500 to-yellow-500",
+      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
       features: ["Real-time Data", "User Login", "Cloud Storage", "Secure"],
       performance: "99.95%",
     },
@@ -116,9 +116,9 @@ export default function TechEcosystem() {
       category: "Language",
       description:
         "Write cleaner, error free code that's easier to maintain and scale over time.",
-      color: "from-blue-600 to-indigo-600",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-blue-600 to-indigo-600",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Error Prevention",
         "Better Code Quality",
@@ -134,9 +134,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Build lightweight, fast websites with simple yet powerful frontend framework.",
-      color: "from-green-400 to-emerald-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-green-400 to-emerald-500",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Easy to Learn",
         "Lightweight",
@@ -152,9 +152,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Develop large scale business applications with Google's trusted framework.",
-      color: "from-red-500 to-pink-500",
+      color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-red-500 to-pink-500",
+      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
       features: [
         "Enterprise Ready",
         "Full-featured",
@@ -170,9 +170,9 @@ export default function TechEcosystem() {
       category: "Backend",
       description:
         "Build secure, database driven websites with popular PHP framework.",
-      color: "from-red-400 to-orange-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-red-400 to-orange-500",
+      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
       features: [
         "Secure Coding",
         "Database Management",
@@ -188,9 +188,9 @@ export default function TechEcosystem() {
       category: "Backend",
       description:
         "Create complex web applications quickly with powerful Python framework.",
-      color: "from-green-600 to-emerald-600",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-green-600 to-emerald-600",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Fast Development",
         "Built-in Features",
@@ -206,9 +206,9 @@ export default function TechEcosystem() {
       category: "Backend",
       description:
         "Build enterprise level applications with Microsoft's reliable framework.",
-      color: "from-purple-600 to-pink-600",
+      color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-purple-600 to-pink-600",
+      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
       features: [
         "High Performance",
         "Cross-platform",
@@ -224,9 +224,9 @@ export default function TechEcosystem() {
       category: "Hosting",
       description:
         "Host your website on fast global servers for best performance worldwide.",
-      color: "from-black to-gray-800",
+      color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-black to-gray-800",
+      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
       features: [
         "Global CDN",
         "Instant Updates",
@@ -242,9 +242,9 @@ export default function TechEcosystem() {
       category: "Frontend",
       description:
         "Build modern, accessible websites with latest web standards and best practices.",
-      color: "from-orange-500 to-pink-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-orange-500 to-pink-500",
+      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
       features: ["Web Standards", "All Browsers", "Accessible", "Mobile Ready"],
       performance: "100%",
     },
@@ -255,9 +255,9 @@ export default function TechEcosystem() {
       category: "Language",
       description:
         "Add interactive features and dynamic content to engage your website visitors.",
-      color: "from-yellow-400 to-yellow-600",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-yellow-400 to-yellow-600",
+      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
       features: [
         "Interactive",
         "Dynamic Content",
@@ -407,7 +407,7 @@ export default function TechEcosystem() {
   return (
     <div
       id="tech"
-      className="min-h-[50vh] bg-gradient-to-b from-white to-blue-50 py-8 md:py-10 px-4 sm:px-6 lg:px-8"
+      className="min-h-[50vh] bg-[#F4F4F4] py-8 md:py-10 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -417,11 +417,17 @@ export default function TechEcosystem() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+          <h2 
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
             Our Tech Ecosystem
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+          <p 
+            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             We use proven, modern technologies that deliver fast, secure, and
             scalable websites for your business.
           </p>
@@ -430,25 +436,28 @@ export default function TechEcosystem() {
         {/* Scroll Controls */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-gray-700">
+            <Target className="w-4 h-4 text-[#27B0C4]" />
+            <span 
+              className="text-sm font-medium text-[#2C3E50]"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
               Technology Stack
             </span>
           </div>
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
+              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
             </button>
             <button
               onClick={scrollRight}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105"
+              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
+              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
             </button>
           </div>
         </div>
@@ -477,10 +486,10 @@ export default function TechEcosystem() {
                   className="relative rounded-xl overflow-hidden group cursor-pointer h-full"
                 >
                   {/* Gradient Border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#27B0C4] via-[#73CCD7] to-[#E67E22] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Main Card */}
-                  <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
+                  <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F4F4F4] h-full">
                     {/* Header with icon */}
                     <div className="flex items-start gap-3 mb-4">
                       <div
@@ -490,31 +499,43 @@ export default function TechEcosystem() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <h3 className="text-lg font-bold text-gray-900">
+                          <h3 
+                            className="text-lg font-bold text-[#2C3E50]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
                             {tech.name}
                           </h3>
                           <motion.div
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}
-                            className="w-2 h-2 bg-green-500 rounded-full"
+                            className="w-2 h-2 bg-[#27B0C4] rounded-full"
                           />
                         </div>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p 
+                          className="text-sm text-[#7A7A7A] mt-1"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           {tech.category}
                         </p>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-700 mb-4">
+                    <p 
+                      className="text-sm text-[#7A7A7A] mb-4"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
                       {tech.description}
                     </p>
 
                     {/* Features */}
                     <div className="mb-4">
                       <div className="flex items-center gap-1 mb-2">
-                        <Sparkles className="w-4 h-4 text-blue-500" />
-                        <span className="text-xs font-semibold text-gray-700">
+                        <Sparkles className="w-4 h-4 text-[#27B0C4]" />
+                        <span 
+                          className="text-xs font-semibold text-[#2C3E50]"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           Key Features
                         </span>
                       </div>
@@ -522,7 +543,8 @@ export default function TechEcosystem() {
                         {tech.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-gradient-to-r from-blue-50 to-purple-50 rounded-md text-xs text-gray-700"
+                            className="px-2 py-1 bg-[#F4F4F4] rounded-md text-xs text-[#2C3E50] border border-[#F4F4F4]"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {feature}
                           </span>
@@ -531,18 +553,29 @@ export default function TechEcosystem() {
                     </div>
 
                     {/* Performance Indicator */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center justify-between pt-4 border-t border-[#F4F4F4]">
                       <div className="flex items-center gap-2">
-                        <Rocket className="w-4 h-4 text-blue-500" />
-                        <span className="text-xs text-gray-600">
+                        <Rocket className="w-4 h-4 text-[#27B0C4]" />
+                        <span 
+                          className="text-xs text-[#7A7A7A]"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           Performance
                         </span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <span className="text-sm font-bold text-gray-900">
+                        <span 
+                          className="text-sm font-bold text-[#2C3E50]"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
                           {tech.performance}
                         </span>
-                        <span className="text-xs text-gray-500">uptime</span>
+                        <span 
+                          className="text-xs text-[#7A7A7A]"
+                          style={{ fontFamily: 'var(--font-poppins)' }}
+                        >
+                          uptime
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -562,9 +595,10 @@ export default function TechEcosystem() {
           <motion.a
             href="#case"
             className="group inline-flex items-center gap-2 
-               bg-gradient-to-r from-blue-600 to-purple-600 
+               bg-[#E67E22]
                text-white px-6 py-3 rounded-lg font-semibold 
-               hover:shadow-lg transition-all hover:scale-105"
+               hover:shadow-lg hover:bg-[#D46A1A] transition-all hover:scale-105"
+            style={{ fontFamily: 'var(--font-poppins)' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             aria-label="View Case Studies"

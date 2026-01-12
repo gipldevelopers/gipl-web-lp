@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Color Palette */
+  --color-deep-charcoal: #2C3E50;
+  --color-clean-white: #FFFFFF;
+  --color-deep-teal: #27B0C4;
+  --color-soft-grey: #F4F4F4;
+  --color-light-cyan: #73CCD7;
+  --color-energizing-orange: #E67E22;
+  --color-muted-grey: #7A7A7A;
+  
+  /* Legacy variables for compatibility */
+  --background: #FFFFFF;
+  --foreground: #2C3E50;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-clean-white);
+  --color-foreground: var(--color-deep-charcoal);
+  --font-rubik: var(--font-rubik);
+  --font-poppins: var(--font-poppins);
+  --font-open-sans: var(--font-open-sans);
 }
 
 body {
+  color: var(--color-deep-charcoal);
+  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
+  background-color: var(--color-clean-white);
+  }
 
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typography Classes */
+h1, h2 {
+  font-family: var(--font-rubik), sans-serif;
+}
+
+h3, h4 {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+h1 {
+  font-weight: 800; /* Extra Bold for hero */
+}
+
+h2 {
+  font-weight: 700; /* Bold for regular headers */
+}
+
+h3 {
+  font-weight: 500; /* Medium for H3 */
+}
+
+h4 {
+  font-weight: 400; /* Regular for H4 */
+}
+
+p, body {
+  font-family: var(--font-open-sans), sans-serif;
 }

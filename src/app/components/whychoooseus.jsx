@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
       title: "Customized for Your Goals",
       description:
         "No generic templates. Every feature is tailored specifically to your audience and business needs.",
-      color: "from-orange-500 to-yellow-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       stats: "Fully customized",
     },
     {
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
       title: "Smooth, Transparent Process",
       description:
         "From planning to launch clear timelines, updates, and zero confusion at any step of your development journey.",
-      color: "from-pink-500 to-red-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       stats: "100% clarity",
     },
     {
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
       title: "Pixel-Perfect Design",
       description:
         "Clean, modern, conversion-first UI that instantly builds trust and drives action.",
-      color: "from-purple-500 to-pink-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       stats: "Modern UI",
     },
     {
@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
       title: "Conversion-Focused Architecture",
       description:
         "Every layout and interaction is designed to increase leads and sales — not just look good.",
-      color: "from-green-500 to-cyan-500",
+      color: "from-[#2C3E50] to-[#7A7A7A]",
       stats: "Higher conversions",
     },
     {
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
       title: "Latest Technology Stack",
       description:
         "Built with modern frameworks like React & Next.js for speed, SEO, and scalability.",
-      color: "from-blue-500 to-indigo-500",
+      color: "from-[#27B0C4] to-[#73CCD7]",
       stats: "Modern stack",
     },
     {
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
       title: "Performance Optimization",
       description:
         "Fast-loading websites that rank better and convert higher. Optimized from day one.",
-      color: "from-blue-500 to-purple-500",
+      color: "from-[#E67E22] to-[#D46A1A]",
       stats: "Under 3 sec",
     },
   ];
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
   const scrollRight = () => handleManualInteraction();
 
   return (
-    <section className="bg-gradient-to-b from-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F4F4F4] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -136,10 +136,16 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2C3E50] mb-2"
+            style={{ fontFamily: 'var(--font-rubik)' }}
+          >
             Why Choose Us as Your Website Development Company?
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+          <p 
+            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             What makes us the best website development company in India?
           </p>
         </motion.div>
@@ -148,15 +154,15 @@ export default function WhyChooseUs() {
         <div className="flex justify-end gap-2 mb-4">
           <button
             onClick={scrollLeft}
-            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition"
+            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
           >
-            <ChevronLeft className="w-4 h-4 text-gray-700" />
+            <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
           </button>
           <button
             onClick={scrollRight}
-            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition"
+            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
           >
-            <ChevronRight className="w-4 h-4 text-gray-700" />
+            <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
           </button>
         </div>
 
@@ -176,7 +182,7 @@ export default function WhyChooseUs() {
             >
               <motion.div
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-xl p-5 h-full shadow-sm hover:shadow-xl border border-gray-100 transition"
+                className="bg-white rounded-xl p-5 h-full shadow-sm hover:shadow-xl border border-[#F4F4F4] transition"
               >
                 <div
                   className={`w-12 h-12 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow mb-4`}
@@ -184,19 +190,33 @@ export default function WhyChooseUs() {
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 
+                  className="text-lg font-bold text-[#2C3E50] mb-2"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-700 mb-4">
+                <p 
+                  className="text-sm text-[#7A7A7A] mb-4"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                >
                   {item.description}
                 </p>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex justify-between items-center border-t border-[#F4F4F4] pt-4">
                   <div className="flex items-center gap-2">
-                    <Rocket className="w-4 h-4 text-blue-500" />
-                    <span className="text-xs text-gray-600">Benefit</span>
+                    <Rocket className="w-4 h-4 text-[#27B0C4]" />
+                    <span 
+                      className="text-xs text-[#7A7A7A]"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
+                      Benefit
+                    </span>
                   </div>
-                  <span className="text-sm font-semibold text-gray-900">
+                  <span 
+                    className="text-sm font-semibold text-[#2C3E50]"
+                    style={{ fontFamily: 'var(--font-poppins)' }}
+                  >
                     {item.stats}
                   </span>
                 </div>
@@ -217,9 +237,10 @@ export default function WhyChooseUs() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2
-            bg-gradient-to-r from-blue-600 to-purple-600
+            bg-[#E67E22]
             text-white px-6 py-3 rounded-lg font-semibold
-            hover:shadow-lg transition-all"
+            hover:shadow-lg hover:bg-[#D46A1A] transition-all"
+            style={{ fontFamily: 'var(--font-poppins)' }}
           >
             Explore Our Tech Ecosystem
             <ArrowRight className="w-4 h-4" />
