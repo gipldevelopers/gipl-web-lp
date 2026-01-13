@@ -22,6 +22,12 @@ export default function TechEcosystem() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const autoPlayRef = useRef(null);
   const resumeTimeoutRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftPosition, setScrollLeftPosition] = useState(0);
+  const velocityRef = useRef(0);
+  const lastXRef = useRef(0);
+  const animationFrameRef = useRef(null);
 
   const techStack = [
     {
@@ -295,6 +301,137 @@ export default function TechEcosystem() {
     resumeAutoPlay();
   };
 
+  // Smooth momentum scrolling
+  const applyMomentum = () => {
+    if (!scrollContainerRef.current || velocityRef.current === 0) return;
+    
+    velocityRef.current *= 0.95; // Friction
+    scrollContainerRef.current.scrollLeft -= velocityRef.current;
+    
+    if (Math.abs(velocityRef.current) > 0.5) {
+      animationFrameRef.current = requestAnimationFrame(applyMomentum);
+    } else {
+      velocityRef.current = 0;
+    }
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    if (!scrollContainerRef.current) return;
+    
+    // Cancel any ongoing momentum
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    velocityRef.current = 0;
+    
+    setIsDragging(true);
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    setStartX(e.pageX - rect.left);
+    setScrollLeftPosition(scrollContainerRef.current.scrollLeft);
+    lastXRef.current = e.pageX;
+    handleManualInteraction();
+    scrollContainerRef.current.style.cursor = "grabbing";
+    scrollContainerRef.current.style.userSelect = "none";
+    scrollContainerRef.current.style.scrollBehavior = "auto";
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging && scrollContainerRef.current) {
+      const currentX = lastXRef.current;
+      const deltaX = currentX - startX;
+      velocityRef.current = deltaX * 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = "grab";
+      scrollContainerRef.current.style.userSelect = "auto";
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging && scrollContainerRef.current && Math.abs(velocityRef.current) > 1) {
+      // Apply momentum based on last movement
+      velocityRef.current *= 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = "grab";
+      scrollContainerRef.current.style.userSelect = "auto";
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    const x = e.pageX - rect.left;
+    const walk = (x - startX) * 1.2; // Reduced multiplier for smoother control
+    scrollContainerRef.current.scrollLeft = scrollLeftPosition - walk;
+    
+    // Calculate velocity for momentum
+    const deltaX = e.pageX - lastXRef.current;
+    velocityRef.current = deltaX;
+    lastXRef.current = e.pageX;
+  };
+
+  // Touch handlers for mobile
+  const touchStartXRef = useRef(0);
+  const touchLastXRef = useRef(0);
+
+  const handleTouchStart = (e) => {
+    if (!scrollContainerRef.current) return;
+    
+    // Cancel any ongoing momentum
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    velocityRef.current = 0;
+    
+    setIsDragging(true);
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    touchStartXRef.current = e.touches[0].pageX - rect.left;
+    touchLastXRef.current = e.touches[0].pageX;
+    setStartX(touchStartXRef.current);
+    setScrollLeftPosition(scrollContainerRef.current.scrollLeft);
+    handleManualInteraction();
+    scrollContainerRef.current.style.scrollBehavior = "auto";
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    const x = e.touches[0].pageX - rect.left;
+    const walk = (x - touchStartXRef.current) * 1.2; // Reduced multiplier for smoother control
+    scrollContainerRef.current.scrollLeft = scrollLeftPosition - walk;
+    
+    // Calculate velocity for momentum
+    const deltaX = e.touches[0].pageX - touchLastXRef.current;
+    velocityRef.current = deltaX;
+    touchLastXRef.current = e.touches[0].pageX;
+  };
+
+  const handleTouchEnd = () => {
+    if (isDragging && scrollContainerRef.current && Math.abs(velocityRef.current) > 1) {
+      // Apply momentum based on last movement
+      velocityRef.current *= 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
   // Auto-slide functionality
   useEffect(() => {
     if (!isAutoPlaying || !scrollContainerRef.current) return;
@@ -326,6 +463,9 @@ export default function TechEcosystem() {
       }
       if (resumeTimeoutRef.current) {
         clearTimeout(resumeTimeoutRef.current);
+      }
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
       }
     };
   }, [isAutoPlaying, techStack.length]);
@@ -407,7 +547,7 @@ export default function TechEcosystem() {
   return (
     <div
       id="tech"
-      className="min-h-[50vh] bg-[#F4F4F4] py-8 md:py-10 px-4 sm:px-6 lg:px-8"
+      className="bg-[#F4F4F4] py-6 sm:py-8 md:py-10 px-3 sm:px-4 md:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -415,17 +555,17 @@ export default function TechEcosystem() {
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-6"
+          className="text-center mb-4 sm:mb-6"
         >
           <h2 
-            className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1.5 sm:mb-2 text-[#2C3E50] px-2"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             Our Tech Ecosystem
           </h2>
 
           <p 
-            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
+            className="text-xs sm:text-sm md:text-base text-[#7A7A7A] max-w-2xl mx-auto px-2"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
             We use proven, modern technologies that deliver fast, secure, and
@@ -434,30 +574,30 @@ export default function TechEcosystem() {
         </motion.div>
 
         {/* Scroll Controls */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-[#27B0C4]" />
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#27B0C4]" />
             <span 
-              className="text-sm font-medium text-[#2C3E50]"
+              className="text-xs sm:text-sm font-medium text-[#2C3E50]"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               Technology Stack
             </span>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-1.5 sm:gap-2">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="p-1.5 sm:p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2C3E50]" />
             </button>
             <button
               onClick={scrollRight}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="p-1.5 sm:p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2C3E50]" />
             </button>
           </div>
         </div>
@@ -466,10 +606,16 @@ export default function TechEcosystem() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-6 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide pb-4 sm:pb-6 snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none touch-pan-x"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             onScroll={handleScroll}
-            onTouchStart={handleManualInteraction}
             onWheel={handleManualInteraction}
           >
             {techStack.map((tech, index) => (
@@ -479,28 +625,29 @@ export default function TechEcosystem() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10.666px)] lg:w-[calc(25%-12px)] snap-center"
+                className="flex-shrink-0 w-[calc(100%-12px)] sm:w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] lg:w-[calc(25%-9px)] snap-center"
               >
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   className="relative rounded-xl overflow-hidden group cursor-pointer h-full"
+                  whileTap={{ scale: 0.98 }}
                 >
                   {/* Gradient Border */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#27B0C4] via-[#73CCD7] to-[#E67E22] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Main Card */}
-                  <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F4F4F4] h-full">
+                  <div className="relative bg-white rounded-xl p-3 sm:p-4 md:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F4F4F4] h-full">
                     {/* Header with icon */}
-                    <div className="flex items-start gap-3 mb-4">
+                    <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                       <div
-                        className={`${tech.bgColor} w-12 h-12 rounded-lg flex items-center justify-center shadow-md`}
+                        className={`${tech.bgColor} w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center shadow-md flex-shrink-0`}
                       >
-                        <span className="text-xl">{tech.emoji}</span>
+                        <span className="text-lg sm:text-xl">{tech.emoji}</span>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
                           <h3 
-                            className="text-lg font-bold text-[#2C3E50]"
+                            className="text-base sm:text-lg font-bold text-[#2C3E50] truncate"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {tech.name}
@@ -508,11 +655,11 @@ export default function TechEcosystem() {
                           <motion.div
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}
-                            className="w-2 h-2 bg-[#27B0C4] rounded-full"
+                            className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#27B0C4] rounded-full flex-shrink-0"
                           />
                         </div>
                         <p 
-                          className="text-sm text-[#7A7A7A] mt-1"
+                          className="text-xs sm:text-sm text-[#7A7A7A] mt-0.5 sm:mt-1"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
                           {tech.category}
@@ -522,18 +669,18 @@ export default function TechEcosystem() {
 
                     {/* Description */}
                     <p 
-                      className="text-sm text-[#7A7A7A] mb-4"
+                      className="text-xs sm:text-sm text-[#7A7A7A] mb-3 sm:mb-4 leading-relaxed"
                       style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       {tech.description}
                     </p>
 
                     {/* Features */}
-                    <div className="mb-4">
-                      <div className="flex items-center gap-1 mb-2">
-                        <Sparkles className="w-4 h-4 text-[#27B0C4]" />
+                    <div className="mb-3 sm:mb-4">
+                      <div className="flex items-center gap-1 mb-1.5 sm:mb-2">
+                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#27B0C4]" />
                         <span 
-                          className="text-xs font-semibold text-[#2C3E50]"
+                          className="text-[10px] sm:text-xs font-semibold text-[#2C3E50]"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
                           Key Features
@@ -543,7 +690,7 @@ export default function TechEcosystem() {
                         {tech.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-[#F4F4F4] rounded-md text-xs text-[#2C3E50] border border-[#F4F4F4]"
+                            className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-[#F4F4F4] rounded-md text-[10px] sm:text-xs text-[#2C3E50] border border-[#F4F4F4]"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {feature}
@@ -553,25 +700,25 @@ export default function TechEcosystem() {
                     </div>
 
                     {/* Performance Indicator */}
-                    <div className="flex items-center justify-between pt-4 border-t border-[#F4F4F4]">
-                      <div className="flex items-center gap-2">
-                        <Rocket className="w-4 h-4 text-[#27B0C4]" />
+                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F4F4F4]">
+                      <div className="flex items-center gap-1.5 sm:gap-2">
+                        <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#27B0C4]" />
                         <span 
-                          className="text-xs text-[#7A7A7A]"
+                          className="text-[10px] sm:text-xs text-[#7A7A7A]"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
                           Performance
                         </span>
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-0.5 sm:gap-1">
                         <span 
-                          className="text-sm font-bold text-[#2C3E50]"
+                          className="text-xs sm:text-sm font-bold text-[#2C3E50]"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
                           {tech.performance}
                         </span>
                         <span 
-                          className="text-xs text-[#7A7A7A]"
+                          className="text-[10px] sm:text-xs text-[#7A7A7A]"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
                           uptime
@@ -594,17 +741,17 @@ export default function TechEcosystem() {
         >
           <motion.a
             href="#case"
-            className="group inline-flex items-center gap-2 
+            className="group inline-flex items-center gap-1.5 sm:gap-2 
                bg-[#E67E22]
-               text-white px-6 py-3 rounded-lg font-semibold 
-               hover:shadow-lg hover:bg-[#D46A1A] transition-all hover:scale-105"
+               text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold 
+               hover:shadow-lg hover:bg-[#D46A1A] transition-all hover:scale-105 touch-manipulation active:scale-95"
             style={{ fontFamily: 'var(--font-poppins)' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             aria-label="View Case Studies"
           >
             View Case Studies
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
           </motion.a>
         </motion.div>
       </div>

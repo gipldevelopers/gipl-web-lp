@@ -226,7 +226,7 @@ export default function TestimonialsSlider() {
   };
 
   return (
-    <div id="testimonials" className="min-h-[40vh] bg-[#FFFFFF] py-6 md:py-8 px-4 sm:px-6 lg:px-8">
+    <div id="testimonials" className="bg-[#FFFFFF] py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

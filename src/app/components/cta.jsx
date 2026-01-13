@@ -44,8 +44,8 @@ export default function AnimatedCTASection() {
   // Don't render particles until client-side
   if (!isClient) {
     return (
-      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#FFFFFF]">
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div className="relative flex items-center justify-center overflow-hidden bg-[#FFFFFF]">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
           <div className="text-center">
             {/* Animated badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F4F4F4] rounded-full mb-6">
@@ -98,7 +98,7 @@ export default function AnimatedCTASection() {
   }
 
   return (
-    <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#FFFFFF]">
+    <div className="relative flex items-center justify-center overflow-hidden bg-[#FFFFFF]">
       {/* Animated background elements */}
       <div
         className="absolute inset-0 transition-transform duration-300 ease-out"
@@ -123,7 +123,7 @@ export default function AnimatedCTASection() {
       </div>
 
       {/* Main content */}
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
         <div
           className={`text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"

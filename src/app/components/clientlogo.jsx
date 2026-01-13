@@ -23,7 +23,7 @@ export default function clientlogo() {
 
    return (
 
-    <div className="client-logo-section py-16 bg-gray-50">
+    <div className="client-logo-section py-8 sm:py-10 md:py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Esteemed Clients</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">

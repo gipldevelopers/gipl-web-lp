@@ -18,18 +18,20 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <HeroSection/>
-      <TrustLineWorkflow/>
-      <TrustedBrands/>
-      <ScrollStorySection/>
-      <AnimatedCTASection/>
-      <WhyChooseUsSection/>
-      <StatsSection/>
-      <IndustriesSlider/>
-      <TechEcosystem/>
-      <WebsiteTypesGrid/>
-      <CaseStudiesSlider/>
-      <TestimonialsSection/>
+      <main role="main">
+        <HeroSection/>
+        <TrustLineWorkflow/>
+        <TrustedBrands/>
+        <ScrollStorySection/>
+        <AnimatedCTASection/>
+        <WhyChooseUsSection/>
+        <StatsSection/>
+        <IndustriesSlider/>
+        <TechEcosystem/>
+        <WebsiteTypesGrid/>
+        <CaseStudiesSlider/>
+        <TestimonialsSection/>
+      </main>
       <Footer/>
     </>
   )

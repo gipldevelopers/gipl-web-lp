@@ -21,6 +21,12 @@ export default function WhyChooseUs() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const autoPlayRef = useRef(null);
   const resumeTimeoutRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const velocityRef = useRef(0);
+  const lastXRef = useRef(0);
+  const animationFrameRef = useRef(null);
 
   const benefits = [
     {
@@ -94,6 +100,137 @@ export default function WhyChooseUs() {
     resumeAutoPlay();
   };
 
+  // Smooth momentum scrolling
+  const applyMomentum = () => {
+    if (!scrollContainerRef.current || velocityRef.current === 0) return;
+    
+    velocityRef.current *= 0.95; // Friction
+    scrollContainerRef.current.scrollLeft -= velocityRef.current;
+    
+    if (Math.abs(velocityRef.current) > 0.5) {
+      animationFrameRef.current = requestAnimationFrame(applyMomentum);
+    } else {
+      velocityRef.current = 0;
+    }
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    if (!scrollContainerRef.current) return;
+    
+    // Cancel any ongoing momentum
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    velocityRef.current = 0;
+    
+    setIsDragging(true);
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    setStartX(e.pageX - rect.left);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    lastXRef.current = e.pageX;
+    handleManualInteraction();
+    scrollContainerRef.current.style.cursor = "grabbing";
+    scrollContainerRef.current.style.userSelect = "none";
+    scrollContainerRef.current.style.scrollBehavior = "auto";
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging && scrollContainerRef.current) {
+      const currentX = lastXRef.current;
+      const deltaX = currentX - startX;
+      velocityRef.current = deltaX * 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = "grab";
+      scrollContainerRef.current.style.userSelect = "auto";
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging && scrollContainerRef.current && Math.abs(velocityRef.current) > 1) {
+      // Apply momentum based on last movement
+      velocityRef.current *= 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = "grab";
+      scrollContainerRef.current.style.userSelect = "auto";
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    const x = e.pageX - rect.left;
+    const walk = (x - startX) * 1.2; // Reduced multiplier for smoother control
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    
+    // Calculate velocity for momentum
+    const deltaX = e.pageX - lastXRef.current;
+    velocityRef.current = deltaX;
+    lastXRef.current = e.pageX;
+  };
+
+  // Touch handlers for mobile
+  const touchStartXRef = useRef(0);
+  const touchLastXRef = useRef(0);
+
+  const handleTouchStart = (e) => {
+    if (!scrollContainerRef.current) return;
+    
+    // Cancel any ongoing momentum
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    velocityRef.current = 0;
+    
+    setIsDragging(true);
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    touchStartXRef.current = e.touches[0].pageX - rect.left;
+    touchLastXRef.current = e.touches[0].pageX;
+    setStartX(touchStartXRef.current);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    handleManualInteraction();
+    scrollContainerRef.current.style.scrollBehavior = "auto";
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    
+    const rect = scrollContainerRef.current.getBoundingClientRect();
+    const x = e.touches[0].pageX - rect.left;
+    const walk = (x - touchStartXRef.current) * 1.2; // Reduced multiplier for smoother control
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    
+    // Calculate velocity for momentum
+    const deltaX = e.touches[0].pageX - touchLastXRef.current;
+    velocityRef.current = deltaX;
+    touchLastXRef.current = e.touches[0].pageX;
+  };
+
+  const handleTouchEnd = () => {
+    if (isDragging && scrollContainerRef.current && Math.abs(velocityRef.current) > 1) {
+      // Apply momentum based on last movement
+      velocityRef.current *= 0.3; // Momentum multiplier
+      applyMomentum();
+    }
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
   useEffect(() => {
     if (!isAutoPlaying || !scrollContainerRef.current) return;
 
@@ -119,14 +256,36 @@ export default function WhyChooseUs() {
     return () => {
       clearInterval(autoPlayRef.current);
       clearTimeout(resumeTimeoutRef.current);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, [isAutoPlaying, benefits.length]);
 
-  const scrollLeft = () => handleManualInteraction();
-  const scrollRight = () => handleManualInteraction();
+  const scrollToLeft = () => {
+    if (!scrollContainerRef.current) return;
+    handleManualInteraction();
+    const cardWidth = scrollContainerRef.current.children[0]?.offsetWidth || 300;
+    const gap = 16;
+    scrollContainerRef.current.scrollBy({
+      left: -(cardWidth + gap),
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToRight = () => {
+    if (!scrollContainerRef.current) return;
+    handleManualInteraction();
+    const cardWidth = scrollContainerRef.current.children[0]?.offsetWidth || 300;
+    const gap = 16;
+    scrollContainerRef.current.scrollBy({
+      left: cardWidth + gap,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <section className="bg-[#F4F4F4] py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F4F4F4] py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -153,13 +312,13 @@ export default function WhyChooseUs() {
         {/* Controls */}
         <div className="flex justify-end gap-2 mb-4">
           <button
-            onClick={scrollLeft}
+            onClick={scrollToLeft}
             className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
           >
             <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
           </button>
           <button
-            onClick={scrollRight}
+            onClick={scrollToRight}
             className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
           >
             <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
@@ -169,7 +328,15 @@ export default function WhyChooseUs() {
         {/* Slider */}
         <div
           ref={scrollContainerRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide pb-6 snap-x snap-mandatory"
+          className="flex gap-4 overflow-x-auto scrollbar-hide pb-6 snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none"
+          style={{ scrollBehavior: "smooth" }}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           onScroll={handleManualInteraction}
         >
           {benefits.map((item, index) => (

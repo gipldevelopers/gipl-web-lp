@@ -153,7 +153,7 @@ const Carousel = ({ children, title, subtitle, id }) => {
   }, [isDragging, startX, scrollLeft, children.length]);
 
   return (
-    <section id={id} className="py-16 md:py-24 bg-[#F4F4F4]">
+    <section id={id} className="py-8 sm:py-10 md:py-12 bg-[#F4F4F4]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Responsive Heading */}
         <h2 
@@ -262,7 +262,7 @@ const StatCard = ({ value, label, Icon, color }) => (
 
 const GohilInfotechLandingPage = () => {
   return (
-    <div className="min-h-screen font-sans antialiased bg-white">
+    <div className="font-sans antialiased bg-white">
       
       {/* 1. Hero Section: Are You Stuck in the Digital Past? */}
       <section className="relative overflow-hidden pt-20 pb-12 md:pt-32 md:pb-24 bg-[#2C3E50] text-white">
@@ -303,7 +303,7 @@ const GohilInfotechLandingPage = () => {
       </section>
 
       {/* 2. Why Choose Gohil Infotech? */}
-      <section className="py-16 md:py-24 bg-[#FFFFFF]">
+      <section className="py-8 sm:py-10 md:py-12 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 
             className="text-3xl sm:text-4xl font-extrabold text-[#2C3E50] text-center mb-4"
@@ -368,7 +368,7 @@ const GohilInfotechLandingPage = () => {
       </section>
 
       {/* 3. Our Proven Track Record: Numbers That Speak Volumes */}
-      <section id="track-record" className="py-16 md:py-24 bg-[#2C3E50] text-white">
+      <section id="track-record" className="py-8 sm:py-10 md:py-12 bg-[#2C3E50] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 
             className="text-3xl sm:text-4xl font-extrabold text-white text-center mb-10"
@@ -499,7 +499,7 @@ const GohilInfotechLandingPage = () => {
       </Carousel>
 
       {/* 7. Your Solution: CTA */}
-      <section className="py-16 md:py-24 bg-[#27B0C4]">
+      <section className="py-8 sm:py-10 md:py-12 bg-[#27B0C4]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
           <h2 
             className="text-3xl md:text-5xl font-extrabold text-white mb-3 sm:mb-4"

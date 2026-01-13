@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Palette, Server, Database } from "lucide-react";
 
 export default function ScrollStorySection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +14,7 @@ export default function ScrollStorySection() {
       title: "UI & User Experience",
       description:
         "Modern, responsive, and conversion-focused interfaces that deliver smooth user journeys and strong brand impact.",
-      icon: Palette,
+      svg: "/frontend.svg",
       iconColor: "from-[#27B0C4] to-[#73CCD7]",
       shadowColor: "rgba(39,176,196,0.35)",
       labelColor: "text-[#27B0C4]",
@@ -29,7 +28,7 @@ export default function ScrollStorySection() {
       title: "Business Logic & APIs",
       description:
         "Secure, scalable server-side systems with clean APIs, authentication, and third-party integrations.",
-      icon: Server,
+      svg: "/backend.svg",
       iconColor: "from-[#2C3E50] to-[#7A7A7A]",
       shadowColor: "rgba(44,62,80,0.35)",
       labelColor: "text-[#2C3E50]",
@@ -43,7 +42,7 @@ export default function ScrollStorySection() {
       title: "Data & Performance",
       description:
         "High-performance databases designed for speed, security, backups, and long-term scalability.",
-      icon: Database,
+      svg: "/database.svg",
       iconColor: "from-[#E67E22] to-[#D46A1A]",
       shadowColor: "rgba(230,126,34,0.35)",
       labelColor: "text-[#E67E22]",
@@ -78,7 +77,6 @@ export default function ScrollStorySection() {
   };
 
   const currentSlideData = slides[currentSlide];
-  const IconComponent = currentSlideData.icon;
 
   return (
     <section className="relative w-full overflow-hidden bg-[#FFF5EB] py-8 sm:py-10 lg:py-12">
@@ -119,16 +117,20 @@ export default function ScrollStorySection() {
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 exit={{ opacity: 0, scale: 0.85, rotate: 10 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className={`absolute ${currentSlideData.size} ${currentSlideData.shape} bg-gradient-to-br ${currentSlideData.iconColor} flex items-center justify-center text-white`}
-                style={{
-                  boxShadow: `0 25px 60px ${currentSlideData.shadowColor}`,
-                }}
+                className="absolute w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] flex items-center justify-center"
               >
                 <motion.div
                   animate={{ y: [-12, 0, -12] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full h-full flex items-center justify-center"
                 >
-                  <IconComponent size={75} strokeWidth={1.2} />
+                  <img 
+                    src={currentSlideData.svg} 
+                    alt={currentSlideData.label}
+                    className="w-full h-full object-contain"
+                    role="img"
+                    aria-hidden="false"
+                  />
                 </motion.div>
               </motion.div>
             </AnimatePresence>

@@ -131,7 +131,7 @@ export default function IndustriesSlider() {
   };
 
   return (
-    <div className="min-h-[50vh] bg-[#73CCD7]/10 py-8 md:py-10 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#73CCD7]/10 py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -291,45 +291,6 @@ export default function IndustriesSlider() {
             </AnimatePresence>
           </div>
 
-          {/* Navigation */}
-          <div className="flex items-center justify-between mb-4">
-            <button
-              onClick={handlePrev}
-              className="group p-2 rounded-full bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
-            >
-              <ChevronLeft className="w-5 h-5 text-[#2C3E50] group-hover:text-[#27B0C4]" />
-            </button>
-
-            <div className="flex gap-1.5">
-              {industries.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleDotClick(index)}
-                  className={`relative w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                    index === activeIndex 
-                      ? 'bg-gradient-to-r from-[#27B0C4] to-[#73CCD7] scale-110' 
-                      : 'bg-[#7A7A7A] hover:bg-[#27B0C4]'
-                  }`}
-                >
-                  {index === activeIndex && (
-                    <motion.div
-                      layoutId="activeDot"
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-[#27B0C4] to-[#73CCD7]"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            <button
-              onClick={handleNext}
-              className="group p-2 rounded-full bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
-            >
-              <ChevronRight className="w-5 h-5 text-[#2C3E50] group-hover:text-[#27B0C4]" />
-            </button>
-          </div>
 
           {/* Badges */}
           <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
