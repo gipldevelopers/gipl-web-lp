@@ -138,6 +138,8 @@ export default function Navbar() {
                   text-[#7A7A7A] hover:text-[#2C3E50]
                   transition-colors duration-200
                   group
+                  flex items-center
+                  leading-none
                 "
                 style={{ fontFamily: 'var(--font-open-sans)' }}
               >
@@ -175,6 +177,7 @@ export default function Navbar() {
                 hover:bg-[#D46A1A]
                 transition-all duration-300
                 inline-flex justify-center items-center
+                leading-none
               "
               style={{ fontFamily: 'var(--font-open-sans)' }}
             >
