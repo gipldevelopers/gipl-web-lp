@@ -11,7 +11,7 @@ export default function TrustedBrands() {
       src: "/adani.png",
     },
     {
-      name: "Amuko",
+      name: "AMC",
       src: "/amuko.png",
     },
     {
@@ -39,7 +39,7 @@ export default function TrustedBrands() {
       src: "/kampomido.png",
     },
     {
-      name: "Housphire",
+      name: "Houspire",
       src: "/housphire.svg",
     },
     {
@@ -47,7 +47,7 @@ export default function TrustedBrands() {
       src: "/novotion.png",
     },
     {
-      name: "Tree",
+      name: "Vadodara Gas Limited",
       src: "/tree.jpg",
     },
     {

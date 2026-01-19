@@ -256,7 +256,6 @@ export default function TestimonialsSlider() {
             <div key={index} className="bg-[#F4F4F4] rounded-lg p-2 shadow-sm border border-[#F4F4F4]">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-1 mb-1">
-                  <stat.icon className="w-3 h-3 text-[#E67E22]" />
                   <span 
                     className="text-sm font-bold text-[#2C3E50]"
                     style={{ fontFamily: 'var(--font-poppins)' }}
