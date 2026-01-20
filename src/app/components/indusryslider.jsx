@@ -12,94 +12,97 @@ import {
   HeartPulse,
   Banknote,
   Plane,
-  Palette,
-  ChevronLeft,
-  ChevronRight,
   Zap,
   Shield,
   CheckCircle,
   Target
 } from 'lucide-react';
 
+const industries = [
+  {
+    icon: Home,
+    title: "Real Estate",
+    description: "Property listing platforms, builder websites, and advanced real estate search.",
+    color: "from-[#E67E22] to-[#D46A1A]",
+    features: ["Listings", "Search", "Showcase"],
+    iconColor: "text-[#E67E22]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing",
+    description: "Industry websites, product catalogs, and smart factory digital solutions.",
+    color: "from-[#27B0C4] to-[#73CCD7]",
+    features: ["Catalogs", "Industry", "Corporate"],
+    iconColor: "text-[#27B0C4]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: Rocket,
+    title: "Startups",
+    description: "MVP development, SaaS dashboards, landing pages, and scalable startup sites.",
+    color: "from-[#E67E22] to-[#D46A1A]",
+    features: ["MVP", "Landing", "SaaS"],
+    iconColor: "text-[#E67E22]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: GraduationCap,
+    title: "Education",
+    description: "LMS platforms, coaching websites, student portals, and course systems.",
+    color: "from-[#27B0C4] to-[#73CCD7]",
+    features: ["LMS", "Student", "Interactive"],
+    iconColor: "text-[#27B0C4]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce",
+    description: "Online stores, marketplace systems, product catalogs, and checkout flows.",
+    color: "from-[#E67E22] to-[#D46A1A]",
+    features: ["Shop", "Cart", "Payment"],
+    iconColor: "text-[#E67E22]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: HeartPulse,
+    title: "Health & Wellness",
+    description: "Clinic websites, appointment systems, patient portals, and medical platforms.",
+    color: "from-[#27B0C4] to-[#73CCD7]",
+    features: ["Booking", "Patient", "Portal"],
+    iconColor: "text-[#27B0C4]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: Banknote,
+    title: "Finance",
+    description: "Secure finance platforms, investment portals, and lead-gen systems.",
+    color: "from-[#E67E22] to-[#D46A1A]",
+    features: ["Secure", "Lead-gen", "Portal"],
+    iconColor: "text-[#E67E22]",
+    bgColor: "bg-[#F4F4F4]"
+  },
+  {
+    icon: Plane,
+    title: "Travel & Hospitality",
+    description: "Hotel websites, booking engines, travel platforms, and tourism solutions.",
+    color: "from-[#27B0C4] to-[#73CCD7]",
+    features: ["Hotels", "Booking", "Tours"],
+    iconColor: "text-[#27B0C4]",
+    bgColor: "bg-[#F4F4F4]"
+  }
+];
+
+const DEFAULT_INDUSTRY_TITLE = "E-Commerce";
+
 export default function IndustriesSlider() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const defaultActiveIndex = Math.max(
+    0,
+    industries.findIndex((i) => i.title === DEFAULT_INDUSTRY_TITLE)
+  );
+  const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef(null);
-
-  const industries = [
-    {
-      icon: Home,
-      title: "Real Estate",
-      description: "Property listing platforms, builder websites, and advanced real estate search.",
-      color: "from-[#E67E22] to-[#D46A1A]",
-      features: ["Listings", "Search", "Showcase"],
-      iconColor: "text-[#E67E22]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: Factory,
-      title: "Manufacturing",
-      description: "Industry websites, product catalogs, and smart factory digital solutions.",
-      color: "from-[#27B0C4] to-[#73CCD7]",
-      features: ["Catalogs", "Industry", "Corporate"],
-      iconColor: "text-[#27B0C4]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: Rocket,
-      title: "Startups",
-      description: "MVP development, SaaS dashboards, landing pages, and scalable startup sites.",
-      color: "from-[#E67E22] to-[#D46A1A]",
-      features: ["MVP", "Landing", "SaaS"],
-      iconColor: "text-[#E67E22]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: GraduationCap,
-      title: "Education",
-      description: "LMS platforms, coaching websites, student portals, and course systems.",
-      color: "from-[#27B0C4] to-[#73CCD7]",
-      features: ["LMS", "Student", "Interactive"],
-      iconColor: "text-[#27B0C4]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: ShoppingCart,
-      title: "E-Commerce",
-      description: "Online stores, marketplace systems, product catalogs, and checkout flows.",
-      color: "from-[#E67E22] to-[#D46A1A]",
-      features: ["Shop", "Cart", "Payment"],
-      iconColor: "text-[#E67E22]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: HeartPulse,
-      title: "Health & Wellness",
-      description: "Clinic websites, appointment systems, patient portals, and medical platforms.",
-      color: "from-[#27B0C4] to-[#73CCD7]",
-      features: ["Booking", "Patient", "Portal"],
-      iconColor: "text-[#27B0C4]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: Banknote,
-      title: "Finance",
-      description: "Secure finance platforms, investment portals, and lead-gen systems.",
-      color: "from-[#E67E22] to-[#D46A1A]",
-      features: ["Secure", "Lead-gen", "Portal"],
-      iconColor: "text-[#E67E22]",
-      bgColor: "bg-[#F4F4F4]"
-    },
-    {
-      icon: Plane,
-      title: "Travel & Hospitality",
-      description: "Hotel websites, booking engines, travel platforms, and tourism solutions.",
-      color: "from-[#27B0C4] to-[#73CCD7]",
-      features: ["Hotels", "Booking", "Tours"],
-      iconColor: "text-[#27B0C4]",
-      bgColor: "bg-[#F4F4F4]"
-    }
-  ];
 
   // Auto-play functionality
   useEffect(() => {
@@ -182,7 +185,7 @@ export default function IndustriesSlider() {
 
                           <div>
                             <h3 
-                              className="text-lg sm:text-xl font-bold text-[#2C3E50]"
+                              className={`text-lg sm:text-xl font-extrabold ${industry.iconColor}`}
                               style={{ fontFamily: 'var(--font-poppins)' }}
                             >
                               {industry.title}
@@ -313,12 +316,14 @@ export default function IndustriesSlider() {
                     <industry.icon className={`w-5 h-5 ${index === activeIndex ? industry.iconColor : 'text-[#7A7A7A]'}`} />
                   </div>
                   <span 
-                    className={`text-xs font-medium ${
-                      index === activeIndex ? 'text-[#2C3E50]' : 'text-[#7A7A7A]'
+                    className={`text-[10px] sm:text-xs leading-tight ${
+                      index === activeIndex
+                        ? `font-extrabold ${industry.iconColor}`
+                        : 'font-medium text-[#7A7A7A]'
                     }`}
                     style={{ fontFamily: 'var(--font-poppins)' }}
                   >
-                    {industry.title.split(" ")[0]}
+                    {industry.title}
                   </span>
                 </div>
               </motion.button>
