@@ -221,7 +221,7 @@ export default function CaseStudiesSlider() {
   return (
     <div
       id="case"
-      className="min-h-[50vh] bg-[#E67E22]/10 py-8 md:py-10 px-4 sm:px-6 lg:px-8"
+      className="bg-[#E67E22]/10 py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

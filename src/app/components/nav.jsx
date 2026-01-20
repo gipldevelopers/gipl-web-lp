@@ -5,6 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Updated navLinks with your content
   const navLinks = [
@@ -56,32 +65,58 @@ export default function Navbar() {
   };
 
   return (
-    <header className="relative z-50 px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
-      <motion.nav
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="max-w-7xl mx-auto"
+    <div 
+      className="fixed top-0 left-0 right-0 z-[100] w-full"
+      style={{ 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        width: '100%'
+      }}
+    >
+      <header 
+        className="w-full" 
+        role="banner"
       >
-        <motion.div
-          variants={itemVariants}
-          className="
-            relative
+        <motion.nav
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className={`
             transition-all duration-300 ease-out
-            flex items-center justify-between
-            py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-6
-          "
-          style={{ fontFamily: 'var(--font-open-sans)' }}
+            ${scrolled 
+              ? 'bg-[#F4F4F4]/95 backdrop-blur-md shadow-md border-b border-[#27B0C4]/20' 
+              : 'bg-[#F4F4F4]/90 backdrop-blur-sm'
+            }
+          `}
+          role="navigation"
+          aria-label="Main navigation"
         >
-          {/* Logo */}
+        {/* Slim navbar: Content-driven height with minimal padding */}
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-1.5 md:py-2">
+          <motion.div
+            variants={itemVariants}
+            className="
+              relative
+              transition-all duration-300 ease-out
+              flex items-center justify-between
+              py-0 sm:py-0.5 md:py-1 px-2 sm:px-4 md:px-6
+              gap-2 sm:gap-4
+            "
+            style={{ fontFamily: 'var(--font-open-sans)' }}
+          >
+          {/* Logo - Compact sizing across all breakpoints */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-1.5 sm:gap-2 md:gap-3"
+            className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0"
           >
             <img
               src="/GIPL_Short-Logo-e1750248392231.png"
               alt="Gohil Infotech"
-              className="h-8 sm:h-10 md:h-12 w-auto"
+              className="h-4 sm:h-5 md:h-6 lg:h-7 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-none"
+              style={{ maxWidth: 'clamp(90px, 22vw, 160px)' }}
             />
           </motion.div>
 
@@ -99,10 +134,12 @@ export default function Navbar() {
                 whileTap={{ scale: 0.98 }}
                 href={link.href}
                 className="
-                  relative px-3 xl:px-4 py-2 xl:py-2.5 text-xs xl:text-sm font-medium
+                  relative px-3 xl:px-4 py-1 xl:py-1.5 text-xs xl:text-sm font-medium
                   text-[#7A7A7A] hover:text-[#2C3E50]
                   transition-colors duration-200
                   group
+                  flex items-center
+                  leading-none
                 "
                 style={{ fontFamily: 'var(--font-open-sans)' }}
               >
@@ -131,7 +168,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.02 }}
               onClick={() => setIsMobileMenuOpen(false)}
               className="
-                px-4 xl:px-5 py-2 xl:py-2.5
+                px-3 xl:px-4 py-1 xl:py-1.5
                 bg-[#E67E22]
                 text-white font-medium text-xs xl:text-sm
                 rounded-lg
@@ -140,6 +177,7 @@ export default function Navbar() {
                 hover:bg-[#D46A1A]
                 transition-all duration-300
                 inline-flex justify-center items-center
+                leading-none
               "
               style={{ fontFamily: 'var(--font-open-sans)' }}
             >
@@ -147,14 +185,14 @@ export default function Navbar() {
             </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Compact sizing */}
           <motion.button
             variants={itemVariants}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="
               lg:hidden
-              p-2 sm:p-2.5
+              p-1.5 sm:p-2 md:p-2
               rounded-lg
               bg-[#F4F4F4]
               border border-[#F4F4F4]
@@ -162,10 +200,15 @@ export default function Navbar() {
               active:bg-[#F4F4F4]/60
               transition-all duration-200
               touch-manipulation
+              min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px]
+              flex items-center justify-center
+              flex-shrink-0
             "
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <div className="w-5 h-5 sm:w-6 sm:h-6 relative">
+            <div className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 relative">
               <span
                 className={`
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -193,12 +236,13 @@ export default function Navbar() {
             </div>
           </motion.button>
         </motion.div>
+        </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
-              {/* Backdrop */}
+              {/* Backdrop - Adjusted for slim navbar height */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -208,27 +252,32 @@ export default function Navbar() {
                   fixed inset-0
                   backdrop-blur-sm bg-black/20
                   lg:hidden z-40
-                  mt-20
+                  mt-10 sm:mt-12 md:mt-14
                 "
               />
 
-              {/* Menu Panel */}
+              {/* Menu Panel - Positioned for slim navbar */}
               <motion.div
+                id="mobile-menu"
                 variants={menuVariants}
                 initial="closed"
                 animate="open"
                 exit="closed"
                 className="
-                  fixed top-16 sm:top-20 left-3 right-3 sm:left-4 sm:right-4
+                  fixed top-10 sm:top-12 md:top-14 left-2.5 right-2.5 sm:left-4 sm:right-4
                   lg:hidden z-50
-                  max-h-[calc(100vh-5rem)] overflow-y-auto
+                  max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto
                 "
+                role="menu"
+                aria-label="Mobile navigation menu"
               >
                 <div
                   className="
+                  bg-[#F4F4F4]/95
                   backdrop-blur-xl
                   rounded-2xl
                   overflow-hidden
+                  border border-[#27B0C4]/10
                 "
                 >
                   <div className="flex flex-col p-3">
@@ -245,12 +294,15 @@ export default function Navbar() {
                           text-[#2C3E50] hover:text-[#2C3E50]
                           font-medium text-sm
                           rounded-xl
-                          hover:bg-[#F4F4F4]
+                          hover:bg-white/80
                           transition-all duration-200
                           border border-transparent hover:border-[#27B0C4]/20
                           flex items-center gap-3
+                          min-h-[44px]
+                          touch-manipulation
                         "
                         style={{ fontFamily: 'var(--font-open-sans)' }}
+                        role="menuitem"
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-[#27B0C4]" />
                         {link.label}
@@ -286,5 +338,6 @@ export default function Navbar() {
         </AnimatePresence>
       </motion.nav>
     </header>
+    </div>
   );
 }

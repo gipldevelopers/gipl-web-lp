@@ -226,7 +226,7 @@ export default function TestimonialsSlider() {
   };
 
   return (
-    <div id="testimonials" className="min-h-[40vh] bg-[#FFFFFF] py-6 md:py-8 px-4 sm:px-6 lg:px-8">
+    <div id="testimonials" className="bg-[#FFFFFF] py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -256,7 +256,6 @@ export default function TestimonialsSlider() {
             <div key={index} className="bg-[#F4F4F4] rounded-lg p-2 shadow-sm border border-[#F4F4F4]">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-1 mb-1">
-                  <stat.icon className="w-3 h-3 text-[#E67E22]" />
                   <span 
                     className="text-sm font-bold text-[#2C3E50]"
                     style={{ fontFamily: 'var(--font-poppins)' }}

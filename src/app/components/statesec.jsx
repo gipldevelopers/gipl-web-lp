@@ -112,7 +112,7 @@ export default function StatsSection() {
   };
 
   return (
-    <div className="min-h-[40vh] bg-[#FFFFFF] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FFFFFF] py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
