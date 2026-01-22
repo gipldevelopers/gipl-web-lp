@@ -183,7 +183,7 @@ export default function TrustLineWorkflow() {
                         </motion.div>
                         <div className="flex-1 min-w-0">
                           <h4 
-                            className="text-xs sm:text-sm font-semibold text-[#2C3E50] mb-0 truncate"
+                            className={`${activeStage === "customers" ? "text-[10px] sm:text-xs" : "text-xs sm:text-sm"} font-semibold text-[#2C3E50] mb-0 leading-snug whitespace-normal break-words`}
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {activeStage === "customers" ? stageInfo.customers.activeDescription : stageInfo.customers.value}
@@ -331,7 +331,7 @@ export default function TrustLineWorkflow() {
                         </motion.div>
                         <div className="flex-1 min-w-0">
                           <h4 
-                            className="text-xs sm:text-sm font-semibold text-[#2C3E50] mb-0 truncate"
+                            className={`${activeStage === "partners" ? "text-[10px] sm:text-xs" : "text-xs sm:text-sm"} font-semibold text-[#2C3E50] mb-0 leading-snug whitespace-normal break-words`}
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {activeStage === "partners" ? stageInfo.partners.activeDescription : stageInfo.partners.value}

@@ -218,7 +218,7 @@ export default function CaseStudiesSlider() {
   return (
     <div
       id="case"
-      className="bg-[#E67E22]/10 py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8"
+      className="bg-[#E67E22]/10 py-4 sm:py-6 md:py-8 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -303,7 +303,7 @@ export default function CaseStudiesSlider() {
 
                   {/* Main Card */}
                   <div
-                    className="relative bg-white rounded-xl p-5 border border-[#F4F4F4] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col min-h-[500px]"
+                    className="relative bg-white rounded-xl p-5 border border-[#F4F4F4] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col min-h-[420px]"
                   >
                     {/* Header */}
                     <div className="mb-4">
@@ -377,7 +377,7 @@ export default function CaseStudiesSlider() {
                     </div>
 
                     {/* Challenge & Solution */}
-                    <div className="space-y-4 flex-grow">
+                    <div className="space-y-4">
                       <div>
                         <div className="flex items-center gap-1 mb-2">
                           <div className="w-2 h-2 bg-[#E67E22] rounded-full"></div>
@@ -416,7 +416,7 @@ export default function CaseStudiesSlider() {
                     </div>
 
                     {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-1 mt-4 pt-4 border-t border-[#F4F4F4]">
+                    <div className="flex flex-wrap gap-1 mt-5 pt-4 border-t border-[#F4F4F4]">
                       {study.tech.map(
                         (tech, idx) => (
                           <span
@@ -443,16 +443,16 @@ export default function CaseStudiesSlider() {
           viewport={{ once: true }}
           className="mt-8 text-center"
         >
-          <div className="bg-[#27B0C4] rounded-xl p-6 max-w-3xl mx-auto border border-[#27B0C4]">
+          <div className="bg-[#FFFFFF] rounded-xl p-6 max-w-3xl mx-auto border border-[#27B0C4]">
             <h3 
-              className="text-xl font-bold text-white mb-2"
+              className="text-xl font-bold text-[#2C3E50] mb-2"
               style={{ fontFamily: 'var(--font-rubik)' }}
             >
               Ready to See These Results?
             </h3>
 
             <p 
-              className="text-white/90 mb-4"
+              className="text-[#7A7A7A] mb-4"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               Let's discuss how we can transform your digital presence.
@@ -463,9 +463,9 @@ export default function CaseStudiesSlider() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 
-                 bg-white text-[#2C3E50] 
+                 bg-[#E67E22] text-white 
                  px-6 py-2.5 rounded-lg font-semibold 
-                 hover:shadow-lg hover:bg-white/90 transition-all border border-white/20"
+                 hover:shadow-lg hover:bg-[#D46A1A] transition-all border border-[#E67E22]"
               style={{ fontFamily: 'var(--font-poppins)' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -474,9 +474,9 @@ export default function CaseStudiesSlider() {
               <img
                 src="/gipl icons_schedule a free consultation.svg"
                 alt="Schedule Free Consultation"
-                className="w-4 h-4 object-contain"
+                className="w-4 h-4 object-contain brightness-0 invert"
               />
-              <span className="text-[#2C3E50]">Schedule Free Consultation</span>
+              <span className="text-white">Schedule Free Consultation</span>
             </motion.a>
           </div>
         </motion.div>

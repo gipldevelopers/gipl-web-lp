@@ -58,7 +58,7 @@ const industries = [
   },
   {
     iconPath: "/gipl icons_health and wellness.svg",
-    title: "Health & Wellness",
+    title: "Medical",
     description: "Clinic websites, appointment systems, patient portals, and medical platforms.",
     color: "from-[#27B0C4] to-[#73CCD7]",
     features: ["Booking", "Patient", "Portal"],
@@ -76,7 +76,7 @@ const industries = [
   },
   {
     iconPath: "/gipl icons_travel and tourism.svg",
-    title: "Travel & Hospitality",
+    title: "Tourism",
     description: "Hotel websites, booking engines, travel platforms, and tourism solutions.",
     color: "from-[#27B0C4] to-[#73CCD7]",
     features: ["Hotels", "Booking", "Tours"],
@@ -255,10 +255,21 @@ export default function IndustriesSlider() {
                           />
 
                           <div className="relative w-32 h-32 rounded-full bg-gradient-to-r from-white to-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg p-3">
-                            <img
-                              src={industry.iconPath}
-                              alt={industry.title}
-                              className="w-full h-full object-contain"
+                            <div
+                              className="w-16 h-16"
+                              style={{
+                                backgroundColor: "#7A7A7A",
+                                WebkitMaskImage: `url("${encodeURI(industry.iconPath)}")`,
+                                maskImage: `url("${encodeURI(industry.iconPath)}")`,
+                                WebkitMaskRepeat: "no-repeat",
+                                maskRepeat: "no-repeat",
+                                WebkitMaskPosition: "center",
+                                maskPosition: "center",
+                                WebkitMaskSize: "contain",
+                                maskSize: "contain",
+                              }}
+                              aria-label={industry.title}
+                              role="img"
                             />
                             
                             {[...Array(3)].map((_, i) => (
@@ -316,7 +327,7 @@ export default function IndustriesSlider() {
                     <img
                       src={industry.iconPath}
                       alt={industry.title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain brightness-0 opacity-50"
                     />
                   </div>
                   <span 
