@@ -95,17 +95,17 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
           <div className="flex gap-2">
             <button
               onClick={() => { handleManual(); scrollRef.current?.scrollBy({ left: -scrollRef.current.clientWidth * 0.7, behavior: 'smooth' }); }}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] flex items-center justify-center"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
             </button>
             <button
               onClick={() => { handleManual(); scrollRef.current?.scrollBy({ left: scrollRef.current.clientWidth * 0.7, behavior: 'smooth' }); }}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] flex items-center justify-center"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
             </button>
           </div>
         </div>
@@ -130,7 +130,11 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
                   viewport={{ once: true, margin: "-50px" }} 
                   className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-16px)] snap-center flex"
                 >
-                  <div className="group relative rounded-xl overflow-hidden flex flex-col w-full">
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative rounded-xl overflow-hidden flex flex-col w-full"
+                  >
                     <div className="absolute inset-0 bg-gradient-to-r from-[#27B0C4] via-[#73CCD7] to-[#E67E22] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F4F4F4] h-full flex flex-col">
@@ -172,7 +176,7 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
                         We design and build {t.title.toLowerCase()} with attention to conversions, performance and brand alignment  optimized for the goals you care about.
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </motion.div>
               );
             })}

@@ -279,7 +279,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="bg-[#F4F4F4] py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F4F4F4] py-8 sm:py-10 md:py-12 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -290,13 +290,13 @@ export default function WhyChooseUs() {
           className="text-center mb-8"
         >
           <h2 
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2C3E50] mb-2"
+            className="text-lg sm:text-2xl md:text-3xl font-bold text-[#2C3E50] mb-2 max-[360px]:text-base"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             Why Choose Us as Your Website Development Company?
           </h2>
           <p 
-            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
+            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto max-[360px]:text-xs"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
             What makes us the best website development company in India?
@@ -304,18 +304,18 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* Controls */}
-        <div className="flex justify-end gap-2 mb-4">
+        <div className="flex justify-end gap-2 mb-4 max-[360px]:gap-1.5">
           <button
             onClick={scrollToLeft}
-            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4] flex items-center justify-center"
           >
-            <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
           </button>
           <button
             onClick={scrollToRight}
-            className="p-2 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4]"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md hover:scale-105 transition border border-[#F4F4F4] flex items-center justify-center"
           >
-            <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
           </button>
         </div>
 

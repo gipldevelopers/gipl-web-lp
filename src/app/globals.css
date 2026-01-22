@@ -245,6 +245,9 @@ button.icon-only, a.icon-only {
 /* Tablet: 768px+ */
 @media (min-width: 768px) {
   /* Tablet-specific styles */
+  main[role="main"] {
+    padding-top: 1.5rem !important;
+  }
 }
 
 /* Desktop: 1024px+ */
@@ -292,11 +295,11 @@ button.icon-only, a.icon-only {
    For iPhone 14 Pro Max (430px) and similar devices
    ============================================ */
 
-/* Mobile: max-width 480px - Optimize header for small screens */
-@media (max-width: 480px) {
-  /* Ensure navbar logo doesn't overflow */
-  header img {
-    max-width: min(120px, 28vw) !important;
+/* Mobile: max-width 767px - Optimize header for small screens */
+@media (max-width: 767px) {
+  /* Mobile-only logo sizing override */
+  header img.company-logo-mobile {
+    max-width: min(180px, 30vh) !important;
     height: auto !important;
   }
   
@@ -315,6 +318,14 @@ button.icon-only, a.icon-only {
   /* Ensure proper gap between logo and hamburger */
   header nav > div > div {
     gap: 0.5rem !important; /* 8px */
+  }
+}
+
+/* Footer logo: smaller on mobile devices */
+@media (max-width: 767px) {
+  footer img.footer-logo {
+    max-width: min(160px, 55vw) !important;
+    height: auto !important;
   }
 }
 

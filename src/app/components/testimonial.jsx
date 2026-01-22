@@ -257,14 +257,14 @@ export default function TestimonialsSlider() {
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-1 mb-1">
                   <span 
-                    className="text-sm font-bold text-[#2C3E50]"
+                    className="text-lg sm:text-xl md:text-2xl font-bold text-[#2C3E50] leading-none"
                     style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     {stat.value}
                   </span>
                 </div>
                 <div 
-                  className="text-[10px] text-[#7A7A7A]"
+                  className="text-xs sm:text-sm text-[#7A7A7A] leading-snug"
                   style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   {stat.label}
@@ -289,18 +289,18 @@ export default function TestimonialsSlider() {
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] flex items-center justify-center"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
             </button>
 
             <button
               onClick={scrollRight}
-              className="p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4]"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] flex items-center justify-center"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 text-[#2C3E50]" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#2C3E50]" />
             </button>
           </div>
         </div>

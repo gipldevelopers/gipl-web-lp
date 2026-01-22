@@ -115,7 +115,7 @@ export default function Navbar() {
             <img
               src="/GIPL_Short-Logo-e1750248392231.png"
               alt="Gohil Infotech"
-              className="h-4 sm:h-5 md:h-6 lg:h-7 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-none"
+              className="company-logo-mobile h-4 sm:h-5 md:h-6 lg:h-7 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-none"
               style={{ maxWidth: 'clamp(90px, 22vw, 160px)' }}
             />
           </motion.div>
@@ -159,12 +159,20 @@ export default function Navbar() {
 
           {/* CTA Button + Startup India Logo - Desktop */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-            <img
-              src="/startupindialogo.png"
-              alt="Startup India"
-              className="h-5 sm:h-6 md:h-7 w-auto object-contain flex-shrink-0"
-              style={{ maxWidth: "120px" }}
-            />
+            <a
+              href="https://www.gohilinfotech.com/STARTUP-INDIA-CERTIFICATE.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Startup India certificate (PDF)"
+              className="flex items-center self-center"
+            >
+              <img
+                src="/startupindialogo.png"
+                alt="Startup India"
+                className="h-5 sm:h-6 md:h-7 w-auto object-contain flex-shrink-0 block translate-y-[2px]"
+                style={{ maxWidth: "120px", display: "block" }}
+              />
+            </a>
             <motion.a
               href="https://gohilinfotech.com/contact"
               target="_blank"
