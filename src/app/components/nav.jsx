@@ -157,8 +157,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
+          {/* CTA Button + Startup India Logo - Desktop */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <img
+              src="/startupindialogo.png"
+              alt="Startup India"
+              className="h-5 sm:h-6 md:h-7 w-auto object-contain flex-shrink-0"
+              style={{ maxWidth: "120px" }}
+            />
             <motion.a
               href="https://gohilinfotech.com/contact"
               target="_blank"
