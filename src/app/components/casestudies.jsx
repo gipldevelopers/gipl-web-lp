@@ -7,11 +7,8 @@ import {
   ChevronRight,
   TrendingUp,
   Shield,
-  Users,
-  Zap,
   Target,
   CheckCircle,
-  Rocket,
   BarChart3,
   ArrowUpRight,
 } from "lucide-react";
@@ -32,7 +29,7 @@ export default function CaseStudiesSlider() {
         "Needed modern website development for luxury property listings with virtual tours and advanced search.",
       solution:
         "Built custom platform with property filters, 360° tours, lead capture, and mobile-responsive design.",
-      icon: Target,
+      iconPath: "/gipl icons_software.svg",
       color: "from-[#27B0C4] to-[#73CCD7]",
       metrics: ["75%", "Increase in Inquiries", "45%", "More Lead Conversions"],
       tech: ["React.js", "Node.js", "MongoDB", "AWS"],
@@ -46,7 +43,7 @@ export default function CaseStudiesSlider() {
         "Creative agency needed website development showcasing their work with fast performance.",
       solution:
         "Interactive portfolio with smooth animations, blog integration, and SEO optimization.",
-      icon: Zap,
+      iconPath: "/gipl icons_software.svg",
       color: "from-[#E67E22] to-[#D46A1A]",
       metrics: ["90%", "Increase in Inquiries", "120%", "Traffic Growth"],
       tech: ["Next.js", "Tailwind CSS", "node.js", "AWS"],
@@ -60,7 +57,7 @@ export default function CaseStudiesSlider() {
         "Platform for sharing traditional recipes with modern UI and search functionality.",
       solution:
         "User accounts, recipe search with filters, step-by-step instructions, and regional categories.",
-      icon: Users,
+      iconPath: "/gipl icons_software.svg",
       color: "from-[#27B0C4] to-[#73CCD7]",
       metrics: ["15,000+", "Registered Users", "2,500+", "Recipes Uploaded"],
       tech: ["Laravel", "Razorpay", "MySQL","AWS"],
@@ -74,7 +71,7 @@ export default function CaseStudiesSlider() {
         "Dual-purpose platform needed: online store + event booking for meditation sessions.",
       solution:
         "WooCommerce store, booking calendar, multi-payment gateways, blog, and multi-language support.",
-      icon: Rocket,
+      iconPath: "/gipl icons_website.svg",
       color: "from-[#E67E22] to-[#D46A1A]",
       metrics: ["₹25L+", "Revenue in Year One", "500+", "Event Bookings"],
       tech: ["HTML","CSS","JS","PHP" ],
@@ -313,9 +310,13 @@ export default function CaseStudiesSlider() {
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <div
-                            className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md flex-shrink-0`}
+                            className={`w-10 h-10 rounded-lg bg-gradient-to-r ${study.color} flex items-center justify-center shadow-md flex-shrink-0 p-2`}
                           >
-                            <study.icon className="w-5 h-5 text-white" />
+                            <img
+                              src={study.iconPath}
+                              alt={study.title}
+                              className="w-full h-full object-contain brightness-0 invert"
+                            />
                           </div>
                           <div>
                             {/* ✅ Make title clickable */}
