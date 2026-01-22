@@ -3,12 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  Zap,
-  Palette,
-  TrendingUp,
-  Cpu,
-  Settings,
-  ListChecks,
   ChevronLeft,
   ChevronRight,
   Rocket,
@@ -30,7 +24,7 @@ export default function WhyChooseUs() {
 
   const benefits = [
     {
-      icon: Settings,
+      iconPath: "/gipl icons_customized for your goal.svg",
       title: "Customized for Your Goals",
       description:
         "No generic templates. Every feature is tailored specifically to your audience and business needs.",
@@ -38,7 +32,7 @@ export default function WhyChooseUs() {
       stats: "Fully customized",
     },
     {
-      icon: ListChecks,
+      iconPath: "/gipl icons_smooth transparent performance.svg",
       title: "Smooth, Transparent Process",
       description:
         "From planning to launch clear timelines, updates, and zero confusion at any step of your development journey.",
@@ -46,7 +40,7 @@ export default function WhyChooseUs() {
       stats: "100% clarity",
     },
     {
-      icon: Palette,
+      iconPath: "/gipl icons_pixel perfect design.svg",
       title: "Pixel-Perfect Design",
       description:
         "Clean, modern, conversion-first UI that instantly builds trust and drives action.",
@@ -54,7 +48,7 @@ export default function WhyChooseUs() {
       stats: "Modern UI",
     },
     {
-      icon: TrendingUp,
+      iconPath: "/gipl icons_conversion focused architecture.svg",
       title: "Conversion-Focused Architecture",
       description:
         "Every layout and interaction is designed to increase leads and sales — not just look good.",
@@ -62,7 +56,7 @@ export default function WhyChooseUs() {
       stats: "Higher conversions",
     },
     {
-      icon: Cpu,
+      iconPath: "/gipl icons_latest technology stack.svg",
       title: "Latest Technology Stack",
       description:
         "Built with modern frameworks like React & Next.js for speed, SEO, and scalability.",
@@ -70,7 +64,7 @@ export default function WhyChooseUs() {
       stats: "Modern stack",
     },
     {
-      icon: Zap,
+      iconPath: "/gipl icons_performance optimization.svg",
       title: "Performance Optimization",
       description:
         "Fast-loading websites that rank better and convert higher. Optimized from day one.",
@@ -352,9 +346,13 @@ export default function WhyChooseUs() {
                 className="bg-white rounded-xl p-5 h-full shadow-sm hover:shadow-xl border border-[#F4F4F4] transition"
               >
                 <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow mb-4`}
+                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow mb-4 p-2`}
                 >
-                  <item.icon className="w-6 h-6 text-white" />
+                  <img
+                    src={item.iconPath}
+                    alt={item.title}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
                 <h3 

@@ -4,14 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { 
-  Home,
-  Factory,
-  Rocket,
-  GraduationCap,
-  ShoppingCart,
-  HeartPulse,
-  Banknote,
-  Plane,
   Zap,
   Shield,
   CheckCircle,
@@ -20,7 +12,7 @@ import {
 
 const industries = [
   {
-    icon: Home,
+    iconPath: "/gipl icons_real estate.svg",
     title: "Real Estate",
     description: "Property listing platforms, builder websites, and advanced real estate search.",
     color: "from-[#E67E22] to-[#D46A1A]",
@@ -29,7 +21,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: Factory,
+    iconPath: "/gipl icons_manufacturing.svg",
     title: "Manufacturing",
     description: "Industry websites, product catalogs, and smart factory digital solutions.",
     color: "from-[#27B0C4] to-[#73CCD7]",
@@ -38,7 +30,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: Rocket,
+    iconPath: "/gipl icons_startup.svg",
     title: "Startups",
     description: "MVP development, SaaS dashboards, landing pages, and scalable startup sites.",
     color: "from-[#E67E22] to-[#D46A1A]",
@@ -47,7 +39,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: GraduationCap,
+    iconPath: "/gipl icons_education.svg",
     title: "Education",
     description: "LMS platforms, coaching websites, student portals, and course systems.",
     color: "from-[#27B0C4] to-[#73CCD7]",
@@ -56,7 +48,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: ShoppingCart,
+    iconPath: "/gipl icons_e commerce.svg",
     title: "E-Commerce",
     description: "Online stores, marketplace systems, product catalogs, and checkout flows.",
     color: "from-[#E67E22] to-[#D46A1A]",
@@ -65,7 +57,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: HeartPulse,
+    iconPath: "/gipl icons_health and wellness.svg",
     title: "Health & Wellness",
     description: "Clinic websites, appointment systems, patient portals, and medical platforms.",
     color: "from-[#27B0C4] to-[#73CCD7]",
@@ -74,7 +66,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: Banknote,
+    iconPath: "/gipl icons_finance.svg",
     title: "Finance",
     description: "Secure finance platforms, investment portals, and lead-gen systems.",
     color: "from-[#E67E22] to-[#D46A1A]",
@@ -83,7 +75,7 @@ const industries = [
     bgColor: "bg-[#F4F4F4]"
   },
   {
-    icon: Plane,
+    iconPath: "/gipl icons_travel and tourism.svg",
     title: "Travel & Hospitality",
     description: "Hotel websites, booking engines, travel platforms, and tourism solutions.",
     color: "from-[#27B0C4] to-[#73CCD7]",
@@ -179,8 +171,12 @@ export default function IndustriesSlider() {
                       {/* Content */}
                       <div className="space-y-3 sm:space-y-4">
                         <div className="flex items-center gap-3">
-                          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r ${industry.color} flex items-center justify-center shadow-md`}>
-                            <industry.icon className="w-7 h-7 text-white" />
+                          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r ${industry.color} flex items-center justify-center shadow-md p-2`}>
+                            <img
+                              src={industry.iconPath}
+                              alt={industry.title}
+                              className="w-full h-full object-contain"
+                            />
                           </div>
 
                           <div>
@@ -258,8 +254,12 @@ export default function IndustriesSlider() {
                             className="absolute inset-3 rounded-full border-3 border-[#E67E22]/20"
                           />
 
-                          <div className="relative w-32 h-32 rounded-full bg-gradient-to-r from-white to-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                            <industry.icon className={`w-16 h-16 ${industry.iconColor}`} />
+                          <div className="relative w-32 h-32 rounded-full bg-gradient-to-r from-white to-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg p-3">
+                            <img
+                              src={industry.iconPath}
+                              alt={industry.title}
+                              className="w-full h-full object-contain"
+                            />
                             
                             {[...Array(3)].map((_, i) => (
                               <motion.div
@@ -312,8 +312,12 @@ export default function IndustriesSlider() {
                 } border border-[#F4F4F4] hover:shadow-sm`}
               >
                 <div className="flex flex-col items-center text-center space-y-1">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg">
-                    <industry.icon className={`w-5 h-5 ${index === activeIndex ? industry.iconColor : 'text-[#7A7A7A]'}`} />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg p-1">
+                    <img
+                      src={industry.iconPath}
+                      alt={industry.title}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <span 
                     className={`text-[10px] sm:text-xs leading-tight ${
