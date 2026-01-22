@@ -582,14 +582,14 @@ export default function TechEcosystem() {
           <div className="flex gap-1.5 sm:gap-2">
             <button
               onClick={scrollLeft}
-              className="p-1.5 sm:p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95 flex items-center justify-center"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2C3E50]" />
             </button>
             <button
               onClick={scrollRight}
-              className="p-1.5 sm:p-2 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white shadow hover:shadow-md transition-all hover:scale-105 border border-[#F4F4F4] touch-manipulation active:scale-95 flex items-center justify-center"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2C3E50]" />

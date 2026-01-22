@@ -36,9 +36,9 @@ export default function Footer() {
           className="block mx-auto mb-4 sm:mb-6 lg:mb-8 flex justify-center"
         >
           <img
-            src="/GIPL_Short-Logo-e1750248392231.png"
+            src="/GIPL_Logo_footer.png"
             alt="Gohil Infotech"
-            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
+            className="footer-logo h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
           />
         </motion.a>
 

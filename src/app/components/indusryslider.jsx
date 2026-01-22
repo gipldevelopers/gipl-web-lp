@@ -126,7 +126,7 @@ export default function IndustriesSlider() {
   };
 
   return (
-    <div className="bg-[#73CCD7]/10 py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#73CCD7]/10 py-6 sm:py-8 md:py-10 px-3 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -137,14 +137,14 @@ export default function IndustriesSlider() {
           className="text-center mb-6"
         >
           <h2 
-            className="text-2xl sm:text-3xl font-bold mb-2 text-[#2C3E50]"
+            className="text-xl sm:text-3xl font-bold mb-2 text-[#2C3E50] max-[360px]:text-lg"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             We Work For Multiple Industries
           </h2>
           
           <p 
-            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
+            className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto max-[360px]:text-xs"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
             Our versatile team has delivered high impact solutions across diverse sectors.
@@ -154,7 +154,7 @@ export default function IndustriesSlider() {
         <div className="relative">
 
           {/* Slider */}
-          <div className="relative h-[200px] md:h-[280px] mb-6 overflow-hidden rounded-xl">
+          <div className="relative h-[260px] sm:h-[220px] md:h-[280px] mb-6 overflow-hidden rounded-xl">
             <AnimatePresence mode="wait">
               {industries.map((industry, index) => 
                 index === activeIndex && (
@@ -164,7 +164,7 @@ export default function IndustriesSlider() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`absolute inset-0 ${industry.bgColor} rounded-xl p-4 sm:p-6`}
+                    className={`absolute inset-0 ${industry.bgColor} rounded-xl p-3 sm:p-5 md:p-6`}
                   >
                     <div className="grid md:grid-cols-2 gap-4 sm:gap-6 h-full items-center">
                       
