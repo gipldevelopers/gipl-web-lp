@@ -14,7 +14,7 @@ export default function ScrollStorySection() {
       title: "UI & User Experience",
       description:
         "Modern, responsive, and conversion-focused interfaces that deliver smooth user journeys and strong brand impact.",
-      svg: "/frontend.svg",
+      svg: "/UI and user exprience-01.png",
       iconColor: "from-[#27B0C4] to-[#73CCD7]",
       shadowColor: "rgba(39,176,196,0.35)",
       labelColor: "text-[#27B0C4]",
@@ -28,12 +28,12 @@ export default function ScrollStorySection() {
       title: "Business Logic & APIs",
       description:
         "Secure, scalable server-side systems with clean APIs, authentication, and third-party integrations.",
-      svg: "/backend.svg",
+      svg: "/business logic and APIs-01.png",
       iconColor: "from-[#2C3E50] to-[#7A7A7A]",
       shadowColor: "rgba(44,62,80,0.35)",
       labelColor: "text-[#2C3E50]",
       shape: "rounded-3xl",
-      size: "w-[200px] h-[200px] sm:w-[220px] sm:h-[220px]",
+      size: "w-[180px] h-[180px] sm:w-[220px] sm:h-[220px]",
       glowColor: "from-[#2C3E50]/25 via-[#7A7A7A]/25 to-[#2C3E50]/25",
     },
     {
@@ -42,7 +42,7 @@ export default function ScrollStorySection() {
       title: "Data & Performance",
       description:
         "High-performance databases designed for speed, security, backups, and long-term scalability.",
-      svg: "/database.svg",
+      svg: "/Data and performance-01.png",
       iconColor: "from-[#E67E22] to-[#D46A1A]",
       shadowColor: "rgba(230,126,34,0.35)",
       labelColor: "text-[#E67E22]",
@@ -137,7 +137,7 @@ export default function ScrollStorySection() {
           </div>
 
           {/* ================= CONTENT ================= */}
-          <div className="relative min-h-[280px] sm:min-h-[320px] text-[#2C3E50]">
+          <div className="relative min-h-[200px] sm:min-h-[320px] text-[#2C3E50]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -171,7 +171,7 @@ export default function ScrollStorySection() {
         </div>
 
         {/* ================= DOT NAVIGATION ================= */}
-        <div className="flex justify-center items-center gap-3 mt-6 sm:mt-8">
+        <div className="flex justify-center items-center gap-3 mt-2 sm:mt-8">
           {slides.map((slide, index) => (
             <button
               key={slide.id}

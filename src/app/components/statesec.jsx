@@ -3,10 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { 
-  FaGlobe,
-  FaUsers,
-  FaCheckCircle,
-  FaTrophy
+  FaCheckCircle
 } from 'react-icons/fa';
 
 const Counter = ({ end, duration = 2, suffix = "" }) => {
@@ -50,7 +47,7 @@ export default function StatsSection() {
   // 🔥 Updated with your new numbers + titles
   const stats = [
     {
-      icon: FaGlobe,
+      iconPath: "/gipl icons_website.svg",
       value: 500,
       suffix: "+",
       title: "Website Launches",
@@ -60,7 +57,7 @@ export default function StatsSection() {
       bgColor: "bg-[#F4F4F4]"
     },
     {
-      icon: FaUsers,
+      iconPath: "/gipl icons_happy client.svg",
       value: 250,
       suffix: "+",
       title: "Happy Clients",
@@ -70,7 +67,7 @@ export default function StatsSection() {
       bgColor: "bg-[#F4F4F4]"
     },
     {
-      icon: FaCheckCircle,
+      iconPath: "/gipl icons_client satisfaction.svg",
       value: 98,
       suffix: "%",
       title: "Client Satisfaction",
@@ -80,7 +77,7 @@ export default function StatsSection() {
       bgColor: "bg-[#F4F4F4]"
     },
     {
-      icon: FaTrophy,
+      iconPath: "/gipl icons_on time delivery.svg",
       value: 100,
       suffix: "%",
       title: "On Time Delivery",
@@ -156,9 +153,13 @@ export default function StatsSection() {
                   whileInView={{ rotate: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", delay: idx * 0.1 }}
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-6 shadow-md`}
+                  className={`w-16 h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-6 shadow-md p-2`}
                 >
-                  <stat.icon className="text-white w-7 h-7" />
+                  <img
+                    src={stat.iconPath}
+                    alt={stat.title}
+                    className={`${idx < 2 ? "w-7 h-7" : "w-8 h-8"} object-contain`}
+                  />
                 </motion.div>
 
                 {/* Counter */}

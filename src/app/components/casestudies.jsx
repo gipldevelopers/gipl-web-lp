@@ -470,7 +470,11 @@ export default function CaseStudiesSlider() {
               whileTap={{ scale: 0.98 }}
               aria-label="Schedule Free Consultation"
             >
-              <CheckCircle className="w-4 h-4 text-[#2C3E50]" />
+              <img
+                src="/gipl icons_schedule a free consultation.svg"
+                alt="Schedule Free Consultation"
+                className="w-4 h-4 object-contain"
+              />
               <span className="text-[#2C3E50]">Schedule Free Consultation</span>
             </motion.a>
           </div>

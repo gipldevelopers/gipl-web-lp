@@ -4,10 +4,6 @@ import React, { useEffect, useState } from "react";
 import {
   ArrowRight,
   Sparkles,
-  Rocket,
-  Zap,
-  TrendingUp,
-  Target,
 } from "lucide-react";
 
 export default function AnimatedCTASection() {
@@ -159,7 +155,11 @@ export default function AnimatedCTASection() {
             {/* Animated stats bar */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 px-2">
               <div className="flex items-center gap-1.5 sm:gap-2 bg-[#F4F4F4] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-[#F4F4F4]">
-                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-[#27B0C4] animate-pulse flex-shrink-0" />
+                <img
+                  src="/gipl icons_Visitors leave due to slow loading.svg"
+                  alt="Visitors leave due to slow loading"
+                  className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse flex-shrink-0"
+                />
                 <span className="font-semibold text-[#2C3E50] text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>65%</span>
                 <span className="text-xs sm:text-sm text-[#7A7A7A] hidden sm:inline" style={{ fontFamily: 'var(--font-poppins)' }}>
                   Visitors leave due to slow loading
@@ -170,7 +170,11 @@ export default function AnimatedCTASection() {
               </div>
 
               <div className="flex items-center gap-1.5 sm:gap-2 bg-[#F4F4F4] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-[#F4F4F4]">
-                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-[#E67E22] animate-pulse flex-shrink-0" />
+                <img
+                  src="/gipl icons_Customers lost on poor mobile UX.svg"
+                  alt="Customers lost on poor mobile UX"
+                  className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse flex-shrink-0"
+                />
                 <span className="font-semibold text-[#2C3E50] text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>60%</span>
                 <span className="text-xs sm:text-sm text-[#7A7A7A] hidden sm:inline" style={{ fontFamily: 'var(--font-poppins)' }}>
                   Customers lost on poor mobile UX
@@ -181,7 +185,11 @@ export default function AnimatedCTASection() {
               </div>
 
               <div className="flex items-center gap-1.5 sm:gap-2 bg-[#F4F4F4] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-[#F4F4F4]">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#27B0C4] animate-pulse flex-shrink-0" />
+                <img
+                  src="/gipl icons_Organic traffic if not ranking.svg"
+                  alt="Organic traffic if not ranking"
+                  className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse flex-shrink-0"
+                />
                 <span className="font-semibold text-[#2C3E50] text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>0%</span>
                 <span className="text-xs sm:text-sm text-[#7A7A7A] hidden sm:inline" style={{ fontFamily: 'var(--font-poppins)' }}>
                   Organic traffic if not ranking
@@ -192,7 +200,11 @@ export default function AnimatedCTASection() {
               </div>
 
               <div className="flex items-center gap-1.5 sm:gap-2 bg-[#F4F4F4] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-[#F4F4F4]">
-                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-[#E67E22] animate-pulse flex-shrink-0" />
+                <img
+                  src="/gipl icons_Wasted Ad spend if site doesn't convert.svg"
+                  alt="Wasted ad spend if site doesn't convert"
+                  className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse flex-shrink-0"
+                />
                 <span className="font-semibold text-[#2C3E50] text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>Wasted</span>
                 <span className="text-xs sm:text-sm text-[#7A7A7A] hidden sm:inline" style={{ fontFamily: 'var(--font-poppins)' }}>
                   Ad spend if site doesn't convert

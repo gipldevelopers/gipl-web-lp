@@ -3,16 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  Briefcase,
-  ShoppingCart,
-  Image as ImageIcon,
   Target,
-  Building,
-  BookOpen,
-  Layout,
-  User,
-  GraduationCap,
-  Home,
   Calendar as CalendarIcon,
   ChevronRight,
   ChevronLeft
@@ -23,16 +14,16 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
   const [isAuto, setIsAuto] = useState(true);
 
   const websiteTypes = [
-    { title: "Business Website", subtitle: "Professional online presence", icon: Briefcase, color: "from-[#27B0C4] to-[#73CCD7]" },
-    { title: "E-Commerce Website", subtitle: "Online stores with secure payments", icon: ShoppingCart, color: "from-[#E67E22] to-[#D46A1A]" },
-    { title: "Real Estate Website", subtitle: "Property listings & lead gen", icon: Home, color: "from-[#27B0C4] to-[#73CCD7]" },
-    { title: "Custom Web Apps", subtitle: "CRMs, dashboards & booking systems", icon: Layout, color: "from-[#E67E22] to-[#D46A1A]" },
-    { title: "Corporate Website", subtitle: "Enterprise digital presence", icon: Building, color: "from-[#2C3E50] to-[#7A7A7A]" },
-    { title: "Personal Branding", subtitle: "Individual professional sites", icon: User, color: "from-[#27B0C4] to-[#73CCD7]" },
-    { title: "Educational / LMS", subtitle: "Online learning platforms", icon: GraduationCap, color: "from-[#E67E22] to-[#D46A1A]" },
-    { title: "Landing Page", subtitle: "High converting sales funnels", icon: Target, color: "from-[#27B0C4] to-[#73CCD7]" },
-    { title: "Portfolio Website", subtitle: "Showcase creative work", icon: ImageIcon, color: "from-[#E67E22] to-[#D46A1A]" },
-    { title: "Blog / News", subtitle: "Content publishing platforms", icon: BookOpen, color: "from-[#27B0C4] to-[#73CCD7]" },
+    { title: "Business Website", subtitle: "Professional online presence", iconPath: "/gipl icons_business website.svg", color: "from-[#27B0C4] to-[#73CCD7]" },
+    { title: "E-Commerce Website", subtitle: "Online stores with secure payments", iconPath: "/gipl icons_e commerce website.svg", color: "from-[#E67E22] to-[#D46A1A]" },
+    { title: "Real Estate Website", subtitle: "Property listings & lead gen", iconPath: "/gipl icons_real estate website.svg", color: "from-[#27B0C4] to-[#73CCD7]" },
+    { title: "Custom Web Apps", subtitle: "CRMs, dashboards & booking systems", iconPath: "/gipl icons_custom web app.svg", color: "from-[#E67E22] to-[#D46A1A]" },
+    { title: "Corporate Website", subtitle: "Enterprise digital presence", iconPath: "/gipl icons_corporate website.svg", color: "from-[#2C3E50] to-[#7A7A7A]" },
+    { title: "Personal Branding", subtitle: "Individual professional sites", iconPath: "/gipl icons_personal branding.svg", color: "from-[#27B0C4] to-[#73CCD7]" },
+    { title: "Educational / LMS", subtitle: "Online learning platforms", iconPath: "/gipl icons_education website.svg", color: "from-[#E67E22] to-[#D46A1A]" },
+    { title: "Landing Page", subtitle: "High converting sales funnels", iconPath: "/gipl icons_landing page website.svg", color: "from-[#27B0C4] to-[#73CCD7]" },
+    { title: "Portfolio Website", subtitle: "Showcase creative work", iconPath: "/gipl icons_portfolio website.svg", color: "from-[#E67E22] to-[#D46A1A]" },
+    { title: "Blog / News", subtitle: "Content publishing platforms", iconPath: "/gipl icons_blog-news.svg", color: "from-[#27B0C4] to-[#73CCD7]" },
 
 
   ];
@@ -130,7 +121,6 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             {websiteTypes.map((t, i) => {
-              const Icon = t.icon;
               return (
                 <motion.div 
                   key={t.title} 
@@ -145,8 +135,12 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
 
                     <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F4F4F4] h-full flex flex-col">
                       <div className="flex items-start gap-3 mb-4">
-                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-md bg-gradient-to-br ${t.color} flex-shrink-0`}>
-                          <Icon className="w-6 h-6 text-white" />
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-md bg-gradient-to-br ${t.color} flex-shrink-0 p-2`}>
+                          <img
+                            src={t.iconPath}
+                            alt={t.title}
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-2">

@@ -3,11 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  Zap,
-  Palette,
-  Server,
-  Database,
-  Code2,
   ChevronLeft,
   ChevronRight,
   Rocket,
@@ -31,15 +26,15 @@ export default function TechEcosystem() {
 
   const techStack = [
     {
-      icon: Zap,
-      emoji: "⚛️",
+      iconPath: "/gipl icons_react.svg",
       name: "React.js",
       category: "Frontend",
       description:
         "Build fast, interactive websites with reusable components and smooth user experience.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Fast Loading",
         "Interactive UI",
@@ -49,15 +44,15 @@ export default function TechEcosystem() {
       performance: "99.9%",
     },
     {
-      icon: Palette,
-      emoji: "🚀",
+      iconPath: "/gipl icons_next js.svg",
       name: "Next.js",
       category: "Frontend",
       description:
         "Create SEO friendly websites that rank higher on Google with fast page loads.",
       color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
+      bgColor: "#E6EBF0",
+      borderColor: "#2C3E50",
       features: [
         "SEO Optimized",
         "Fast Performance",
@@ -67,15 +62,15 @@ export default function TechEcosystem() {
       performance: "99.95%",
     },
     {
-      icon: Server,
-      emoji: "🟢",
+      iconPath: "/gipl icons_node js.svg",
       name: "Node.js/Express",
       category: "Backend",
       description:
         "Power your website with reliable backend technology for APIs and server functions.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Scalable",
         "Fast Processing",
@@ -85,15 +80,15 @@ export default function TechEcosystem() {
       performance: "99.9%",
     },
     {
-      icon: Database,
-      emoji: "🎨",
+      iconPath: "/gipl icons_tailwind css.svg",
       name: "Tailwind CSS",
       category: "Frontend",
       description:
         "Design beautiful, responsive websites faster with modern CSS framework.",
       color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
+      bgColor: "#FDE9D9",
+      borderColor: "#E67E22",
       features: [
         "Mobile Friendly",
         "Quick Design",
@@ -103,28 +98,28 @@ export default function TechEcosystem() {
       performance: "100%",
     },
     {
-      icon: Code2,
-      emoji: "🔥",
+      iconPath: "/gipl icons_firebase.svg",
       name: "Firebase/Supabase",
       category: "Database/Auth",
       description:
         "Store data securely with real time updates and user authentication features.",
       color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
+      bgColor: "#FDE9D9",
+      borderColor: "#E67E22",
       features: ["Real-time Data", "User Login", "Cloud Storage", "Secure"],
       performance: "99.95%",
     },
     {
-      icon: Zap,
-      emoji: "✅",
+      iconPath: "/gipl icons_typescript.svg",
       name: "TypeScript",
       category: "Language",
       description:
         "Write cleaner, error free code that's easier to maintain and scale over time.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Error Prevention",
         "Better Code Quality",
@@ -134,15 +129,15 @@ export default function TechEcosystem() {
       performance: "100%",
     },
     {
-      icon: Palette,
-      emoji: "⚡",
+      iconPath: "/gipl icons_vue.svg",
       name: "Vue.js",
       category: "Frontend",
       description:
         "Build lightweight, fast websites with simple yet powerful frontend framework.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Easy to Learn",
         "Lightweight",
@@ -152,15 +147,15 @@ export default function TechEcosystem() {
       performance: "99.9%",
     },
     {
-      icon: Server,
-      emoji: "🅰️",
+      iconPath: "/gipl icons_angular.svg",
       name: "Angular",
       category: "Frontend",
       description:
         "Develop large scale business applications with Google's trusted framework.",
       color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
+      bgColor: "#E6EBF0",
+      borderColor: "#2C3E50",
       features: [
         "Enterprise Ready",
         "Full-featured",
@@ -170,15 +165,15 @@ export default function TechEcosystem() {
       performance: "99.8%",
     },
     {
-      icon: Database,
-      emoji: "🐘",
+      iconPath: "/gipl icons_php and laravel.svg",
       name: "PHP/Laravel",
       category: "Backend",
       description:
         "Build secure, database driven websites with popular PHP framework.",
       color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
+      bgColor: "#FDE9D9",
+      borderColor: "#E67E22",
       features: [
         "Secure Coding",
         "Database Management",
@@ -188,15 +183,15 @@ export default function TechEcosystem() {
       performance: "99.9%",
     },
     {
-      icon: Code2,
-      emoji: "🐍",
+      iconPath: "/gipl icons_python adn django.svg",
       name: "Python/Django",
       category: "Backend",
       description:
         "Create complex web applications quickly with powerful Python framework.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Fast Development",
         "Built-in Features",
@@ -206,15 +201,15 @@ export default function TechEcosystem() {
       performance: "99.95%",
     },
     {
-      icon: Zap,
-      emoji: "🪟",
+      iconPath: "/gipl icons_.net.svg",
       name: ".NET",
       category: "Backend",
       description:
         "Build enterprise level applications with Microsoft's reliable framework.",
       color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
+      bgColor: "#E6EBF0",
+      borderColor: "#2C3E50",
       features: [
         "High Performance",
         "Cross-platform",
@@ -224,15 +219,15 @@ export default function TechEcosystem() {
       performance: "99.9%",
     },
     {
-      icon: Palette,
-      emoji: "🌐",
+      iconPath: "/gipl icons_vercel.svg",
       name: "Vercel",
       category: "Hosting",
       description:
         "Host your website on fast global servers for best performance worldwide.",
       color: "from-[#2C3E50] to-[#7A7A7A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#2C3E50] to-[#7A7A7A]",
+      bgColor: "#E6EBF0",
+      borderColor: "#2C3E50",
       features: [
         "Global CDN",
         "Instant Updates",
@@ -242,28 +237,28 @@ export default function TechEcosystem() {
       performance: "99.99%",
     },
     {
-      icon: Server,
-      emoji: "📄",
+      iconPath: "/gipl icons_html and css.svg",
       name: "HTML5 & CSS3",
       category: "Frontend",
       description:
         "Build modern, accessible websites with latest web standards and best practices.",
       color: "from-[#E67E22] to-[#D46A1A]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#E67E22] to-[#D46A1A]",
+      bgColor: "#FDE9D9",
+      borderColor: "#E67E22",
       features: ["Web Standards", "All Browsers", "Accessible", "Mobile Ready"],
       performance: "100%",
     },
     {
-      icon: Database,
-      emoji: "📜",
+      iconPath: "/gipl icons_java script.svg",
       name: "JavaScript",
       category: "Language",
       description:
         "Add interactive features and dynamic content to engage your website visitors.",
       color: "from-[#27B0C4] to-[#73CCD7]",
       iconColor: "text-white",
-      bgColor: "bg-gradient-to-br from-[#27B0C4] to-[#73CCD7]",
+      bgColor: "#DDF6FA",
+      borderColor: "#27B0C4",
       features: [
         "Interactive",
         "Dynamic Content",
@@ -640,9 +635,14 @@ export default function TechEcosystem() {
                     {/* Header with icon */}
                     <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                       <div
-                        className={`${tech.bgColor} w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center shadow-md flex-shrink-0`}
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center shadow-md flex-shrink-0 border p-2"
+                        style={{ backgroundColor: tech.bgColor, borderColor: tech.borderColor }}
                       >
-                        <span className="text-lg sm:text-xl">{tech.emoji}</span>
+                        <img 
+                          src={tech.iconPath} 
+                          alt={tech.name}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between gap-2">
