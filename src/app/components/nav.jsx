@@ -323,6 +323,24 @@ export default function Navbar() {
                       </motion.a>
                     ))}
 
+                    {/* Mobile Startup India Logo */}
+                    <div className="mt-3 px-4">
+                      <a
+                        href="https://www.gohilinfotech.com/STARTUP-INDIA-CERTIFICATE.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open Startup India certificate (PDF)"
+                        className="flex items-center justify-start"
+                      >
+                        <img
+                          src="/startupindialogo.png"
+                          alt="Startup India"
+                          className="h-5 w-auto object-contain block"
+                          style={{ maxWidth: "140px" }}
+                        />
+                      </a>
+                    </div>
+
                     {/* Mobile CTA */}
                     <Link href="https://gohilinfotech.com/contact">
                       <motion.button
