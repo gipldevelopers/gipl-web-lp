@@ -62,17 +62,17 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
   };
 
   return (
-    <section  id="service" className="py-10 px-4 sm:px-6 lg:px-8 bg-transparent">
+    <section id="service" className="py-10 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
         {/* Header - styled to match TechEcosystem exactly */}
         <motion.div initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
-          <h2 
+          <h2
             className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             Types of Websites We Build
           </h2>
-          <p 
+          <p
             className="text-sm sm:text-base text-[#7A7A7A] max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
@@ -84,7 +84,7 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#27B0C4]" />
-            <span 
+            <span
               className="text-sm font-medium text-[#2C3E50]"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
@@ -122,12 +122,12 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
           >
             {websiteTypes.map((t, i) => {
               return (
-                <motion.div 
-                  key={t.title} 
-                  variants={cardVariant} 
-                  initial="hidden" 
-                  whileInView="visible" 
-                  viewport={{ once: true, margin: "-50px" }} 
+                <motion.div
+                  key={t.title}
+                  variants={cardVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
                   className="flex-shrink-0 w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-16px)] snap-center flex"
                 >
                   <motion.div
@@ -148,19 +148,19 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-2">
-                            <h3 
+                            <h3
                               className="text-lg font-bold text-[#2C3E50] flex-1"
                               style={{ fontFamily: 'var(--font-poppins)' }}
                             >
                               {t.title}
                             </h3>
-                            <motion.div 
-                              animate={{ rotate: [0, 10, 0] }} 
-                              transition={{ duration: 2, repeat: Infinity }} 
-                              className="w-2 h-2 bg-[#27B0C4] rounded-full flex-shrink-0" 
+                            <motion.div
+                              animate={{ rotate: [0, 10, 0] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                              className="w-2 h-2 bg-[#27B0C4] rounded-full flex-shrink-0"
                             />
                           </div>
-                          <p 
+                          <p
                             className="text-sm text-[#7A7A7A] mt-1"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
@@ -169,7 +169,7 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
                         </div>
                       </div>
 
-                      <p 
+                      <p
                         className="text-sm text-[#7A7A7A] flex-grow"
                         style={{ fontFamily: 'var(--font-poppins)' }}
                       >
@@ -182,28 +182,26 @@ export default function WebsiteTypesGrid({ calendarLink = "#contact", onCTA }) {
             })}
           </div>
 
-          
+
         </div>
 
         {/* CTA block - matches TechEcosystem button style */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-2 text-center">
           <div className="inline-flex gap-3">
-           <motion.a
-  href="https://gohilinfotech.com/contact"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-3 
+            <motion.a
+              href="#contact-us"
+              className="inline-flex items-center gap-3 
              bg-[#E67E22]
              text-white px-6 py-3 rounded-lg font-semibold 
              hover:shadow-lg hover:bg-[#D46A1A] transition-all"
-  style={{ fontFamily: 'var(--font-poppins)' }}
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.98 }}
-  aria-label="Schedule a Free Consultation"
->
-  Schedule a Free Consultation
-  <ChevronRight className="w-4 h-4" />
-</motion.a>
+              style={{ fontFamily: 'var(--font-poppins)' }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              aria-label="Schedule a Free Consultation"
+            >
+              Schedule a Free Consultation
+              <ChevronRight className="w-4 h-4" />
+            </motion.a>
 
 
           </div>

@@ -60,7 +60,7 @@ export default function CaseStudiesSlider() {
       iconPath: "/gipl icons_software.svg",
       color: "from-[#27B0C4] to-[#73CCD7]",
       metrics: ["15,000+", "Registered Users", "2,500+", "Recipes Uploaded"],
-      tech: ["Laravel", "Razorpay", "MySQL","AWS"],
+      tech: ["Laravel", "Razorpay", "MySQL", "AWS"],
     },
 
     {
@@ -74,7 +74,7 @@ export default function CaseStudiesSlider() {
       iconPath: "/gipl icons_website.svg",
       color: "from-[#E67E22] to-[#D46A1A]",
       metrics: ["₹25L+", "Revenue in Year One", "500+", "Event Bookings"],
-      tech: ["HTML","CSS","JS","PHP" ],
+      tech: ["HTML", "CSS", "JS", "PHP"],
     },
   ];
 
@@ -228,14 +228,14 @@ export default function CaseStudiesSlider() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 
+          <h2
             className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             Real Results: Our Mini Case Studies
           </h2>
 
-          <p 
+          <p
             className="text-sm sm:text-base text-[#7A7A7A] max-w-3xl mx-auto mb-6"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
@@ -250,7 +250,7 @@ export default function CaseStudiesSlider() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#27B0C4]" />
-            <span 
+            <span
               className="text-sm font-medium text-[#2C3E50]"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
@@ -332,7 +332,7 @@ export default function CaseStudiesSlider() {
                                 {/* <ArrowUpRight className="w-3 h-3 opacity-60" /> */}
                               </a>
                             ) : (
-                              <div 
+                              <div
                                 className="text-sm font-bold text-[#2C3E50]"
                                 style={{ fontFamily: 'var(--font-poppins)' }}
                               >
@@ -360,13 +360,13 @@ export default function CaseStudiesSlider() {
                           key={startIdx}
                           className="bg-[#F4F4F4] rounded-lg p-2 text-center border border-[#F4F4F4]"
                         >
-                          <div 
+                          <div
                             className="text-lg font-bold text-[#2C3E50]"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {study.metrics[startIdx]}
                           </div>
-                          <div 
+                          <div
                             className="text-xs text-[#7A7A7A]"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
@@ -381,14 +381,14 @@ export default function CaseStudiesSlider() {
                       <div>
                         <div className="flex items-center gap-1 mb-2">
                           <div className="w-2 h-2 bg-[#E67E22] rounded-full"></div>
-                          <span 
+                          <span
                             className="text-sm font-medium text-[#2C3E50]"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             Challenge
                           </span>
                         </div>
-                        <p 
+                        <p
                           className="text-sm text-[#7A7A7A] leading-relaxed"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
@@ -399,14 +399,14 @@ export default function CaseStudiesSlider() {
                       <div>
                         <div className="flex items-center gap-1 mb-2">
                           <div className="w-2 h-2 bg-[#27B0C4] rounded-full"></div>
-                          <span 
+                          <span
                             className="text-sm font-medium text-[#2C3E50]"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             Solution
                           </span>
                         </div>
-                        <p 
+                        <p
                           className="text-sm text-[#7A7A7A] leading-relaxed"
                           style={{ fontFamily: 'var(--font-poppins)' }}
                         >
@@ -444,14 +444,14 @@ export default function CaseStudiesSlider() {
           className="mt-8 text-center"
         >
           <div className="bg-[#FFFFFF] rounded-xl p-6 max-w-3xl mx-auto border border-[#27B0C4]">
-            <h3 
+            <h3
               className="text-xl font-bold text-[#2C3E50] mb-2"
               style={{ fontFamily: 'var(--font-rubik)' }}
             >
               Ready to See These Results?
             </h3>
 
-            <p 
+            <p
               className="text-[#7A7A7A] mb-4"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
@@ -459,9 +459,7 @@ export default function CaseStudiesSlider() {
             </p>
 
             <motion.a
-              href="https://gohilinfotech.com/contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact-us"
               className="inline-flex items-center gap-2 
                  bg-[#E67E22] text-white 
                  px-6 py-2.5 rounded-lg font-semibold 
