@@ -1,5 +1,6 @@
 
 import CaseStudiesSlider from './components/casestudies'
+import ContactUs from './components/contact'
 import AnimatedCTASection from './components/cta'
 import Footer from './components/footer'
 import HeroSection from './components/hero'
@@ -19,20 +20,21 @@ export default function Home() {
     <>
       <Nav />
       <main role="main">
-        <HeroSection/>
-        <TrustLineWorkflow/>
-        <TrustedBrands/>
-        <ScrollStorySection/>
-        <AnimatedCTASection/>
-        <WhyChooseUsSection/>
-        <StatsSection/>
-        <IndustriesSlider/>
-        <TechEcosystem/>
-        <WebsiteTypesGrid/>
-        <CaseStudiesSlider/>
-        <TestimonialsSection/>
+        <HeroSection />
+        <TrustLineWorkflow />
+        <TrustedBrands />
+        <ScrollStorySection />
+        <AnimatedCTASection />
+        <WhyChooseUsSection />
+        <StatsSection />
+        <IndustriesSlider />
+        <TechEcosystem />
+        <WebsiteTypesGrid />
+        <CaseStudiesSlider />
+        <TestimonialsSection />
+        <ContactUs />
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }

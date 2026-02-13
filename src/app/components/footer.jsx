@@ -61,9 +61,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          href="https://gohilinfotech.com/contact"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact-us"
           className="inline-flex items-center gap-2 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-full bg-[#27B0C4] border border-[#27B0C4] text-white text-sm sm:text-base font-semibold hover:bg-[#73CCD7] hover:border-[#73CCD7] transition-all active:scale-95"
           style={{ fontFamily: 'var(--font-poppins)' }}
         >
