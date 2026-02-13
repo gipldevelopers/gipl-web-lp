@@ -20,9 +20,8 @@ export default function AnimatedCTASection() {
     const styles = [...Array(20)].map(() => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${
-        Math.random() * 2
-      }s`,
+      animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2
+        }s`,
     }));
     setParticleStyles(styles);
 
@@ -99,9 +98,8 @@ export default function AnimatedCTASection() {
       <div
         className="absolute inset-0 transition-transform duration-300 ease-out"
         style={{
-          backgroundPosition: `${mousePosition.x * 100}% ${
-            mousePosition.y * 100
-          }%`,
+          backgroundPosition: `${mousePosition.x * 100}% ${mousePosition.y * 100
+            }%`,
         }}
       >
         {/* Gradient orbs */}
@@ -121,9 +119,8 @@ export default function AnimatedCTASection() {
       {/* Main content */}
       <div className="relative max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
         <div
-          className={`text-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           {/* Main heading */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight px-2" style={{ fontFamily: 'var(--font-rubik)' }}>
@@ -134,11 +131,10 @@ export default function AnimatedCTASection() {
 
           {/* Animated subheading */}
           <div
-            className={`relative max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 transition-all duration-1000 delay-300 ${
-              isVisible
+            className={`relative max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 transition-all duration-1000 delay-300 ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
-            }`}
+              }`}
           >
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#7A7A7A] mb-4 sm:mb-5 md:mb-6 px-2" style={{ fontFamily: 'var(--font-poppins)' }}>
               Is your website development outdated? Many businesses lose
@@ -218,14 +214,13 @@ export default function AnimatedCTASection() {
 
           {/* Animated CTA buttons */}
           <div
-            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center transition-all duration-1000 delay-500 px-2 ${
-              isVisible
+            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center transition-all duration-1000 delay-500 px-2 ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
-            }`}
+              }`}
           >
             {/* Primary CTA */}
-            <a href="https://gohilinfotech.com/contact" className="inline-block w-full sm:w-auto">
+            <a href="#contact-us" className="inline-block w-full sm:w-auto">
               <button className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#E67E22] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 transform overflow-hidden hover:bg-[#D46A1A] touch-manipulation">
                 {/* Animated background effect */}
                 <div className="absolute inset-0 bg-[#D46A1A] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

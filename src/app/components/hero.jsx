@@ -124,7 +124,7 @@ export default function HeroSection() {
           ease: [0.4, 0, 0.2, 1],
         }}
       />
-      
+
       {/* Animated gradient orbs for depth - Adapts to content height */}
       <div className="absolute inset-0 min-h-full overflow-hidden pointer-events-none">
         {/* Large floating orbs */}
@@ -153,7 +153,7 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      
+
       {/* Animated mesh gradient overlay - Adapts to content height */}
       <motion.div
         className="absolute inset-0 min-h-full opacity-40"
@@ -171,7 +171,7 @@ export default function HeroSection() {
           ease: [0.4, 0, 0.2, 1],
         }}
       />
-      
+
       {/* Animated geometric shapes - Adapts to content height */}
       <div className="absolute inset-0 min-h-full overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
@@ -200,7 +200,7 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      
+
       {/* Floating particles - Adapts to content height */}
       <div className="absolute inset-0 min-h-full overflow-hidden pointer-events-none">
         {[...Array(12)].map((_, i) => (
@@ -229,7 +229,7 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      
+
       {/* Subtle grid pattern - Adapts to content height */}
       <motion.div
         className="absolute inset-0 min-h-full opacity-5"
@@ -290,14 +290,14 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                  whileHover={{ 
-                    scale: 1.02, 
+                  whileHover={{
+                    scale: 1.02,
                     y: -2,
                     transition: { duration: 0.2 }
                   }}
                   className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 md:p-3.5 rounded-lg bg-white/80 backdrop-blur-sm border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px]"
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center bg-gradient-to-br from-[#27B0C4] to-[#73CCD7] text-white flex-shrink-0 shadow-md"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.3 }}
@@ -315,10 +315,9 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-2 sm:mb-3 md:mb-4 justify-center w-full sm:w-auto"
             >
               <motion.a
-                href="https://gohilinfotech.com/contact"
-                target="_blank"
+                href="#contact-us"
                 rel="noopener noreferrer"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 10px 30px rgba(230, 126, 34, 0.4)"
                 }}
@@ -331,7 +330,7 @@ export default function HeroSection() {
                 title="Start Your Project Today"
                 style={{ fontFamily: 'var(--font-poppins)' }}
               >
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-[#D46A1A] to-[#E67E22] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 <div className="relative flex items-center justify-center gap-2 z-10">
