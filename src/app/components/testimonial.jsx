@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Star,
+  StarHalf,
   Quote,
   ChevronLeft,
   ChevronRight,
@@ -23,7 +24,7 @@ export default function TestimonialsSlider() {
         "Best website development company we've worked with. The new e-commerce site is fast, beautiful, and easy to manage. 60% increase in orders within 2 months!",
       name: "Rajesh Mehta",
       role: "Founder, Mehta Handicrafts",
-      rating: 5,
+      rating: 4.5,
       location: "Mumbai",
       project: "E-Commerce Website Development",
       bgColor: "bg-[#F4F4F4]",
@@ -34,7 +35,7 @@ export default function TestimonialsSlider() {
         "Most professional website development company in India. Among all website development companies in India, they stood out. Transparent, on-time, perfect quality.",
       name: "Priya Sharma",
       role: "Director, Sharma Consultancy",
-      rating: 5,
+      rating: 5.0,
       location: "Bangalore",
       project: "Corporate Website Development",
       bgColor: "bg-[#F4F4F4]",
@@ -45,7 +46,7 @@ export default function TestimonialsSlider() {
         "Exceptional website development with ongoing support. Their post-launch support is amazing. The website loads super fast and looks great on mobile!",
       name: "Vikram Patel",
       role: "CEO, TechVision Solutions",
-      rating: 5,
+      rating: 4.0,
       location: "Pune",
       project: "Web Application Development",
       bgColor: "bg-[#F4F4F4]",
@@ -56,7 +57,7 @@ export default function TestimonialsSlider() {
         "Best for complex projects. Complex real estate portal handled beautifully. Definitely the best website development company in India for technical projects.",
       name: "Anjali Desai",
       role: "Managing Partner, Elite Properties",
-      rating: 5,
+      rating: 4.5,
       location: "Ahmedabad",
       project: "Real Estate Platform",
       bgColor: "bg-[#F4F4F4]",
@@ -67,7 +68,7 @@ export default function TestimonialsSlider() {
         "From startup to success. Built a robust platform that handles thousands of users daily. True expertise in web design & development services.",
       name: "Arjun Reddy",
       role: "Co-Founder, EduLearn India",
-      rating: 5,
+      rating: 5.0,
       location: "Hyderabad",
       project: "LMS Development",
       bgColor: "bg-[#F4F4F4]",
@@ -78,7 +79,7 @@ export default function TestimonialsSlider() {
         "Amazing results, friendly team. Explained everything clearly. More inquiries than we imagined. Highly recommend this website development company!",
       name: "Neha Gupta",
       role: "Owner, Blissful Wellness Spa",
-      rating: 5,
+      rating: 4.0,
       location: "Delhi",
       project: "Business Website Development",
       bgColor: "bg-[#F4F4F4]",
@@ -235,14 +236,14 @@ export default function TestimonialsSlider() {
           viewport={{ once: true }}
           className="text-center mb-4"
         >
-          <h2 
+          <h2
             className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#2C3E50]"
             style={{ fontFamily: 'var(--font-rubik)' }}
           >
             What Our Clients Say
           </h2>
 
-          <p 
+          <p
             className="text-sm sm:text-base text-[#7A7A7A] mb-4 max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-poppins)' }}
           >
@@ -256,14 +257,14 @@ export default function TestimonialsSlider() {
             <div key={index} className="bg-[#F4F4F4] rounded-lg p-2 shadow-sm border border-[#F4F4F4]">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-1 mb-1">
-                  <span 
+                  <span
                     className="text-lg sm:text-xl md:text-2xl font-bold text-[#2C3E50] leading-none"
                     style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     {stat.value}
                   </span>
                 </div>
-                <div 
+                <div
                   className="text-xs sm:text-sm text-[#7A7A7A] leading-snug"
                   style={{ fontFamily: 'var(--font-poppins)' }}
                 >
@@ -278,11 +279,11 @@ export default function TestimonialsSlider() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#27B0C4]" />
-            <span 
+            <span
               className="text-sm font-medium text-[#2C3E50]"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
-              Client Testimonials
+              Happy Client Testimonials
             </span>
           </div>
 
@@ -338,7 +339,7 @@ export default function TestimonialsSlider() {
 
                     {/* quote */}
                     <div className="mb-4 flex-grow">
-                      <p 
+                      <p
                         className="text-sm text-[#7A7A7A] leading-relaxed italic"
                         style={{ fontFamily: 'var(--font-poppins)' }}
                       >
@@ -348,14 +349,20 @@ export default function TestimonialsSlider() {
 
                     {/* rating */}
                     <div className="flex items-center gap-1 mb-4 flex-shrink-0">
-                      {Array.from({ length: t.rating }).map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-[#E67E22] fill-[#E67E22]" />
-                      ))}
-                      <span 
+                      {Array.from({ length: 5 }).map((_, i) => {
+                        if (t.rating >= i + 1) {
+                          return <Star key={i} className="w-4 h-4 text-[#E67E22] fill-[#E67E22]" />;
+                        } else if (t.rating >= i + 0.5) {
+                          return <StarHalf key={i} className="w-4 h-4 text-[#E67E22] fill-[#E67E22]" />;
+                        } else {
+                          return <Star key={i} className="w-4 h-4 text-gray-300" />;
+                        }
+                      })}
+                      <span
                         className="text-xs text-[#7A7A7A] ml-2"
                         style={{ fontFamily: 'var(--font-poppins)' }}
                       >
-                        {t.rating}.0
+                        {t.rating.toFixed(1)}
                       </span>
                     </div>
 
@@ -363,19 +370,19 @@ export default function TestimonialsSlider() {
                     <div className="pt-4 border-t border-[#F4F4F4] flex-shrink-0">
                       <div className="flex justify-between items-start">
                         <div className="min-w-0">
-                          <h4 
+                          <h4
                             className="font-semibold text-[#2C3E50] text-sm truncate mb-1"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {t.name}
                           </h4>
-                          <p 
+                          <p
                             className="text-xs text-[#7A7A7A] truncate"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             {t.role}
                           </p>
-                          <p 
+                          <p
                             className="text-xs text-[#7A7A7A] mt-1"
                             style={{ fontFamily: 'var(--font-poppins)' }}
                           >
@@ -390,7 +397,7 @@ export default function TestimonialsSlider() {
             ))}
           </div>
 
-         
+
         </div>
       </div>
 
