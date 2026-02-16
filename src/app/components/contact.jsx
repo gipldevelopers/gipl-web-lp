@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, User, Phone, MessageSquare } from 'lucide-react';
+import { Send, Mail, User, Phone, MessageSquare, RefreshCw, ShieldCheck } from 'lucide-react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { isValidPhoneNumber } from 'libphonenumber-js';
@@ -17,8 +17,64 @@ export default function ContactUs() {
         contactNumber: '',
         description: ''
     });
+    const [captcha, setCaptcha] = useState("");
+    const [captchaInput, setCaptchaInput] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errors, setErrors] = useState({});
+    const canvasRef = useRef(null);
+
+    const generateCaptcha = () => {
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let randomString = "";
+        for (let i = 0; i < 6; i++) {
+            randomString += chars[Math.floor(Math.random() * chars.length)];
+        }
+        setCaptcha(randomString);
+    };
+
+    useEffect(() => {
+        generateCaptcha();
+    }, []);
+
+    useEffect(() => {
+        if (captcha && canvasRef.current) {
+            const canvas = canvasRef.current;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Background
+            ctx.fillStyle = '#F3F4F6';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add noise (lines)
+            for (let i = 0; i < 7; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.strokeStyle = `rgba(0,0,0,${0.1 + Math.random() * 0.2})`;
+                ctx.lineWidth = 1 + Math.random();
+                ctx.stroke();
+            }
+
+            // Draw text
+            ctx.font = 'bold 24px Courier New';
+            ctx.fillStyle = '#374151';
+            ctx.textBaseline = 'middle';
+            ctx.textAlign = 'center';
+
+            // Draw each character with slight rotation/offset
+            const charWidth = canvas.width / 6;
+            for (let i = 0; i < 6; i++) {
+                ctx.save();
+                const x = (i * charWidth) + (charWidth / 2);
+                const y = canvas.height / 2;
+                ctx.translate(x, y);
+                ctx.rotate((Math.random() - 0.5) * 0.4);
+                ctx.fillText(captcha[i], 0, 0);
+                ctx.restore();
+            }
+        }
+    }, [captcha]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,6 +106,12 @@ export default function ContactUs() {
             newErrors.contactNumber = 'Invalid phone number';
         }
 
+        if (!captchaInput.trim()) {
+            newErrors.captcha = 'Please enter the captcha code';
+        } else if (captchaInput.trim().toUpperCase() !== captcha) {
+            newErrors.captcha = 'Incorrect captcha code';
+        }
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -77,11 +139,15 @@ export default function ContactUs() {
                 if (result.status === 'success') {
                     console.log('Form submitted successfully:', result);
                     setFormData({ name: '', email: '', contactNumber: '', description: '' });
+                    setCaptchaInput("");
+                    generateCaptcha();
                     setErrors({});
                     router.push('/thank-you');
                 } else {
                     console.error('Submission failed:', result);
                     alert('Something went wrong. Please try again later.');
+                    generateCaptcha();
+                    setCaptchaInput("");
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
@@ -211,6 +277,49 @@ export default function ContactUs() {
                                     className="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-sm text-[#2C3E50] placeholder-[#CFD8DC] focus:border-[#27B0C4] outline-none transition-all resize-none min-h-[60px]"
                                 />
                             </div>
+                        </div>
+
+                        {/* Captcha */}
+                        <div>
+                            <label className="block text-xs font-semibold text-[#546E7A] uppercase tracking-wide mb-1">
+                                Security Code <span className="text-red-500">*</span>
+                            </label>
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="bg-white p-1 border border-gray-200 rounded">
+                                    <canvas
+                                        ref={canvasRef}
+                                        width="140"
+                                        height="38"
+                                        className="rounded cursor-pointer"
+                                        onClick={generateCaptcha}
+                                        title="Click to refresh captcha"
+                                    />
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={generateCaptcha}
+                                    className="p-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors text-gray-600"
+                                    title="Refresh Captcha"
+                                >
+                                    <RefreshCw className="h-4 w-4" />
+                                </button>
+                            </div>
+                            <div className="relative group">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                                    <ShieldCheck className={`h-4 w-4 transition-colors ${errors.captcha ? 'text-red-500' : 'text-[#B0BEC5] group-focus-within:text-[#27B0C4]'}`} />
+                                </div>
+                                <input
+                                    type="text"
+                                    value={captchaInput}
+                                    onChange={(e) => {
+                                        setCaptchaInput(e.target.value);
+                                        if (errors.captcha) setErrors(prev => ({ ...prev, captcha: null }));
+                                    }}
+                                    placeholder="Enter security code"
+                                    className={`w-full pl-9 pr-3 py-2 bg-white border rounded text-sm text-[#2C3E50] placeholder-[#CFD8DC] outline-none transition-all h-[38px] ${errors.captcha ? 'border-red-500' : 'border-gray-200 focus:border-[#27B0C4]'}`}
+                                />
+                            </div>
+                            {errors.captcha && <p className="text-[10px] text-red-500 mt-0.5">{errors.captcha}</p>}
                         </div>
 
                         <motion.button
