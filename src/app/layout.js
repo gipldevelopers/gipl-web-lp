@@ -1,4 +1,5 @@
 import { Rubik, Poppins, Open_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -70,11 +71,11 @@ export const metadata = {
   },
   category: "technology",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+
         {/* Additional meta tags for better SEO and responsive design */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <meta name="theme-color" content="#27B0C4" />
@@ -83,7 +84,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
+
         {/* Structured data for better SEO */}
         <script
           type="application/ld+json"
@@ -136,6 +137,27 @@ export default function RootLayout({ children }) {
       <body
         className={`${rubik.variable} ${poppins.variable} ${openSans.variable} antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PQ7B8VLV"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PQ7B8VLV');`}
+        </Script>
+        {/* End Google Tag Manager */}
+
         {children}
       </body>
     </html>
